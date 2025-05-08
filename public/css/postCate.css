@@ -1,0 +1,126 @@
+.article-page{
+    background:#F7F7F7
+}
+
+.article-page .art-category-group{
+    background:#0676DA;
+    text-align:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    margin-bottom:24px;
+    position:relative
+}
+
+.article-page .art-category-group a{
+    color:#fff;
+    font-weight:600;
+    line-height:64px;
+    padding:0 8px
+}
+
+.article-page .art-category-group a:hover, .article-page .art-category-group a.current{
+    background:rgba(255, 255, 255, 0.2)
+}
+
+.article-page .item-icon{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center
+}
+
+.article-page .article-list-container{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap
+}
+
+.article-page .art-item{
+    margin:0 30px 30px 0;
+    width:calc(100% / 3 - 20px)
+}
+
+.article-page .art-item:nth-child(3n){
+    margin-right:0
+}
+
+.article-page .art-time{
+    display:block;
+    margin-bottom:12px;
+    font-size:14px;
+    line-height:17px;
+    color:#A3A3A3;
+    font-weight:300
+}
+
+.article-page .box-title-group{
+    line-height:30px;
+    position:relative;
+    padding-bottom:5px;
+    border-bottom:3px solid #D9D9D9;
+    margin-bottom:32px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between
+}
+
+.article-page .box-title-group::after{
+    content:'';
+    position:absolute;
+    bottom:-3px;
+    left:0;
+    width:85px;
+    height:3px;
+    background:gray
+}
+
+.article-page .box-title-group .box-title{
+    font-weight:700;
+    font-size:24px;
+    text-transform:uppercase;
+    color:#005BAD
+}
+
+.article-page .box-title-group .box-title *{
+    display:inherit
+}
+
+.article-page .paging{
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    margin:10px 0
+}
+
+.article-page .paging a{
+    height:32px;
+    line-height:32px;
+    background:#FAFAFA;
+    border:1px solid #CACACA;
+    border-radius:6px;
+    color:#A3A3A3;
+    font-weight:600
+}
+
+.article-page .paging a:hover, .article-page .paging a.current{
+    background:#005BAD;
+    color:#fff;
+    border-color:transparent
+}

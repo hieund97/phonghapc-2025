@@ -1,0 +1,40 @@
+{
+    "name": "botble/support",
+    "description": "The Botble Platform based on Laravel Framework.",
+    "keywords": [
+        "botble",
+        "botble cms",
+        "botble platform"
+    ],
+    "homepage": "https://botble.com",
+    "support": {
+        "issues": "https://github.com/botble/issues",
+        "document": "https://docs.botble.com"
+    },
+    "authors": [
+        {
+            "name": "Sang Nguyen",
+            "email": "sangnguyenplus@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Botble\\Support\\": "src"
+        },
+        "files": [
+            "helpers/common.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Botble\\Support\\Providers\\SupportServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

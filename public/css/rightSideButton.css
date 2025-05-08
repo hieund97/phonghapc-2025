@@ -1,0 +1,56 @@
+.animate__backInRight {
+    -webkit-animation-name: backInRight;
+    animation-name: backInRight;
+}
+
+.contact-box-bottom {
+    position: fixed;
+    bottom: 85px;
+    right: 10px;
+    z-index: 10000;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+}
+
+.contact-box-wrapper {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+    color: #000;
+}
+
+.contact-icon-box {
+    display: block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 999px;
+    margin-right: 10px;
+}
+
+.contact-info {
+    font-size:12px;
+}
+
+.contact-info span {
+    color: #868686;
+    font-size: 12px;
+    display: block;
+}
+@media only screen and (max-width:768px){
+    .contact-icon-box {
+        margin: 1.5em 0;
+    }
+}
+

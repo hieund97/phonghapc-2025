@@ -1,0 +1,35 @@
+{
+    "name": "ladifire/laravel-payment",
+    "description": "Laravel Payment library.",
+    "authors": [
+        {
+            "name": "Dang Diep",
+            "email": "d4rkstar263@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "phpseclib/phpseclib": "^2.0",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ladifire\\LaravelPayment\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ladifire\\LaravelPayment\\PaymentServiceProvider"
+            ],
+            "aliases": {
+                "Payment": "Ladifire\\LaravelPayment\\Facades\\Payment"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

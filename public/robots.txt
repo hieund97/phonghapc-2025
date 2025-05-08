@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /search/suggest?q=*
+Sitemap: https://maytinhnamha.vn/sitemap.xml

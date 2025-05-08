@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateDiscussionsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('discussions', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('review_id');
+            $table->string('full_name');
+            $table->string('email')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->text('body');
+            $table->boolean('approved')->default(false);
+            $table->dateTime('publish_at')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('discussions');
+    }
+}

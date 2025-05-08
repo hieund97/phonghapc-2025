@@ -1,0 +1,81 @@
+.global-popup-login{display:none}
+
+.bg-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0, 0, 0, 0.4);
+    z-index:9999;
+    cursor:pointer
+}
+
+.global-popup-login .global-popup-content{max-width:800px;width:100%;margin:auto;background:#fff;border-radius:16px;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);z-index:10000;display:-webkit-box;display:-ms-flexbox;display:flex;color:#404D5F}
+
+.global-popup-login .item-left-login{width:299px;background-position:center;border-right:1px solid #E5EAF1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+
+.global-popup-login .item-right-login{width:calc(100% - 300px);padding:21px 40px 25px;position:relative}
+
+.global-popup-login .close-popup{color:#404D5F;font-size:21px;margin-right:-20px}
+
+.global-popup-login .box-title{line-height:20px;margin:24px 0;font-size:16px}
+
+.global-popup-login .box-title a{color:#1988EC;text-decoration:underline;font-weight:600}
+
+.global-popup-login .box-title p{margin:0}
+
+.global-popup-login .box-title p:first-child{margin-bottom:4px;font-weight:700;font-size:28px;line-height:32px}
+
+.global-popup-login .input-box{position:relative;margin-bottom:16px}
+
+.global-popup-login .input-box input{width:100%;margin:0;padding:0 20px 0 0;height:25px;border:0;border-bottom:1px solid #E1E9EC;font-size:16px}
+
+.global-popup-login .icon-eye{width:12px;height:12px;position:absolute;right:0;top:5px;background-position:-213px -52px}
+
+.global-popup-login .icon-google{background-position:-8px -186px}
+
+.global-popup-login .icon-facebook{background-position:-64px -186px}
+
+.global-popup-login .btn-forgot-password{color:#697789;font-weight:600;font-size:14px;line-height:18px}
+
+.global-popup-login .popup-btn{width:100%;background:#1988EC;border-radius:8px;text-align:center;color:#fff;margin:16px 0 24px;line-height:40px;font-weight:600;font-size:16px;display:block}
+
+.global-popup-login .popup-icons-group{margin:24px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+
+.global-popup-login .popup-icons-group .icons{width:40px;height:40px;margin:0 8px}
+
+.global-popup-login .popup-btn-direction{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+
+.global-popup-login .btn-back{width:10px;height:10px;border:2px solid #404D5F;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-right:0;border-top:0}
+
+.global-popup-login .popup-registor-group .input-box{margin-bottom:32px}
+
+.global-popup-login .popup-registor-group .popup-btn{margin-top:40px}
+
+.icons{
+    background:url(../images/sprite.png) no-repeat;
+    background-size:250px 300px;
+}
+
+@media only screen and (max-width:768px){
+    .global-popup-login .global-popup-content{
+        width:90%;
+    }
+    .global-popup-login .item-left-login{
+        visibility:hidden;
+        width:0;
+    }
+
+    .global-popup-login .item-right-login{
+        width:100%;
+        height:50%;
+        display:block;
+    }
+
+    .global-popup-login .box-title p:first-child{
+        font-size:25px;
+    }
+}
+
+
