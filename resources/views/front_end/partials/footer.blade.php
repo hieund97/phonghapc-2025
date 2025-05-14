@@ -70,7 +70,7 @@
                     </div>
                     <div class="nav-bottom">
                         <p><span>Địa chỉ: </span>{{ $mainSettings['contact_address_company'] }}</p>
-                        <p><span>Địa chỉ kinh doanh: </span>{{ $mainSettings['contact_address_company_for_sale'] }}</p>
+                        <p><span>Địa chỉ kinh doanh: </span>{{ $mainSettings['contact_address_company_for_sale'] ?? '' }}</p>
                         <p style="color:#fff!important">
                             <span>Điện thoại: </span>{{ $mainSettings['contact_phone_company'] }}</p>
                         <p><span>Email: </span>{{ $mainSettings['contact_email'] }}</p>

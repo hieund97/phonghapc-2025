@@ -137,9 +137,9 @@ class RolesAndPermissionsSeeder extends Seeder
 
             // create default admin
             $user = User::create([
-                'name'     => 'Nguyễn Văn Vương',
-                'email'    => 'maytinhvietanh2011@gmail.com',
-                'password' => bcrypt('Mtva2011#'),
+                'name'     => 'Phong Hà Admin',
+                'email'    => 'bwadmin@admin.com',
+                'password' => bcrypt('Abcd@1234'),
             ]);
 
             $user->assignRole('Super Admin');

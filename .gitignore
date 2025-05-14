@@ -1,7 +1,6 @@
 /vendor
 .env
 /.idea
-composer.lock
 public/storage
 /storage/oauth-private.key
 /storage/oauth-public.key

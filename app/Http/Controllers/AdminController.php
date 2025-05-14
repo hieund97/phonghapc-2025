@@ -32,7 +32,7 @@ class AdminController extends Controller
         $this->authorize('users.index');
 
         return view('users.index', [
-            'users' => User::role('Customer')->paginate(),
+            'users' => User::role('Customers')->paginate(),
         ]);
     }
 
