@@ -24,9 +24,8 @@
                     <div class="col-md-3 col-sm-6 col-xs-6 box-item-product wow fadeInUp"
                          style="visibility: visible; animation-name: fadeInUp;">
                         <div class="item-product">
-                            <div class="image border-image-namha">
-                                <a href="{{ route("fe.product",["slug"=>$product->slug]) }}"
-                                   class="thubmail-img">
+                            <div class="image" style="position: relative">
+                                <a href="{{ route("fe.product",["slug"=>$product->slug]) }}" class="thubmail-img">
                                     <img class=""
                                          alt="{{ $product->name }}"
                                          src="{{ get_image_url($product->feature_img, '') }}"
@@ -103,6 +102,24 @@
                                    data-redirect="redirect"
                                    data-quantity="1" data-id="1693" data-price="0">Mua hàng
                                 </a>
+                            </div>
+                            <div class="tooltip-product">
+                                <div class="tooltip-title">{{ $product->name }}</div>
+                                <div class="tooltip-content">
+                                    <div class="tooltip-price">{{ $price }}</div>
+                                    <div class="tooltip-info">
+                                        <div class="pd-offer-group">
+                                            <p class="title"><i class="fa-solid fa-gift">&nbsp</i>
+                                                Quà tặng và ưu đãi kèm theo
+                                            </p>
+                                            <div class="pd-offer-list">
+                                                <p>
+                                                    {!! $product->gift_product !!}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

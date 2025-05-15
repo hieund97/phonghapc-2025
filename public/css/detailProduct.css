@@ -550,19 +550,24 @@
 }
 
 .buy-item{
-    width:50%;
     display:inline-block;
     background-color:#56585b !important;
     color:#fff !important;
-    margin:0px !important;
-    border-radius:5px;
+    margin:0 !important;
+    border-radius:10px;
+    height: 75px;
+    width: calc(50% - 10px);
 }
 
-.bk-btn-paynow{
-    margin:0px !important;
+.buy-now-btn {
+    display:inline-block;
+    background-color:#E31223 !important;
+    color:#fff !important;
+    border-radius:10px;
+    height: 75px;
 }
 
-.action-button.ajax-addtocart{
+.buy-item .action-button, .buy-now-btn .action-button {
     font-size:20px;
     font-weight:bold;
     height:100%;
@@ -571,6 +576,7 @@
     align-items:center;
     color:#fff;
     width:100%;
+    text-transform: uppercase;
 }
 
 .bk-btn .bk-btn-box .bk-btn-paynow{
@@ -596,68 +602,6 @@
 .mua-hang{
     position:relative;
     min-height:166px;
-}
-
-.action-button.ajax-addtocart{
-    text-transform:uppercase;
-}
-
-#bk-btn-installment, #bk-btn-installment-amigo, #bk-btn-paynow, .bk-btn-installment, .bk-btn-installment-amigo, .bk-btn-paynow{
-    border:none;
-    font-size:14px;
-    color:#fff;
-    position:relative;
-    cursor:pointer;
-    text-transform:capitalize;
-    padding:4px 10px;
-    border-radius:5px;
-    transition:all 0.3s ease-in-out;
-    margin-bottom:10px;
-    width:250px;
-    margin-right:10px
-}
-
-#bk-btn-paynow, .bk-btn-paynow, .bk-btn-paynow-list{
-    background:#e00 !important
-}
-
-#bk-btn-installment, .bk-btn-installment, .bk-btn-installment-list{
-    background:#288ad6 !important
-}
-
-.bk-btn-installment-list, .bk-btn-paynow-list{
-    border:none;
-    border-radius:5px;
-    transition:all 0.3s ease-in-out
-}
-
-#bk-btn-installment-amigo, .bk-btn-installment-amigo{
-    align-items:center;
-    justify-content:center;
-    color:#000;
-    background:#f1eb1f !important
-}
-
-#bk-btn-paynow:hover, .bk-btn-paynow-list:hover, .bk-btn-paynow:hover{
-    background:#c90000
-}
-
-#bk-btn-installment:hover, .bk-btn-installment-list:hover, .bk-btn-installment:hover{
-    background:#247abd
-}
-
-#bk-btn-installment-amigo:hover, .bk-btn-installment-amigo:hover{
-    color:#000;
-    background:#fcff99
-}
-
-#bk-btn-installment strong, #bk-btn-installment-amigo strong, #bk-btn-paynow strong, .bk-btn-installment strong, .bk-btn-installment-amigo strong, .bk-btn-paynow strong{
-    text-transform:uppercase
-}
-
-#bk-btn-installment span, #bk-btn-installment-amigo span, #bk-btn-paynow span, .bk-btn-installment span, .bk-btn-installment-amigo span, .bk-btn-paynow span{
-    font-size:12px;
-    display:block
 }
 
 .tlqcontent table{
@@ -747,21 +691,6 @@
     line-height:22px;
     display:inline-block;
     margin-right:8px;
-}
-
-.bk-btn-box strong{
-    font-size:20px;
-}
-
-.bk-btn-installment, .bk-btn-paynow{
-
-    padding:16px 7px !important;
-    margin-right:0px !important;
-}
-
-
-.bk-btn-paynow{
-    margin-right:12px !important;
 }
 
 .slider .swiper-container{
@@ -1160,13 +1089,6 @@ a.viewmoretskt{
 }
 
 @media (max-width:767px){
-    .bk-btn-box strong{
-        font-size:18px;
-    }
-
-}
-
-@media (max-width:767px){
     .product-tabs img{
         max-width:100%;
         height:auto;
@@ -1358,8 +1280,15 @@ a.viewmoretskt{
         font-size:16px;
     }
 
-    .mua-hang .buy-item{
-        height:73px;
-        top: 6em;
+    .buy-item{
+        height: 65px;
+    }
+
+    .buy-now-btn {
+        height: 65px;
+    }
+
+    .buy-item .action-button, .buy-now-btn .action-button {
+        font-size:14px;
     }
 }

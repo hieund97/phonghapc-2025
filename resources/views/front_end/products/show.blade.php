@@ -69,12 +69,15 @@
                                                                 <div class="swiper-container">
                                                                     <div class="swiper-wrapper">
                                                                         @for($i = 0; $i < count($images); $i++)
-                                                                            <div class="swiper-slide swiper-slide-{{ $i + 1 }}"
-                                                                                 style="border: 1px solid #dddddd">
-                                                                                <div class="slider__image slider__image_select"
-                                                                                     data-image="{{ $images[$i] }}">
-                                                                                    <img src="{{ get_image_url($images[$i], '') }}"
-                                                                                         style="height: 60px;width: 100%;object-fit: border">
+                                                                            <div
+                                                                                class="swiper-slide swiper-slide-{{ $i + 1 }}"
+                                                                                style="border: 1px solid #dddddd">
+                                                                                <div
+                                                                                    class="slider__image slider__image_select"
+                                                                                    data-image="{{ $images[$i] }}">
+                                                                                    <img
+                                                                                        src="{{ get_image_url($images[$i], '') }}"
+                                                                                        style="height: 60px;width: 100%;object-fit: border">
                                                                                 </div>
                                                                             </div>
                                                                         @endfor
@@ -112,7 +115,7 @@
                                                             Bình luận: <span class="blue-2">0</span>
                                                         </p>
                                                         <p>Lượt xem: <span
-                                                                    class="blue-2">{{ $product->view_count }}</span>
+                                                                class="blue-2">{{ $product->view_count }}</span>
                                                         </p>
                                                     </div>
                                                     <form action="#" method="post">
@@ -124,12 +127,12 @@
                                                                 {{  number_format($product->price,0,'.',',') }}đ
                                                             @endif
                                                         </span>
-                                                        @if(!empty($product->sale_price))
-                                                            <del class="pd-old-price">
-                                                                {{ number_format($product->price,0,'.',',') }} đ
-                                                            </del>
-                                                            <span class="pd-price-off">Tiết kiệm {{ number_format((int)$product->price - (int)$product->sale_price,0,'.',',') }} đ</span>
-                                                        @endif
+                                                            @if(!empty($product->sale_price))
+                                                                <del class="pd-old-price">
+                                                                    {{ number_format($product->price,0,'.',',') }} đ
+                                                                </del>
+                                                                <span class="pd-price-off">Tiết kiệm {{ number_format((int)$product->price - (int)$product->sale_price,0,'.',',') }} đ</span>
+                                                            @endif
                                                         </div>
 
                                                         <div class="p-short-description">
@@ -137,7 +140,7 @@
                                                         </div>
                                                         <a href="javascript:" class="viewmoretskt"
                                                            data-content="#js-tskt-item">Xem thêm <i
-                                                                    class="far fa-angle-down"></i></a>
+                                                                class="far fa-angle-down"></i></a>
 
                                                         <br>
                                                         <div style="clear: both;"></div>
@@ -156,9 +159,22 @@
                                                                 </div>
                                                             </div>
                                                         @endif
-                                                        <div class="mua-hang">
-                                                            <div class="bk-btn"></div>
-                                                            <div class="buy-item">
+                                                        <div class="d-flex align-items-center justify-content-between flex-wrap" style="gap: 20px">
+                                                            <div class="buy-now-btn col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <a href="{{ route("fe.cart") }}"
+                                                                   class="action-button ajax-addtocart"
+                                                                   data-id="{{ $product->id }}"
+                                                                   data-config="original"
+                                                                   data-checkConfig="{{ checkHasConfig($product->config) ? 1 : 0 }}"
+                                                                   data-buyNow="1"
+                                                                >
+                                                                    Đặt mua ngay
+                                                                </a>
+                                                            </div>
+                                                            <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                                                <a class="action-button">Trả góp</a>
+                                                            </div>
+                                                            <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6">
                                                                 <a href="javascript:void(0)"
                                                                    class="action-button ajax-addtocart"
                                                                    data-id="{{ $product->id }}"
@@ -167,7 +183,8 @@
                                                                 >Thêm vào giỏ hàng</a>
                                                             </div>
                                                         </div>
-                                                        <input type="hidden" name="needCheckOut" id="needCheckOut" value="{{ checkNeedCheckOut($product) ? 1 : 0 }}">
+                                                        <input type="hidden" name="needCheckOut" id="needCheckOut"
+                                                               value="{{ checkNeedCheckOut($product) ? 1 : 0 }}">
                                                     </form>
                                                 </div>
                                             </div>
@@ -196,7 +213,7 @@
                                                     <div class="viewmore-area">
                                                         <a href="javascript:void(0)" class="viewmore"
                                                            id="viewmore-dd-nb">Xem thêm <i
-                                                                    class="far fa-angle-down"></i></a>
+                                                                class="far fa-angle-down"></i></a>
                                                     </div>
                                                 </div>
                                                 <div class="content-box" id="5a">
@@ -207,8 +224,9 @@
                                                               action=""
                                                               method="post">
                                                             <div id="notification">
-                                                                <div class="callout callout-success comment-success uk-margin-bottom hidden"
-                                                                     style="background:#53A653;padding:8px;color:#fff;margin-bottom:10px">
+                                                                <div
+                                                                    class="callout callout-success comment-success uk-margin-bottom hidden"
+                                                                    style="background:#53A653;padding:8px;color:#fff;margin-bottom:10px">
                                                                     Gửi bình luận thành công
                                                                 </div>
                                                                 <div id="error-full_name"
@@ -226,17 +244,21 @@
                                                             </div>
                                                             <div class="write-review__stars">
                                                                 <input
-                                                                        type="hidden" class="rating-disabled" value="5"
-                                                                        name="rating">
+                                                                    type="hidden" class="rating-disabled" value="5"
+                                                                    name="rating">
                                                             </div>
                                                             <div class="form-group row d-flex">
                                                                 <div class="col-md-6 col-sm-6 col-xs-12 wp-input-form">
                                                                     <input type="text" name="fullname" id="rate-name"
-                                                                           class="form-control" value="{{ auth()->user()->name ?? null }}" placeholder="Họ và tên">
+                                                                           class="form-control"
+                                                                           value="{{ auth()->user()->name ?? null }}"
+                                                                           placeholder="Họ và tên">
                                                                 </div>
                                                                 <div class="col-md-6 col-sm-6 col-xs-12 wp-input-form">
                                                                     <input type="text" name="email" id="rate-email"
-                                                                           class="form-control" value="{{ auth()->user()->email ?? null }}" placeholder="Email">
+                                                                           class="form-control"
+                                                                           value="{{ auth()->user()->email ?? null }}"
+                                                                           placeholder="Email">
                                                                 </div>
                                                             </div>
                                                             <textarea name="message" id="rate-content" rows="4"
@@ -253,15 +275,16 @@
                                                                     <div class="hoi">
                                                                         <div class="top-cmt">
                                                                             <div class="img-avt"><img
-                                                                                        src="{{ asset('images/avatar.jpg') }}">
+                                                                                    src="{{ asset('images/avatar.jpg') }}">
                                                                             </div>
                                                                             <div class="text-cmt-top"><p class="p1">
                                                                                     <b>{{ $comment->full_name }}</b>
                                                                                     ({{ $comment->created_at }})
                                                                                     đã bình luận:</p>
                                                                                 <p class="p2"><a
-                                                                                            href="javascript:void(0)">
-                                                                                            <span class="write-review__stars">
+                                                                                        href="javascript:void(0)">
+                                                                                            <span
+                                                                                                class="write-review__stars">
                                                                                                 @for($i = 1;$i <= $comment->rating;$i++)
                                                                                                     <i class="fa fa-star rating-color"></i>
                                                                                                 @endfor
@@ -305,7 +328,7 @@
                                 <div class="readmore">
                                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
                                             data-target="#myModal">Xem đầy đủ thông số kỹ thuật <i
-                                                class="far fa-angle-down"></i>
+                                            class="far fa-angle-down"></i>
                                     </button>
                                 </div>
                                 <!-- Modal -->
@@ -346,17 +369,17 @@
                                                          echo number_format($product->sale_price) ?></span>
         <span class="price-sale"><?php
                                      echo number_format($product->price) ?></span>
-        <?php
+            <?php
         } elseif (empty($product->price)) { ?>
         <span class="price-no-sale">Liên hệ</span>
-        <?php
+            <?php
         } elseif (!empty($product->price)) {
             $price_final = $product->price ?>
         <span class="price-no-sale bk-product-price"><?php
                                                          echo number_format($product->price) ?></span>
-        <?php
+            <?php
         } ?>
-        <?php
+            <?php
         } else { ?>
         <span id="ProductPrice" class="h2 ProductPrice  bk-product-price" itemprop="price" style="display: none">
                                                         <?php
@@ -370,7 +393,7 @@
 
     </span>
 
-        <?php
+            <?php
         } ?>
 
 
@@ -435,7 +458,7 @@
     <script>
         $("input.rating-disabled").rating({
             filled: 'fa fa-star rating-color',
-            empty : 'fa fa-star-o'
+            empty: 'fa fa-star-o'
         });
     </script>
 
@@ -451,11 +474,11 @@
 
             setTimeout(() => {
                 $.ajax({
-                    type   : "POST",
-                    url    : "{{ route('fe.product.viewCount') }}",
-                    data   : {
-                        _token    : '{{ csrf_token() }}',
-                        id        : id,
+                    type: "POST",
+                    url: "{{ route('fe.product.viewCount') }}",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: id,
                         view_count: viewCount,
                     },
                     success: function (response) {
@@ -481,20 +504,20 @@
             var prodId = $('.view_count_data').data('id');
 
             $.ajax({
-                type   : "POST",
-                url    : '{{ route('fe.product.rateProduct') }}',
-                data   : {
-                    _token    : '{{ csrf_token() }}',
+                type: "POST",
+                url: '{{ route('fe.product.rateProduct') }}',
+                data: {
+                    _token: '{{ csrf_token() }}',
                     product_id: prodId,
-                    body      : contents,
-                    full_name : fullname,
-                    email     : email,
-                    rating    : star,
+                    body: contents,
+                    full_name: fullname,
+                    email: email,
+                    rating: star,
                 },
                 success: function (response) {
                     $('.comment-success').removeClass('hidden')
                 },
-                error  : function (xhr) {
+                error: function (xhr) {
                     $.each(xhr.responseJSON.errors, function (prop, val) {
                         $('#error-' + prop).removeClass('hidden');
                         $('#error-' + prop).html(val);
@@ -507,52 +530,52 @@
     <script>
         $("input.rating-disabled").rating({
             filled: 'fa fa-star rating-color',
-            empty : 'fa fa-star-o'
+            empty: 'fa fa-star-o'
         });
     </script>
     <script>
         const sliderThumbs = new Swiper(".slider__thumbs .swiper-container", {
 
-            direction     : "vertical",
-            slidesPerView : 4,
-            spaceBetween  : 10,
+            direction: "vertical",
+            slidesPerView: 4,
+            spaceBetween: 10,
             hashNavigation: {
                 watchState: true,
             },
-            navigation    : {
+            navigation: {
                 nextEl: ".slider__next",
                 prevEl: ".slider__prev",
             },
-            freeMode      : true,
-            breakpoints   : {
-                0  : {
-                    direction    : "horizontal",
+            freeMode: true,
+            breakpoints: {
+                0: {
+                    direction: "horizontal",
                     slidesPerView: 3,
                 },
                 768: {
-                    direction    : "horizontal",
+                    direction: "horizontal",
                     slidesPerView: 4,
                 },
             },
         });
         const sliderImages = new Swiper(".slider__images .swiper-container", {
-            direction     : "horizontal",
-            slidesPerView : 1,
-            spaceBetween  : 0,
-            mousewheel    : true,
+            direction: "horizontal",
+            slidesPerView: 1,
+            spaceBetween: 0,
+            mousewheel: true,
             hashNavigation: {
                 watchState: true,
             },
-            navigation    : {
+            navigation: {
                 nextEl: ".slider__next",
                 prevEl: ".slider__prev",
             },
-            grabCursor    : true,
-            thumbs        : {
+            grabCursor: true,
+            thumbs: {
                 swiper: sliderThumbs,
             },
-            breakpoints   : {
-                0  : {
+            breakpoints: {
+                0: {
                     direction: "horizontal",
                 },
                 768: {

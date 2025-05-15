@@ -74,6 +74,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <script src="{{ asset('js/hc-offcanvas-nav.js?ver=3.3.0') }}"></script>
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/swiper-bundle.min.js') }}"></script>
@@ -87,6 +89,31 @@
                 $('#btn-top').stop().fadeOut(200);
             }
         });
+
+        // tippy('.item-product .image', {
+        //     content: $('.tooltip-product').html(),
+        //     allowHTML: true,
+        //     placement: 'right',
+        //     interactive: true,
+        //     followCursor: true,
+        // });
+
+        $('.item-product .image').each(function () {
+            const $image = $(this);
+            const $tooltip = $image.closest('.item-product').find('.tooltip-product');
+
+            tippy(this, {
+                content: $tooltip.html(),
+                allowHTML: true,
+                followCursor: true,
+                placement: 'right', // hoặc top, bottom,...
+                animation: 'shift-away',
+                theme: 'light-border',
+                trigger: 'mouseenter focus',
+                interactive: true,
+            });
+        });
+
 
         $('#btn-top').on('click', function (e) {
             e.preventDefault()
@@ -117,8 +144,9 @@
             e.preventDefault()
             let id = $(this).data('id');
             let configType = $(this).data('config');
-            let hasConfig = $(this).data('checkConfig');
+            let hasConfig = $(this).data('checkconfig');
             let needCheckOut = $('#needCheckOut').val();
+            const buyNowFlag = $(this).data('buynow');
 
             if(needCheckOut == 1) {
                 Swal.fire({
@@ -138,7 +166,11 @@
             addOneProductToCart(id, configType, hasConfig);
 
             setTimeout(function (){
-                location.reload()
+                if (buyNowFlag !== undefined) {
+                    window.location.href = window.location.origin + "/gio-hang";
+                } else {
+                    location.reload()
+                }
             }, 2000)
         })
     });
@@ -274,5 +306,4 @@
     {!! $mainSettings['footer'] !!}
 @endif
 </body>
-
 </html>
