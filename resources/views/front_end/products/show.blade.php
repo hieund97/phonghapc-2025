@@ -202,7 +202,7 @@
                                                 <div class="content-box" id="5a">
                                                     <div class="form-cmt form-group">
                                                         <h2 class="h2-title" style="font-weight: bold;font-size: 20px">
-                                                            Đánh giá nhận xét</h2>
+                                                            Đánh giá bình luận</h2>
                                                         <form id="rateform"
                                                               action=""
                                                               method="post">
