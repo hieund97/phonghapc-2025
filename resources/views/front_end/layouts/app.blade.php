@@ -90,27 +90,19 @@
             }
         });
 
-        // tippy('.item-product .image', {
-        //     content: $('.tooltip-product').html(),
-        //     allowHTML: true,
-        //     placement: 'right',
-        //     interactive: true,
-        //     followCursor: true,
-        // });
-
         $('.item-product .image').each(function () {
             const $image = $(this);
-            const $tooltip = $image.closest('.item-product').find('.tooltip-product');
+            const $tooltip = $image.closest('.item-product').find('.tooltip-wrapper');
 
             tippy(this, {
                 content: $tooltip.html(),
                 allowHTML: true,
                 followCursor: true,
-                placement: 'right', // hoặc top, bottom,...
-                animation: 'shift-away',
-                theme: 'light-border',
+                placement: 'right',
+                theme: 'default',
                 trigger: 'mouseenter focus',
-                interactive: true,
+                arrow: false,
+                maxWidth: 'none',
             });
         });
 
