@@ -326,7 +326,7 @@ class CartController extends Controller
                 'password'    => bcrypt('123456'),
             ]);
 
-            $user->assignRole('Customer');
+            $user->assignRole('Customers');
         }
 
         return $user;
