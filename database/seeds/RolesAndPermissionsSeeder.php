@@ -145,8 +145,8 @@ class RolesAndPermissionsSeeder extends Seeder
             $user->assignRole('Super Admin');
         }
 
-        if (!Role::whereName('Customer')->exists()) {
-            Role::create(['name' => 'Customer']);
+        if (!Role::whereName('Customers')->exists()) {
+            Role::create(['name' => 'Customers']);
         }
     }
 }
