@@ -22,11 +22,10 @@
                 <div class="col-lg-3 item">
                     <h3 class="title-footer">Fanpage Facebook</h3>
                     <div class="nav-item-adress">
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnamhacomputer68%2F&tabs=timeline&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1506652110137847"
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FM%25C3%2581Y-T%25C3%258DNH-PHONG-H%25C3%2580-100057216169392%2F&tabs=timeline&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2700411746766380"
                                 width="340" height="130" style="border:none;overflow:hidden" scrolling="no"
                                 frameborder="0" allowfullscreen="true"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                        </iframe>
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-3 item">
@@ -57,7 +56,7 @@
     <div class="top-footer footer-bottom wow fadeInUp">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2" style="margin-top:15px; padding:15px">
                     <a href="{{ route('fe.home') }}" class="logo-footer">
                         <img class="lazy entered loaded" data-src="/uploads/images/untitled-1.png"
                              alt="CÔNG TY CP CÔNG NGHỆ NAM HÀ" data-ll-status="loaded"
@@ -70,7 +69,9 @@
                     </div>
                     <div class="nav-bottom">
                         <p><span>Địa chỉ: </span>{{ $mainSettings['contact_address_company'] }}</p>
-                        <p><span>Địa chỉ kinh doanh: </span>{{ $mainSettings['contact_address_company_for_sale'] ?? '' }}</p>
+                        <p>
+                            <span>Địa chỉ kinh doanh: </span>{{ $mainSettings['contact_address_company_for_sale'] ?? '' }}
+                        </p>
                         <p style="color:#fff!important">
                             <span>Điện thoại: </span>{{ $mainSettings['contact_phone_company'] }}</p>
                         <p><span>Email: </span>{{ $mainSettings['contact_email'] }}</p>
@@ -133,7 +134,7 @@
     .copy-right{
         width:100%;
         display:inline-block;
-        background:#0069c7;
+        background:#0f1424;
         /*height: 44px;*/
         /*line-height: 44px;*/
         text-align:center;
@@ -162,7 +163,7 @@
     }
 
     @media only screen and (max-width:768px){
-        .right-pc-position {
+        .right-pc-position{
             width:1em !important;
         }
     }

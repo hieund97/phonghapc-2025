@@ -109,7 +109,7 @@
                             <div class="col-md-2 col-6 col-xs-3 col-lg-1 cart-mobile-order">
                                 <div class="cart d-flex center-flex">
                                     <a href="{{ route('fe.cart') }}" class="d-block" title="Giỏ hàng của bạn">
-                                        <i class="fas fa-shopping-cart" style="color: #0069c7; font-size:25px"></i>
+                                        <i class="fas fa-shopping-cart" style="color: #56585b; font-size:25px"></i>
                                         <span class="js-cart-count cart-count">
                                             @if (!\Cart::isEmpty())
                                                 {{ \Cart::getTotalQuantity() }}

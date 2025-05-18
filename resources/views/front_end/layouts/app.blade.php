@@ -23,13 +23,18 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ asset('css/demo.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.32/sweetalert2.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bk.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/loginPopup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/rightSideButton.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+
     @stack('css')
     <?php echo $mainSettings['script_header']; ?>
 </head>

@@ -208,7 +208,7 @@
         function screenshot(html) {
             document.body.appendChild(html[0]);
             html2canvas(html[0]).then(function (canvas) {
-                downloadImage(canvas.toDataURL(), "NamHaComputer_buildPc.png");
+                downloadImage(canvas.toDataURL(), "phonghacomputer_buildPc.png");
             });
         }
 
