@@ -35,8 +35,8 @@
 }
 
 .box-static-item{
-    -webkit-box-shadow:0 0 0 1px #0069c7;
-    box-shadow:0 0 0 1px #0069c7;
+    -webkit-box-shadow:0 0 0 1px #56585b;
+    box-shadow:0 0 0 1px #56585b;
     border-radius:10px;
     overflow:hidden;
     margin-bottom:20px;
@@ -54,7 +54,7 @@
     padding:0 10px;
     line-height:38px;
     color:#fff;
-    background:#0069c7;
+    background:#56585b;
 }
 
 .box-static-item .static-text{
@@ -552,7 +552,7 @@
 .buy-item{
     width:50%;
     display:inline-block;
-    background-color:#0069c7 !important;
+    background-color:#56585b !important;
     color:#fff !important;
     margin:0px !important;
     border-radius:5px;

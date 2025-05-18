@@ -25,7 +25,7 @@
                          style="visibility: visible; animation-name: fadeInUp;">
                         <div class="item-product">
                             <div class="image border-image-namha">
-                                <a href="{{ route("fe.product",["slug"=>$product->slug]) }}l"
+                                <a href="{{ route("fe.product",["slug"=>$product->slug]) }}"
                                    class="thubmail-img">
                                     <img class=""
                                          alt="{{ $product->name }}"

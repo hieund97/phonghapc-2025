@@ -72,13 +72,13 @@
     <table width="900" class="list_table" border="1">
         <tbody>
         <tr align="center" style="color: #ffffff; background-color:#0676d8;font-weight: bold;">
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">STT</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">Mã sản phẩm</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff; width:300px" colspan="2">Tên sản phẩm</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">Bảo hành</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">Số lượng</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff; width:100px;">Đơn giá</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff; width:100px;">Thành tiền</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">STT</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">Mã sản phẩm</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff; width:300px" colspan="2">Tên sản phẩm</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">Bảo hành</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">Số lượng</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff; width:100px;">Đơn giá</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff; width:100px;">Thành tiền</td>
         </tr>
 
         @php

@@ -14,8 +14,8 @@
 use App\Imports\ProductWarranty;
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/cp_admin/login', 'AuthController@showLoginForm')->name('login');
-    Route::post('/cp_admin/login', 'AuthController@login');
+    Route::get('/ph_admin/login', 'AuthController@showLoginForm')->name('login');
+    Route::post('/ph_admin/login', 'AuthController@login');
 });
 
 Route::post('/get-google-sign-in-url', [\App\Http\Controllers\FrontEnd\GoogleController::class, 'getGoogleSignInUrl'])->name('fe.login.google');
@@ -24,9 +24,9 @@ Route::get('/callback', [\App\Http\Controllers\FrontEnd\GoogleController::class,
 Route::post('/get-facebook-sign-in-url', [\App\Http\Controllers\FrontEnd\FacebookController::class, 'getFacebookSignInUrl'])->name('fe.login.facebook');
 Route::get('/callback-facebook', [\App\Http\Controllers\FrontEnd\FacebookController::class, 'loginCallback'])->name('fe.login.callback.facebook');
 
-Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'cp_admin'], function () {
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'ph_admin'], function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
-    Route::post('/cp_admin/logout', 'AuthController@logout')->name('logout');
+    Route::post('/ph_admin/logout', 'AuthController@logout')->name('logout');
     Route::resource('users', 'AdminController')->except('show');
     Route::resource('admins', 'AdminQTVController')->except('show');
     Route::get('profile/password', 'ProfileController@password')->name('profile.password');
