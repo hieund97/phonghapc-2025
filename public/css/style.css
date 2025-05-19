@@ -3253,3 +3253,84 @@ header .search .form .searchResult{
     text-decoration:underline !important;
 }
 
+/*Tooltip*/
+.tippy-box[data-theme~='default'] {
+    background-color: #fff;
+    color: #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.tippy-box {
+    border-radius: 10px;
+}
+
+.tippy-content {
+    margin: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.tooltip-product {
+    width: 440px;
+    height: auto;
+    padding-bottom: 1px;
+}
+
+.tooltip-product .tooltip-title {
+    background: #2B76DA;
+    color: #fefefe;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    padding: 12px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    font-weight: bold;
+}
+
+.tooltip-product .tooltip-content {
+    margin-top: 16px;
+    display: flex;
+    padding: 0 8px;
+}
+
+.tooltip-price {
+    padding: 0 12px 6px;
+}
+
+.tooltip-price p {
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.tooltip-product .tooltip-info {
+    margin-left: 80px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.tooltip-gift {
+    border: 1px solid #2B76DA;
+    padding: 10px;
+    margin: 10px;
+}
+
+.title-gift {
+    box-shadow: unset;
+    border-radius: unset;
+    padding-left: 10px;
+    font-size: 18px;
+    background: #0f5b99;
+    color: #fff;
+    font-weight: 700;
+    line-height: 40px;
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .tippy-box {
+        display: none !important;
+    }
+}
+
