@@ -151,18 +151,20 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="tooltip-gift">
-                                        <div class="header-wrapper">
-                                            <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
-                                                Quà tặng và ưu đãi kèm theo
-                                            </p>
-                                            <div class="content-gift">
-                                                <p>
-                                                    {!! $product->gift_product !!}
+                                    @if(!empty($product->gift_product) || !empty($gift))
+                                        <div class="tooltip-gift">
+                                            <div class="header-wrapper">
+                                                <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
+                                                    Quà tặng và ưu đãi kèm theo
                                                 </p>
+                                                <div class="content-gift">
+                                                    <p>
+                                                        {!! $product->gift_product ?? $gift->content !!}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

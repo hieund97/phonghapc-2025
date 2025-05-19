@@ -3285,6 +3285,7 @@ header .search .form .searchResult{
     padding: 12px;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    font-weight: bold;
 }
 
 .tooltip-product .tooltip-content {

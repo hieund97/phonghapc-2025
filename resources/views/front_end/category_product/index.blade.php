@@ -18,7 +18,8 @@
                 'aryProduct'        => $aryProduct,
                 '$listAllAttribute' => $listAllAttribute,
                 'selected'          => $selectedAttribute ?? [],
-                'type'              => $type ?? 0
+                'type'              => $type ?? 0,
+                'gift'              => $gift ?? ''
             ])
     </section>
 @endsection

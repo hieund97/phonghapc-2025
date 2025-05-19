@@ -171,7 +171,7 @@
                                                                     Đặt mua ngay
                                                                 </a>
                                                             </div>
-                                                            <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                                            <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6" style="cursor: pointer">
                                                                 <a class="action-button">Trả góp</a>
                                                             </div>
                                                             <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6">
