@@ -209,7 +209,7 @@
         var searchRequest = null
         let timer;
         $(document).ready(function() {
-            const minlength = 3
+            const minlength = 1
             const delay = 500;
             $('.input-search-global').keyup(function() {
                 clearTimeout(timer);
