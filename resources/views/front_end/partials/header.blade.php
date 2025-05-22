@@ -207,9 +207,12 @@
 @push('script')
     <script defer="">
         var searchRequest = null
+        let timer;
         $(document).ready(function() {
-            var minlength = 3
+            const minlength = 1
+            const delay = 500;
             $('.input-search-global').keyup(function() {
+                clearTimeout(timer);
                 var that = this,
                     value = $(this).val();
 
@@ -217,28 +220,32 @@
                     $('.searchResult').hide();
                 }
 
-                if (value.length >= minlength) {
-                    if (searchRequest != null) {
-                        searchRequest.abort()
+                timer = setTimeout(function () {
+                    if (value.length >= minlength) {
+                        if (searchRequest != null) {
+                            searchRequest.abort()
+                        }
+                        searchRequest = $.ajax({
+                            type: 'GET',
+                            url: "{{ route('fe.search.suggest') }}",
+                            data: {
+                                'q': value,
+                            },
+                            dataType: 'text',
+                            success: function(msg) {
+                                const searchResult = jQuery('.searchResult');
+
+                                //we need to check if the value is the same
+                                if (msg && value == $(that).val()) {
+                                    //jQuery('.search-autocomplete').html(msg)
+                                    searchResult.html(msg).show();
+                                } else {
+                                    searchResult.html(`<p style="text-align: center">Không tìm thấy sản phẩm phù hợp!</p>`).show();
+                                }
+                            },
+                        })
                     }
-                    searchRequest = $.ajax({
-                        type: 'GET',
-                        url: "{{ route('fe.search.suggest') }}",
-                        data: {
-                            'q': value,
-                        },
-                        dataType: 'text',
-                        success: function(msg) {
-                            //we need to check if the value is the same
-                            if (value == $(that).val()) {
-                                //jQuery('.search-autocomplete').html(msg)
-                                jQuery('.searchResult').show();
-                                jQuery('.searchResult').html(msg);
-                                // console.log($(that))
-                            }
-                        },
-                    })
-                }
+                }, delay);
             })
 
             $('.input-search-global').on('focus', function() {
