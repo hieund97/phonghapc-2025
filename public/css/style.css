@@ -221,7 +221,7 @@ a{
 
 #header-site{
     /* background: -webkit-radial-gradient(center center, circle farthest-side, #ffffff -107%, #000 100%); */
-    background:#fff;
+    background:#DB0214;
 }
 
 .top-header .item-top ul li a{
@@ -554,7 +554,7 @@ img{
 
 .item-product .price .gia-moi{
     font-size:17px !important;
-    color:#000033;
+    color:#DB0214;
     display:block;
 }
 
@@ -1914,8 +1914,7 @@ div.list-menu{
 }
 
 .category-menu{
-    background:linear-gradient(#caad5c -16%, #f2e386 47%, #caad5c 82%);
-    background:#fff;
+    background:#DB0214;
 }
 
 .category-menu .title-category{
@@ -2517,7 +2516,7 @@ i{
 
 .header-new-bot .list-content .item-n.item-n-first a.title-n{width:100%;float:left;font-size:15px;text-transform:uppercase;line-height:38px;text-align:center;color:#222222;font-weight:700;height:34px;overflow:hidden;background:url(../images/bg-re-oran.jpg) repeat-x;background-size:auto 100%;border-radius:5px;}
 
-.header-new-bot .list-content .item-n.item-n-first .menu-main-sub{width:290px;height:683px;background:#fff;position:absolute;top:25px;left:0px;padding:2.5px 0px;text-align:left;z-index:99;list-style:outside none; /* display: none; */}
+.header-new-bot .list-content .item-n.item-n-first .menu-main-sub{width:290px;height:auto;background:#fff;position:absolute;top:25px;left:0px;padding:2.5px 0px;text-align:left;z-index:9;padding-bottom:19px;list-style:outside none; /* display: none; */}
 
 #main-menu1 ul li.menu-item.first-category-box ul.menu-main-sub{
     transform:rotateX(
@@ -2532,9 +2531,6 @@ i{
     border-radius:10px;
 }
 
-ul.menu-main-sub li:hover{
-    background:#555555 !important;
-}
 
 .header-new-bot .list-content .item-n.item-n-first.nothome .menu-main-sub{visibility:hidden;opacity:0;transition:0.3s;}
 
@@ -2544,11 +2540,11 @@ ul.menu-main-sub li:hover{
 
 .header-new-bot .list-content .item-n.item-n-first .menu-main-sub li a{width:100%;float:left;line-height:52px;padding-left:65px;background-position:25px center !important;background-size:20px auto !important;font-size:15px;font-weight:500;color:#222222;position:relative;font-weight:700;}
 
-.header-new-bot .list-content .item-n.item-n-first .menu-main-sub > li:hover{background:#555555;}
+.header-new-bot .list-content .item-n.item-n-first .menu-main-sub > li:hover{background:#E30019;}
 
 .header-new-bot .list-content .item-n.item-n-first .menu-main-sub > li:hover a.itop{color:#fff;}
 
-.header-new-bot .list-content .item-n.item-n-first .menu-main-sub li:hover a.itop::after{content:'';width:0;height:0;border-top:26px solid transparent;border-bottom:26px solid transparent;border-left:19px solid #555555;position:absolute;top:0px;right:-19px;z-index:99999999;}
+.header-new-bot .list-content .item-n.item-n-first .menu-main-sub li:hover a.itop::after{content:'';width:0;height:0;border-top:26px solid transparent;border-bottom:26px solid transparent;border-left:19px solid #E30019;position:absolute;top:0px;right:-19px;z-index:99999999;}
 
 .header-new-bot .list-content .item-n.item-n-first .menu-main-sub li .box-sub-cat{width:1330px;float:left;position:absolute;top:0px;left:100%;z-index:999;background:#fff;padding:10px;min-height:100%;visibility:hidden;opacity:0;transition:0.3s;}
 
@@ -2715,7 +2711,7 @@ div.adfloat{top:205px !important;}
 .sidebar .nav-product-sb .item .price{font-size:15px;}
 
 @media (min-width:768px){
-    .main-logo-shop > .container > .row > .col-md-2.col-xs-12{background-color: #fff;text-align:center;}
+    .main-logo-shop > .container > .row > .col-md-2.col-xs-12{text-align:center;}
 }
 
 .main-slider .owl-prev, .main-slider .owl-next{background:initial;}
