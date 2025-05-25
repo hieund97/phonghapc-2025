@@ -264,6 +264,12 @@ class ProductController extends Controller
             return Redirect::to(route('fe.product.tag', ["slug" => $category->slug, 'id' => $category->id]), 301);
         }
 
+        // Add gift for tooltip
+        $giftOfCategory = Gift::with(['category'])
+            ->whereHas('category', function ($q) use ($id) {
+                $q->where('product_categories.id', $id);
+            })->where('status', 1)->select('content')->first();
+
         $data = [];
 
         $data['type']       = $type;
@@ -272,6 +278,7 @@ class ProductController extends Controller
 
         $data["category"]         = $category;
         $data["listAllAttribute"] = $listAllAttribute;
+        $data["gift"] = $giftOfCategory;
 
         if (!empty($category->manyProducts)) {
             $data["aryProduct"] = $category->manyProducts($column, $sort)
@@ -741,6 +748,11 @@ class ProductController extends Controller
             }
         }
 
+        $gift = Gift::with(['category'])
+            ->whereHas('category', function ($q) use ($request) {
+                $q->where('product_categories.id', $request->id);
+            })->where('status', 1)->select('content')->first();
+
         if ($request->has('is_call_modal')) {
             $attrCategory = $category;
             $arrProduct   = $aryProduct ?? [];
@@ -752,7 +764,7 @@ class ProductController extends Controller
         } else {
             return view('front_end.category_product.element.content-category',
                 compact('aryProduct', 'category', 'isAjax', 'isCategory', 'selectedAttribute', 'isFilterCategory',
-                    'listAllAttribute', 'title', 'type'));
+                    'listAllAttribute', 'title', 'type', 'gift'));
         }
     }
 
