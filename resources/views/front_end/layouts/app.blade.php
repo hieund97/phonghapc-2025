@@ -15,7 +15,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="facebook-domain-verification" content="v1ihepcict7dat54xhl08gtx93isue" />
     {!! meta()->toHtml() !!}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts/font.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
@@ -34,6 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}">
 
     @stack('css')
     <?php echo $mainSettings['script_header']; ?>
