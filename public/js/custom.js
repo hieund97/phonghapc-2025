@@ -5,22 +5,20 @@ function myFunction(x) {
 
 // ?jquery mobile
  (function($) {
-          var $main_nav = $('#main-nav');
-          var $toggle = $('.toggle');
+          const $main_nav = $('#main-nav');
 
-          var defaultData = {
+          const defaultData = {
             maxWidth: false,
-            customToggle: $toggle,
-            // navTitle: 'All Categories',
             levelTitles: true,
-            pushContent: '#container'
+            pushContent: '#container',
+            labelClose: "Danh mục"
           };
 
           // add new items to original nav
           $main_nav.find('li.add').children('a').on('click', function() {
-            var $this = $(this);
-            var $li = $this.parent();
-            var items = eval('(' + $this.attr('data-add') + ')');
+            const $this = $(this);
+            const $li = $this.parent();
+            const items = eval('(' + $this.attr('data-add') + ')');
 
             $li.before('<li class="new"><a>'+items[0]+'</a></li>');
 
@@ -37,7 +35,13 @@ function myFunction(x) {
           });
 
           // call our plugin
-          var Nav = $main_nav.hcOffcanvasNav(defaultData);
+          const Nav = $main_nav.hcOffcanvasNav(defaultData);
+
+         $(document).on('click', '#main-header-cate-btn', function () {
+             if (window.innerWidth <= 1024) {
+                Nav.open();
+             }
+         });
 
           // demo settings update
 
@@ -90,7 +94,7 @@ function myFunction(x) {
         $(this).parent().find('.nav-search').toggleClass('open');
      });
 
-  
+
 /*js home slider banner*/
 $('#slider-home').owlCarousel({
     loop:true,
@@ -124,7 +128,7 @@ $('#slider-home').owlCarousel({
         autoplay:true,
         autoplayTimeout:5000,
         autoplaySpeed:1500,
-       
+
     });
    $('.slider-small').owlCarousel({
         items:5,
@@ -225,7 +229,7 @@ $('#product-sale-home').owlCarousel({
         center:false,
         margin:10,
         nav:false,
-       
+
     });
    $('.slider-small1').owlCarousel({
         items:4,

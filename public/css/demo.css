@@ -306,7 +306,7 @@ body.hc-nav-open {
 .hc-offcanvas-nav .nav-container,
 .hc-offcanvas-nav .nav-wrapper,
 .hc-offcanvas-nav ul {
-	background: #1b76bd;
+	background: #fff;
 }
 
 .hc-offcanvas-nav h2 {
@@ -320,10 +320,10 @@ body.hc-nav-open {
 .hc-offcanvas-nav a {
 	padding: 14px 17px;
 	font-size: 15px;
-	color: #fff;
+	color: #000;
 	z-index: 1;
 	background: rgba(0, 0, 0, 0);
-	border-bottom: 1px solid #252565;
+	border-bottom: 1px solid gray;
 }
 
 .hc-offcanvas-nav:not(.touch-device) a:hover {
@@ -341,14 +341,15 @@ body.hc-nav-open {
 
 .hc-offcanvas-nav li.nav-close a,
 .hc-offcanvas-nav li.nav-back a {
-	background: #1b76bd;
-	border-top: 1px solid #1b76bd;
-	border-bottom: 1px solid #1b76bd
+	background: #E30019;
+	border-top: 1px solid #E30019;
+	border-bottom: 1px solid #E30019;
+	color: #fff;
 }
 
 .hc-offcanvas-nav li.nav-close a:hover,
 .hc-offcanvas-nav li.nav-back a:hover {
-	background: #1b76bd
+	background: #E30019
 }
 
 .hc-offcanvas-nav li.nav-parent a {
@@ -365,7 +366,7 @@ body.hc-nav-open {
 	bottom: 0;
 	text-align: center;
 	cursor: pointer;
-	transition: background .2s ease
+	transition: background .2s ease;
 }
 
 .hc-offcanvas-nav li.nav-close span::before,
@@ -391,7 +392,7 @@ body.hc-nav-open {
 }
 
 .hc-offcanvas-nav a[href]:not([href="#"])>span.nav-next {
-	border-left: 1px solid #2c5d8f
+	border-left: 1px solid gray;
 }
 
 .hc-offcanvas-nav span.nav-next::before,
@@ -410,7 +411,8 @@ body.hc-nav-open {
 }
 
 .hc-offcanvas-nav span.nav-next::before {
-	transform: translate(-50%, -50%) rotate(135deg)
+	transform: translate(-50%, -50%) rotate(135deg);
+	border-color: #000;
 }
 
 .hc-offcanvas-nav li.nav-back span::before {
@@ -428,7 +430,8 @@ body.hc-nav-open {
 .hc-offcanvas-nav.nav-position-right span.nav-next::before {
 	margin-left: 0;
 	margin-right: -2px;
-	transform: translate(-50%, -50%) rotate(-45deg)
+	transform: translate(-50%, -50%) rotate(-45deg);
+	border-color: #000;
 }
 
 .hc-offcanvas-nav.nav-position-right li.nav-back span::before {
@@ -444,7 +447,8 @@ body.hc-nav-open {
 .hc-offcanvas-nav.nav-position-top span.nav-next::before {
 	margin-left: 0;
 	margin-right: -2px;
-	transform: translate(-50%, -50%) rotate(-135deg)
+	transform: translate(-50%, -50%) rotate(-135deg);
+	border-color: #000;
 }
 
 .hc-offcanvas-nav.nav-position-top li.nav-back span::before {
@@ -460,7 +464,8 @@ body.hc-nav-open {
 .hc-offcanvas-nav.nav-position-bottom span.nav-next::before {
 	margin-left: 0;
 	margin-right: -2px;
-	transform: translate(-50%, -50%) rotate(45deg)
+	transform: translate(-50%, -50%) rotate(45deg);
+	border-color: #000;
 }
 
 .hc-offcanvas-nav.nav-position-bottom li.nav-back span::before {

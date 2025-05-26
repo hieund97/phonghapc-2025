@@ -260,7 +260,7 @@
 								</span>
                                 <span class="box-text"><span class="txtnw">Danh mục</span></span>
                             </a>
-                            <div class="banner-home-left">
+                            <div class="banner-home-left is-pc">
                                 <div class="header-new-bot">
                                     <div class="list-content">
                                         <div class="item-n menu-main item-n-first">
@@ -286,6 +286,43 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="wrapper cf is-mobile">
+                                <nav id="main-nav">
+                                    <ul class="second-nav">
+                                        @if (auth()->user())
+                                            <li><a href="{{ route('fe.profile') }}">Xin
+                                                    chào {{ auth()->user()->name }}</a>
+                                            </li>
+                                            <li><a href="{{ route('fe.logout') }}">Đăng xuất</a>
+                                            </li>
+                                        @else
+                                            <li><a href="javascript:void(0)" class="open-register">Đăng ký</a>
+                                            </li>
+                                            <li><a href="javascript:void(0)" class="open-login">Đăng nhập</a>
+                                            </li>
+                                        @endif
+                                        @if ($mainHeaders)
+                                            @foreach ($mainHeaders as $menu)
+                                                @if ($menu->parent == null)
+                                                    <li class="devices">
+                                                        <a href="{{ route('fe.product.category', ['slug' => $menu->slug, 'id' => $menu->id]) }}">
+                                                            <span>{{ $menu->title }}</span>
+                                                            <ul>
+                                                                @foreach ($menu->children as $child)
+                                                                    <li>
+                                                                        <a
+                                                                            href="{{ route('fe.product.category', ['slug' => $child->slug, 'id' => $child->id]) }}">{{ $child->title }}</a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                         <div class="header-action_boxfull menu-desktop" id="menu-desktop-ajax">
@@ -3050,31 +3087,19 @@
             const cateHeaderButton = $('#main-header-cate-btn');
             const cateHeaderList = $('.header-action_text .banner-home-left');
             const wrapperHeaderCate = $('.main-header--left');
-            let openListFlg = true;
 
             // Handle show button cate when scroll behind
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 700) {
-                    cateHeaderButton.addClass('visible');
+                    cateHeaderButton.fadeIn();
                 } else {
-                    cateHeaderButton.removeClass('visible');
+                    cateHeaderButton.fadeOut();
                 }
             });
 
             // Handle hover button show list
             if (window.innerWidth >= 1024) {
                 wrapperHeaderCate.hover(function () {cateHeaderList.fadeIn()}, function () {cateHeaderList.fadeOut()});
-            }
-            else {
-                cateHeaderButton.on('click', function () {
-                    if (openListFlg) {
-                        cateHeaderList.fadeIn();
-                    } else {
-                        cateHeaderList.fadeOut();
-                    }
-
-                    openListFlg = !openListFlg;
-                });
             }
         })
     </script>
