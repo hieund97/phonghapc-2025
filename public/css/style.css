@@ -3330,3 +3330,14 @@ header .search .form .searchResult{
     }
 }
 
+#main-header-cate-btn {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#main-header-cate-btn.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+

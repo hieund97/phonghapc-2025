@@ -243,9 +243,9 @@
         <div class="container-fluid">
             <div class="row-header">
                 <div class="coll-header main-header--left header-action">
-                    <div class="header-action-item main-header--cate">
+                    <div class="header-action-item main-header--cate" id="main-header-cate-btn">
                         <div class="header-action_text">
-                            <a class="header-action__link" href="#" id="site-menu-handle" aria-label="Danh mục"
+                            <a class="header-action__link" href="javascript:0" id="site-menu-handle" aria-label="Danh mục"
                                title="Danh mục">
 								<span class="box-icon">
 									<svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -2764,7 +2764,7 @@
                         <a href="/" itemprop="url">
                             <picture>
                                 <source media="(max-width: 1023px)"
-                                        srcset="{{ $mainSettings['info_logo_mobile'] }}">
+                                        srcset="{{ $mainSettings['info_logo_mobile'] ?? '' }}">
                                 <source media="(min-width: 1024px)"
                                         srcset="{{ $mainSettings['info_logo'] }}">
                                 <img class="img-responsive logoimg ls-is-cached lazyloaded"
@@ -3020,6 +3020,15 @@
                 }
             })
 
+            const cateHeaderButton = $('#main-header-cate-btn');
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 500) {
+                    cateHeaderButton.addClass('visible');
+                } else {
+                    cateHeaderButton.removeClass('visible');
+                }
+            });
         })
     </script>
 @endpush
