@@ -243,9 +243,9 @@
         <div class="container-fluid">
             <div class="row-header">
                 <div class="coll-header main-header--left header-action">
-                    <div class="header-action-item main-header--cate">
+                    <div class="header-action-item main-header--cate" id="main-header-cate-btn">
                         <div class="header-action_text">
-                            <a class="header-action__link" href="#" id="site-menu-handle" aria-label="Danh mục"
+                            <a class="header-action__link" href="javascript:0" id="site-menu-handle" aria-label="Danh mục"
                                title="Danh mục">
 								<span class="box-icon">
 									<svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -260,6 +260,33 @@
 								</span>
                                 <span class="box-text"><span class="txtnw">Danh mục</span></span>
                             </a>
+                            <div class="banner-home-left">
+                                <div class="header-new-bot">
+                                    <div class="list-content">
+                                        <div class="item-n menu-main item-n-first">
+                                            <ul class="menu-main-sub">
+                                                @foreach ($mainHeaders as $cate)
+                                                    @if ($cate->parent == null)
+                                                        <li>
+                                                            <a href="{{ route('fe.product.category', ['slug' => $cate->slug, 'id' => $cate->id]) }}"
+                                                               class="itop"
+                                                               style="background: url('{{ get_image_url($cate->icon, '') }}') no-repeat;">{{ $cate->title }}</a>
+                                                            <div class="box-sub-cat">
+                                                                @foreach ($cate->childrenEnable as $child)
+                                                                    <div class="box-cat">
+                                                                        <a href="{{ route('fe.product.category', ['slug' => $child->slug, 'id' => $child->id]) }}"
+                                                                           class="cat2">{{ $child->title }}</a>
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
+                                                        </li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="header-action_boxfull menu-desktop" id="menu-desktop-ajax">
                             <div class="sidebar-menu" id="sidebar-menu-ajax">
@@ -2764,7 +2791,7 @@
                         <a href="/" itemprop="url">
                             <picture>
                                 <source media="(max-width: 1023px)"
-                                        srcset="{{ $mainSettings['info_logo_mobile'] }}">
+                                        srcset="{{ $mainSettings['info_logo_mobile'] ?? '' }}">
                                 <source media="(min-width: 1024px)"
                                         srcset="{{ $mainSettings['info_logo'] }}">
                                 <img class="img-responsive logoimg ls-is-cached lazyloaded"
@@ -3020,6 +3047,35 @@
                 }
             })
 
+            const cateHeaderButton = $('#main-header-cate-btn');
+            const cateHeaderList = $('.header-action_text .banner-home-left');
+            const wrapperHeaderCate = $('.main-header--left');
+            let openListFlg = true;
+
+            // Handle show button cate when scroll behind
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 700) {
+                    cateHeaderButton.addClass('visible');
+                } else {
+                    cateHeaderButton.removeClass('visible');
+                }
+            });
+
+            // Handle hover button show list
+            if (window.innerWidth >= 1024) {
+                wrapperHeaderCate.hover(function () {cateHeaderList.fadeIn()}, function () {cateHeaderList.fadeOut()});
+            }
+            else {
+                cateHeaderButton.on('click', function () {
+                    if (openListFlg) {
+                        cateHeaderList.fadeIn();
+                    } else {
+                        cateHeaderList.fadeOut();
+                    }
+
+                    openListFlg = !openListFlg;
+                });
+            }
         })
     </script>
 @endpush
