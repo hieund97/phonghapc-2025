@@ -235,6 +235,7 @@
     right:0;
     top:99%;
     visibility:hidden;
+    display: none;
     opacity:0;
     padding-top:74.5px;
     -moz-transition:all 0.25s;

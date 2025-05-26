@@ -3335,9 +3335,32 @@ header .search .form .searchResult{
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
 #main-header-cate-btn.visible {
     visibility: visible;
     opacity: 1;
+}
+
+#main-header-cate-btn .header-action_text .banner-home-left {
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+}
+
+#main-header-cate-btn .header-action_text .banner-home-left .box-sub-cat {
+    width: 1050px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#main-header-cate-btn .header-action_text .banner-home-left .menu-main-sub {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 767px) {
+    #main-header-cate-btn {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 

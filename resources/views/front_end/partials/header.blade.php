@@ -260,6 +260,33 @@
 								</span>
                                 <span class="box-text"><span class="txtnw">Danh mục</span></span>
                             </a>
+                            <div class="banner-home-left">
+                                <div class="header-new-bot">
+                                    <div class="list-content">
+                                        <div class="item-n menu-main item-n-first">
+                                            <ul class="menu-main-sub">
+                                                @foreach ($mainHeaders as $cate)
+                                                    @if ($cate->parent == null)
+                                                        <li>
+                                                            <a href="{{ route('fe.product.category', ['slug' => $cate->slug, 'id' => $cate->id]) }}"
+                                                               class="itop"
+                                                               style="background: url('{{ get_image_url($cate->icon, '') }}') no-repeat;">{{ $cate->title }}</a>
+                                                            <div class="box-sub-cat">
+                                                                @foreach ($cate->childrenEnable as $child)
+                                                                    <div class="box-cat">
+                                                                        <a href="{{ route('fe.product.category', ['slug' => $child->slug, 'id' => $child->id]) }}"
+                                                                           class="cat2">{{ $child->title }}</a>
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
+                                                        </li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="header-action_boxfull menu-desktop" id="menu-desktop-ajax">
                             <div class="sidebar-menu" id="sidebar-menu-ajax">
@@ -3021,14 +3048,34 @@
             })
 
             const cateHeaderButton = $('#main-header-cate-btn');
+            const cateHeaderList = $('.header-action_text .banner-home-left');
+            const wrapperHeaderCate = $('.main-header--left');
+            let openListFlg = true;
 
+            // Handle show button cate when scroll behind
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 500) {
+                if ($(this).scrollTop() > 700) {
                     cateHeaderButton.addClass('visible');
                 } else {
                     cateHeaderButton.removeClass('visible');
                 }
             });
+
+            // Handle hover button show list
+            if (window.innerWidth >= 1024) {
+                wrapperHeaderCate.hover(function () {cateHeaderList.fadeIn()}, function () {cateHeaderList.fadeOut()});
+            }
+            else {
+                cateHeaderButton.on('click', function () {
+                    if (openListFlg) {
+                        cateHeaderList.fadeIn();
+                    } else {
+                        cateHeaderList.fadeOut();
+                    }
+
+                    openListFlg = !openListFlg;
+                });
+            }
         })
     </script>
 @endpush
