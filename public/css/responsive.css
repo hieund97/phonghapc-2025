@@ -222,7 +222,8 @@
 		display: none;
 	}
 	.hc-nav-trigger{
-		top: 24px;
+		top: 6px;
+        left: 12px;
 	}
 	.sale{
 		margin-top: 10px;
