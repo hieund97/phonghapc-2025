@@ -327,7 +327,7 @@ body.hc-nav-open {
 }
 
 .hc-offcanvas-nav:not(.touch-device) a:hover {
-	background: #1b76bd
+	background: #E30019
 }
 
 .hc-offcanvas-nav ul:first-of-type:not(:first-child)>li:first-child:not(.nav-back):not(.nav-close)>a {

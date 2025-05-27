@@ -37,8 +37,10 @@ function myFunction(x) {
           // call our plugin
           const Nav = $main_nav.hcOffcanvasNav(defaultData);
 
+          $('.hc-nav-trigger').remove();
+
          $(document).on('click', '#main-header-cate-btn', function () {
-             if (window.innerWidth <= 1024) {
+             if ($(window).width() <= 768) {
                 Nav.open();
              }
          });

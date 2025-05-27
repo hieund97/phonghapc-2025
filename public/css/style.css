@@ -3351,8 +3351,14 @@ header .search .form .searchResult{
 
 @media (max-width: 767px) {
     #main-header-cate-btn {
-        display: block;
+        display: block !important;
     }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #main-header-cate-btn {
+    display: block !important;
+  }
 }
 
 .hc-offcanvas-nav .nav-container, .hc-offcanvas-nav .nav-wrapper, .hc-offcanvas-nav ul {

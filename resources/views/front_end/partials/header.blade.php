@@ -288,7 +288,7 @@
                                 </div>
                             </div>
                             <div class="wrapper cf is-mobile">
-                                <nav id="main-nav">
+                                <nav id="main-nav" style="display: none">
                                     <ul class="second-nav">
                                         @if (auth()->user())
                                             <li><a href="{{ route('fe.profile') }}">Xin
@@ -3090,16 +3090,20 @@
 
             // Handle show button cate when scroll behind
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 700) {
-                    cateHeaderButton.fadeIn();
-                } else {
-                    cateHeaderButton.fadeOut();
-                }
+               if ($(window).width() > 1024) {
+                  if ($(this).scrollTop() > 700) {
+                     cateHeaderButton.fadeIn();
+                  } else {
+                     cateHeaderButton.fadeOut();
+                  }
+               } else {
+                  cateHeaderButton.fadeIn();
+               }
             });
 
             // Handle hover button show list
-            if (window.innerWidth >= 1024) {
-                wrapperHeaderCate.hover(function () {cateHeaderList.fadeIn()}, function () {cateHeaderList.fadeOut()});
+            if ($(window).width() > 1024) {
+               wrapperHeaderCate.hover(function () {cateHeaderList.fadeIn()}, function () {cateHeaderList.fadeOut()});
             }
         })
     </script>
