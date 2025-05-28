@@ -54,6 +54,7 @@ class PostUpdate extends FormRequest
             'seo.noarchive'       => 'nullable|boolean',
             'seo.nosnippet'       => 'nullable|boolean',
             'seo.follow'          => 'nullable|boolean',
+            'is_featured'         => 'nullable',
         ];
     }
 
@@ -61,7 +62,7 @@ class PostUpdate extends FormRequest
     {
         $this->merge([
             'tags'        => array_filter(array_map('trim', explode(',', $this->tags))),
-            'is_featured' => $this->is_featured ?? false,
+            'is_featured' => $this->is_featured ? true : false,
             'is_video'    => $this->is_video ?? false,
             'slug'        => $this->slug ?: Str::slug(str_replace('/', '-', $this->title)),
         ]);

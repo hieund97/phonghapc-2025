@@ -41,7 +41,38 @@
         <section class="main-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <div class="nav-main-content">
+                            <h2 class="h2 products-section-title text-uppercase">
+                                <span>Tin nổi bật</span>
+                            </h2>
+                            @if($featurePosts)
+                                <div class="slider-large owl-carousel owl-theme owl-loaded owl-drag">
+                                    @foreach($featurePosts as $item)
+                                        <div class="item-new wow fadeInUp"
+                                            style="visibility: visible; animation-name: fadeInUp;">
+                                            <div>
+                                                <a href="{{ route('fe.post', ['slug' => $item->slug, 'id' => $item->id]) }}">
+                                                    <img src="{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <h3 class="title">
+                                                    <a href="{{ route('fe.post', ['slug' => $item->slug, 'id' => $item->id]) }}">
+                                                        {{ $item->title }}
+                                                    </a>
+                                                </h3>
+                                                <p class="date">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</p>
+                                                <p class="desc">{!! strip_tags($item->excerpt) !!}</p>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
                         <div class="nav-main-content">
                             <div class="content-detail-new">
                                 @if($post)
