@@ -68,7 +68,7 @@ class ProductController extends Controller
 
         $similarProducts = $product->similars;
         if ($similarProducts->isEmpty()) {
-            $similarProducts = Product::filter($request->all())
+            $similarProducts = Product::filter($request->all())->with("categories.gift")
                                       ->where('product_category_id', $product->productCategory->id)
                                       ->whereNotIn('id', $ids)
                                       ->orderByDesc('id')
@@ -114,6 +114,8 @@ class ProductController extends Controller
             'status_note'    => $product->status_note,
             'feature_img'    => $product->feature_img,
             'sale_price'     => $product->sale_price,
+            'gift_product'   => $product->gift_product,
+            'gift_category'  => $product->categories[0]->gift[0]
         ];
 
         $cookieProduct         = 'recentlyProductViewed';
@@ -137,6 +139,8 @@ class ProductController extends Controller
                     'status_note'    => $pro['status_note'],
                     'feature_img'    => $pro['feature_img'],
                     'sale_price'     => $pro['sale_price'],
+                    'gift_product'   => $pro['gift_product'] ?? '',
+                    'gift_category'  => $pro['gift_category'] ?? ''
                 ];
             }
 

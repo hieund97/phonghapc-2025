@@ -738,8 +738,7 @@ img{
     text-transform:uppercase;
     margin:0;
     border-bottom:1px solid #DDD;
-    padding-bottom:8px;
-    background:#555555;
+    background:#E30019;
     padding:15px 10px;
     color:#fff;
     border-top-right-radius:5px;
@@ -749,7 +748,6 @@ img{
 .sidebar .item-sb .title-sb:after{
     content:'';
     position:absolute;
-    background:#1b76bd;
     height:2px;
     width:73px;
     left:0;
@@ -1186,12 +1184,23 @@ i{
 #btn-top{
     position:fixed;
     bottom:50px;
-    right:90px;
+    right:50px;
     cursor:pointer;
-    /*width: 50px;*/
-    /*border: none;*/
-    /*z-index: 99;*/
-    /*display: none;*/
+    width: 60px;
+    display: none;
+}
+
+#btn-top button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: #E30019;
+    border-color: #fff;
+}
+
+#btn-top button i {
+    color: #fff;
+    font-size: 20px;
 }
 
 #footer-site{
