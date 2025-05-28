@@ -263,6 +263,25 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
+                                {{ __('Nổi bật') }}
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="checkbox" name="is_featured" id="is_featured" @if(!empty($post) && $post->is_featured) checked @endif>
+                                        Nổi bật
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
                                 {{ __('Status') }} (
                                 <span class="text-danger">*</span>
                                                    )
