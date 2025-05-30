@@ -199,7 +199,7 @@
                     </div>
                     <div class="row row-col row-mobile" style="margin-top: 30px">
                         <div class="col-md-8 col-sm-12 col-xs-12">
-                            <div class="nav-main-content">
+                            <div class="nav-main-content wow fadeInUp">
                                 <div class="content-product">
                                     <div class="content-detail-product">
                                         <div class="product-tabs" style="margin-top: 0px">
@@ -264,7 +264,7 @@
                                                             <textarea name="message" id="rate-content" rows="4"
                                                                       class="form-control form-group"
                                                                       placeholder="Bình luận"></textarea>
-                                                            <button type="button" class="btn btn-info btn-comment">Bình
+                                                            <button type="button" class="btn btn-comment">Bình
                                                                 luận
                                                             </button>
                                                         </form>
@@ -326,7 +326,7 @@
                                     </div>
                                 </div>
                                 <div class="readmore">
-                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                                    <button type="button" class="btn btn-lg" data-toggle="modal"
                                             data-target="#myModal">Xem đầy đủ thông số kỹ thuật <i
                                             class="far fa-angle-down"></i>
                                     </button>

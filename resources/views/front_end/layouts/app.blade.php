@@ -57,8 +57,9 @@
             <span class="holine-phone">{{ $mainSettings['contact_hotline'] }}</span>
         </div>
     </div>
-    <div id="btn-top" style="width: 60px; display:none">
-        <img src="{{ asset('images/back-to-top-icon.jpg') }}" alt="">
+    <div id="btn-top">
+        <button><i class="fa fa-chevron-up"></i></button>
+{{--        <img src="{{ asset('images/back-to-top-icon.jpg') }}" alt="">--}}
     </div>
 
 </div>

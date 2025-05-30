@@ -213,17 +213,19 @@ $('#product-sale-home').owlCarousel({
     }
 });
  $(document).ready(function () {
-  $(window).scroll(function () {
-      if ($(this).scrollTop() != 0) {
-          $('#btn-top').fadeIn();
-      }
-      else {
-          $('#btn-top').fadeOut();
-      }
-  });
-  $('#btn-top').click(function () {
-      $('body,html').animate({scrollTop: 0}, 800);
-  })
+     $(window).scroll(function () {
+         if ($(this).scrollTop() > 0) {
+             $('#btn-top').finish().fadeIn();
+         }
+         else {
+             $('#btn-top').finish().fadeOut();
+         }
+     });
+
+     $('#btn-top').click(function () {
+         // $(this).finish().fadeOut();
+         $('body,html').animate({scrollTop: 0}, 800);
+     });
 });
    $('.slider-large1').owlCarousel({
         items:1,
