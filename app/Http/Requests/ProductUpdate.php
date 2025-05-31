@@ -64,7 +64,7 @@ class ProductUpdate extends FormRequest
             'warranty'                => 'nullable|string',
             'feature_img'             => 'required|string',
             'border_image'            => 'nullable|string',
-            'is_border'               => 'nullable|numeric',
+            'is_border'               => 'nullable|boolean',
             'status'                  => 'required|integer|in:' . implode(',',
                     array_keys(config('admin.product_status'))),
             'product_category_id.*'   => 'required|integer|exists:product_categories,id',
@@ -151,6 +151,7 @@ class ProductUpdate extends FormRequest
         $this->merge([
             'hide_sale_time' => !empty($this->hide_sale_time),
             'show_on_top'    => !empty($this->show_on_top),
+            'is_border'      => !empty($this->is_border),
             'pin_to_top'     => !empty($this->pin_to_top),
             'videos'         => !empty($this->videos) && is_array($this->videos) ? array_values($this->videos) : null,
             'tags'           => array_filter(array_map('trim', explode(',', $this->tags))),
