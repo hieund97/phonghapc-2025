@@ -172,20 +172,20 @@
                                                                         </p>
                                                                     </div>
                                                                 </div>
-{{--                                                                @if(!empty($product->gift_product) || !empty($product->categories[0]->gift))--}}
-{{--                                                                    <div class="tooltip-gift">--}}
-{{--                                                                        <div class="header-wrapper">--}}
-{{--                                                                            <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>--}}
-{{--                                                                                Quà tặng và ưu đãi kèm theo--}}
-{{--                                                                            </p>--}}
-{{--                                                                            <div class="content-gift">--}}
-{{--                                                                                <p>--}}
-{{--                                                                                    {!! $product->gift_product ?? $product->categories[0]->gift[0]->content !!}--}}
-{{--                                                                                </p>--}}
-{{--                                                                            </div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                @endif--}}
+                                                                @if(!empty($product->gift_product) || !empty($product->categories[0]->gift))
+                                                                    <div class="tooltip-gift">
+                                                                        <div class="header-wrapper">
+                                                                            <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
+                                                                                Quà tặng và ưu đãi kèm theo
+                                                                            </p>
+                                                                            <div class="content-gift">
+                                                                                <p>
+                                                                                    {!! $product->gift_product ?? $product->categories[0]->gift[0]->content !!}
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>

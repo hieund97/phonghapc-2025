@@ -115,7 +115,9 @@ class ProductController extends Controller
             'feature_img'    => $product->feature_img,
             'sale_price'     => $product->sale_price,
             'gift_product'   => $product->gift_product,
-            'gift_category'  => $product->categories[0]->gift[0]
+            'gift_category'  => isset($product->categories[0]->gift[0])
+                ? $product->categories[0]->gift[0]
+                : null
         ];
 
         $cookieProduct         = 'recentlyProductViewed';
