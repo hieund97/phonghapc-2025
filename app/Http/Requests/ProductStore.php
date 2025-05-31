@@ -50,6 +50,8 @@ class ProductStore extends FormRequest
             'slug'                    => 'required|string|max:255|unique:products,slug',
             'warranty'                => 'nullable|string',
             'feature_img'             => 'required|string',
+            'border_image'            => 'nullable|string',
+            'is_border'               => 'nullable|numeric',
             'outstanding_features'    => 'nullable|string',
             'gift_product'            => 'nullable|string',
             'view_count'              => 'nullable|numeric',

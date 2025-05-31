@@ -89,7 +89,7 @@ class HomeController extends Controller
                     'manyProducts' =>
                         function ($q) {
                             return $q->where('show_on_top', 1)
-                                     ->select('id', 'name', 'price', 'sale_price', 'feature_img', 'status', 'slug', 'gift_product')
+                                     ->select('id', 'name', 'price', 'sale_price', 'feature_img', 'status', 'slug', 'gift_product', 'border_image', 'is_border')
                                      ->orderBy('created_at', 'DESC')
                             ;
                         }

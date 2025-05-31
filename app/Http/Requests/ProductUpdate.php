@@ -63,6 +63,8 @@ class ProductUpdate extends FormRequest
             ],
             'warranty'                => 'nullable|string',
             'feature_img'             => 'required|string',
+            'border_image'            => 'nullable|string',
+            'is_border'               => 'nullable|numeric',
             'status'                  => 'required|integer|in:' . implode(',',
                     array_keys(config('admin.product_status'))),
             'product_category_id.*'   => 'required|integer|exists:product_categories,id',
