@@ -533,7 +533,7 @@
                                             value="1"
                                             id="is_border"
                                             @if (old('is_border') || (!empty($product) && $product->is_border == 1)) checked @endif>
-                                    <label for="is_border">{{ __('Use border?') }}</label>
+                                    <label for="is_border">{{ __('Use border') }}?</label>
                                 </div>
                             </div>
                         </div>
