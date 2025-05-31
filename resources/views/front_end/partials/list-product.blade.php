@@ -29,6 +29,14 @@
                                     <img class=""
                                          alt="{{ $product->name }}"
                                          src="{{ get_image_url($product->feature_img, '') }}"
+                                         style="
+                                                @if ($product->is_border)
+                                                    border-style: solid;
+                                                    border-width: 2rem;
+                                                    border-image: url('{{ $product->border_image }}') 11% round;
+                                                    border-image-repeat: stretch;
+                                                @endif
+                                             "
                                     >
                                 </a>
                                 <div class="new-pr {{ $product->status != config('front_end.product_status.new') ? 'hidden' : '' }}">

@@ -48,7 +48,7 @@
                                         @endphp
                                         <div class="col-md-2 col-sm-6 col-xs-6 box-item-product wow fadeInUp">
                                             <div class="item-product">
-                                                <div class="image border-image-namha">
+                                                <div class="image">
                                                     <a href="{{ route('fe.product', ['slug' => $product['slug']]) }}"
                                                        class="thubmail-img">
                                                         <img class="lazy"
@@ -56,6 +56,14 @@
                                                              alt=" {{ $product['name'] }}"
                                                              data-ll-status="loaded"
                                                              src=""
+                                                             style="
+                                                                    @if ($product["is_border"])
+                                                                        border-style: solid;
+                                                                        border-width: 2rem;
+                                                                        border-image: url('{{ $product["border_image"] }}') 11% round;
+                                                                        border-image-repeat: stretch;
+                                                                    @endif
+                                                                 "
                                                         >
                                                     </a>
                                                     <div class="new-pr {{ $product['status'] != config('front_end.product_status.new') ? 'hidden' : '' }}">

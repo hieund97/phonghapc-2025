@@ -3091,7 +3091,7 @@
             // Handle show button cate when scroll behind
             $(window).scroll(function () {
                if ($(window).width() > 1024) {
-                  if ($(this).scrollTop() > 700) {
+                  if ($(this).scrollTop() > 50) {
                      cateHeaderButton.fadeIn();
                   } else {
                      cateHeaderButton.fadeOut();

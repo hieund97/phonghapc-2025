@@ -67,7 +67,9 @@ class Product extends Model
         'outstanding_features',
         'gift_product',
         'view_count',
-        'config'
+        'config',
+        'is_border',
+        'border_image'
     ];
 
     /**

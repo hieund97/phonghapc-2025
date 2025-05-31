@@ -26,6 +26,14 @@
                                                                         data-src="{{ get_image_url($similarProd->feature_img, 'default') }}"
                                                                         alt="{{ $similarProd->name }}"
                                                                         src=""
+                                                                        style="
+                                                                            @if ($similarProd->is_border)
+                                                                                border-style: solid;
+                                                                                border-width: 2rem;
+                                                                                border-image: url('{{ $similarProd->border_image }}') 11% round;
+                                                                                border-image-repeat: stretch;
+                                                                            @endif
+                                                                         "
                                                                 ></a>
                                                             <div class="new-pr {{ $similarProd->status != config('front_end.product_status.new') ? 'hidden' : '' }}">
                                                                 <img src="{{ asset('images/new.png') }}"
@@ -202,7 +210,16 @@
                                                                         class="lazy"
                                                                         data-src="{{ get_image_url($prod['feature_img'], 'default') }}"
                                                                         alt="{{ $prod['name'] }}"
-                                                                        src="{{ $prod['feature_img'] }}"></a>
+                                                                        src="{{ $prod['feature_img'] }}"
+                                                                        style="
+                                                                            @if ($prod["is_border"])
+                                                                                border-style: solid;
+                                                                                border-width: 2rem;
+                                                                                border-image: url('{{ $prod["border_image"] }}') 11% round;
+                                                                                border-image-repeat: stretch;
+                                                                            @endif
+                                                                         "
+                                                                ></a>
 
                                                             <div class="new-pr {{ $prod['status'] != config('front_end.product_status.new') ? 'hidden' : '' }}">
                                                                 <img src="{{ asset('images/new.png') }}"

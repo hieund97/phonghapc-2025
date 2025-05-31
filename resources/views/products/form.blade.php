@@ -466,6 +466,80 @@
                     </div>
                 </div>
             </div>
+            {{--Border image--}}
+            <div class="card image-box">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        {{ __('Border image') }}
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="preview-image-wrapper img-fluid">
+                                    <img
+                                            class="preview_image"
+                                            src="{{ old('border_image') ?: (!empty($product->border_image) ? get_image_url($product->border_image, '') : '/preview-icon.png') }}"
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <span class="input-group-btn">
+                                        <a
+                                                href="javascript:void(0)"
+                                                data-result="image" data-action="select-image"
+                                                class="btn_gallery btn btn-primary text-white"
+                                        >
+                                            <i class="fa fa-picture-o"></i> {{__('Choose')}}
+                                        </a>
+                                        <a class="btn_remove_image btn btn-primary text-white"> <i
+                                                    class="fa fa-trash-alt"></i></a>
+                                    </span>
+                                    <input
+                                            name="border_image" type="hidden" maxlength="999"
+                                            class="image-data form-control @error('border_image') is-invalid @enderror"
+                                            value="{{ old('border_image') ?: (!empty($product) ? $product->border_image : '') }}"
+                                    >
+                                </div>
+                                @error('border_image')
+                                <span class="error invalid-feedback" style="display: block" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" data-card-widget="collapse">
+                    <h3 class="card-title">{{ __('Use border') }}</h3>
+                    <div class="card-tools">
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group clearfix">
+                                <div class="icheck-primary d-inline">
+                                    <input
+                                            type="checkbox"
+                                            name="is_border"
+                                            value="1"
+                                            id="is_border"
+                                            @if (old('is_border') || (!empty($product) && $product->is_border == 1)) checked @endif>
+                                    <label for="is_border">{{ __('Use border?') }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
