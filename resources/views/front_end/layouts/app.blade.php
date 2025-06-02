@@ -62,6 +62,8 @@
 {{--        <img src="{{ asset('images/back-to-top-icon.jpg') }}" alt="">--}}
     </div>
 
+    @include('front_end.partials.banner')
+
 </div>
 
 @stack('footer')
