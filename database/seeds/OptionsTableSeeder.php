@@ -20,6 +20,7 @@ class OptionsTableSeeder extends Seeder
             'info_site_name'          => ['value' => 'Phong Hà Computer', 'type' => '', 'tab' => 'info'],
             'info_company'            => ['value' => 'CÔNG TY CP CÔNG NGHỆ PHONG HÀ', 'type' => '', 'tab' => 'info'],
             'info_site_description'   => ['value' => '', 'type' => '', 'tab' => 'info'],
+            'info_header'             => ['value' => asset('images/header.png'), 'type' => 'upload', 'tab' => 'info'],
             'info_slogan'             => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_logo'               => ['value' => asset('images/logo.png'), 'type' => 'upload', 'tab' => 'info'],
             'info_logo_mobile'        => ['value' => asset('images/logo_mobile.png'), 'type' => 'upload', 'tab' => 'info'],

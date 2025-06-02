@@ -212,8 +212,8 @@
             <div class="item-banner fade-box active" data-bg="background-color:#191B3B;">
                 <a class="aspect-ratio" href="/pages/pc-gvn" aria-label="PC GVN KM T02" title="PC GVN KM T02">
                     <img data-sizes="auto" class="lazyautosizes lazyloaded"
-                         src="https://file.hstatic.net/200000722513/file/thang_04_pc_tang_man_banner_191b3b.jpg"
-                         data-src="https://file.hstatic.net/200000722513/file/thang_04_pc_tang_man_banner_191b3b.jpg"
+                         src="{{ $mainSettings['info_header'] ?? '' }}"
+                         data-src="{{ $mainSettings['info_header'] ?? '' }}"
                          alt="PC GVN KM T02" sizes="1200px">
                 </a>
             </div>
