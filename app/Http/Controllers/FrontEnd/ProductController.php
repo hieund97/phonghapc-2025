@@ -117,7 +117,9 @@ class ProductController extends Controller
             'gift_product'   => $product->gift_product,
             'gift_category'  => isset($product->categories[0]->gift[0])
                 ? $product->categories[0]->gift[0]
-                : null
+                : null,
+            'is_border'      => $product->is_border,
+            'border_image'   => $product->border_image,
         ];
 
         $cookieProduct         = 'recentlyProductViewed';
@@ -142,7 +144,9 @@ class ProductController extends Controller
                     'feature_img'    => $pro['feature_img'],
                     'sale_price'     => $pro['sale_price'],
                     'gift_product'   => $pro['gift_product'] ?? '',
-                    'gift_category'  => $pro['gift_category'] ?? ''
+                    'gift_category'  => $pro['gift_category'] ?? '',
+                    'is_border'      => $pro['is_border'] ?? '',
+                    'border_image'   => $pro['border_image'] ?? '',
                 ];
             }
 
