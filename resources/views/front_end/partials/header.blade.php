@@ -2921,7 +2921,13 @@
                                               stroke="white" stroke-width="2" stroke-linecap="round"
                                               stroke-linejoin="round"></path>
 									</svg>
-									<span class="count-holder"><span class="count">0</span></span>
+									<span class="count-holder"><span class="count">
+                                        @if (!\Cart::isEmpty())
+                                            {{ \Cart::getTotalQuantity() }}
+                                        @else
+                                            0
+                                        @endif
+                                    </span></span>
 								</span>
                                 <span class="box-text">
 									<span class="txtnw">Giỏ</span>
