@@ -51,7 +51,7 @@ strong, b, .bold, h1, h2, h3, h4, h5, h6 {
 }
 
 .page-change-password .login_button{
-    margin:10px 0 0 0;
+    margin-top: 15px;
     height:39px;
 }
 
@@ -2761,7 +2761,7 @@ div.adfloat{top:205px !important;}
 
 .profile_box .login_button{
     border:unset;
-    background:#555555;
+    background:#E30019;
     color:#fff;
     padding:10px 15px;
 }
@@ -3417,4 +3417,9 @@ header .search .form .searchResult{
     .fixed-right img{
         width: 120px !important;
     }
+}
+
+/*Profile*/
+#profile-tabs li a:hover{
+    color: #E30019 !important;
 }
