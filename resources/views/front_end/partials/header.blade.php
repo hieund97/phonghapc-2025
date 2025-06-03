@@ -2844,11 +2844,13 @@
                 <div class="coll-header main-header--right header-action" style="--header-dropdown-mheight: 72.6875px;">
                     <div class="header-action-item main-header--search">
                         <div class="header-action_dropdown_mb search-box wpo-wrapper-search">
-                            <form action="/search" class="searchform-product searchform-categoris ultimate-search"
+                            <form action="{{ route('fe.search.index') }}"
+                                  class="searchform-product searchform-categoris ultimate-search"
                                   id="searchform-product">
                                 <div class="wpo-search-inner">
                                     <input type="hidden" name="type" value="product">
-                                    <input required="" id="inputSearchAuto" class="input-search" name="q" maxlength="40"
+                                    <input required="" id="inputSearchAuto" class="input-search input-search-global"
+                                           name="q" maxlength="40"
                                            autocomplete="off" type="text" size="20" placeholder="Bạn cần tìm gì?">
                                 </div>
                                 <button type="submit" class="btn-search btn" id="btn-search">
@@ -2863,7 +2865,7 @@
                             </form>
                             <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults"
                                  style="display: none">
-                                <div class="resultsContent"></div>
+                                <div class="resultsContent searchResult"></div>
                             </div>
                         </div>
                     </div>
@@ -2894,8 +2896,8 @@
                     </div>
                     <div class="header-action-item main-header--ordertracking hide-mb">
                         <div class="header-action_text">
-                            <a class="header-action__link js-account" data-box="acc-login-box" href="#"
-                               aria-label="Tra cứu đơn hàng" title="Tra cứu đơn hàng">
+                            <a class="header-action__link js-account" data-box="acc-login-box" href="/build-pc"
+                               aria-label="Xây dựng cấu hình" title="Xây dựng cấu hình">
 								<span class="box-icon">
 									<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
                                       <path d="M22.7 19.3l-6.6-6.6c.6-1.1 1-2.3 1-3.7 0-4.4-3.6-8-8-8-1.4 0-2.6.4-3.7 1l4.5 4.5-3 3-4.5-4.5c-.6 1.1-1 2.3-1 3.7 0 4.4 3.6 8 8 8 1.4 0 2.6-.4 3.7-1l6.6 6.6c.4.4 1 .4 1.4 0l1.3-1.3c.4-.4.4-1 0-1.4z"/>
@@ -2912,7 +2914,7 @@
                     <div class="header-action-item main-header--cart">
                         <div class="header-action_text">
                             <a class="header-action__link header-action_clicked" id="site-cart-handle"
-                               href="/cart#cart-buy-order-box" aria-label="Giỏ hàng" title="Giỏ hàng">
+                               href="{{ route('fe.cart') }}" aria-label="Giỏ hàng" title="Giỏ hàng">
 								<span class="box-icon">
 									<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M4.22111 3L3.84216 1H1M4.22111 3H19L15.2105 12.0455H5.73689M4.22111 3L5.73689 12.0455M5.73689 12.0455L3.56458 13.293C2.96774 13.923 3.5309 14.9091 4.375 14.9091H9.625H12.25L15.2105 15M15.2105 15C14.708 15 14.2261 15.2107 13.8708 15.5858C13.5154 15.9609 13.3158 16.4696 13.3158 17C13.3158 17.5304 13.5154 18.0391 13.8708 18.4142C14.2261 18.7893 14.708 19 15.2105 19C15.7131 19 16.195 18.7893 16.5503 18.4142C16.9056 18.0391 17.1053 17.5304 17.1053 17C17.1053 16.4696 16.9056 15.9609 16.5503 15.5858C16.195 15.2107 15.7131 15 15.2105 15ZM7.63162 17C7.63162 17.5304 7.432 18.0391 7.07667 18.4142C6.72134 18.7893 6.2394 19 5.73689 19C5.23438 19 4.75245 18.7893 4.39711 18.4142C4.04178 18.0391 3.84216 17.5304 3.84216 17C3.84216 16.4696 4.04178 15.9609 4.39711 15.5858C4.75245 15.2107 5.23438 15 5.73689 15C6.2394 15 6.72134 15.2107 7.07667 15.5858C7.432 15.9609 7.63162 16.4696 7.63162 17Z"
@@ -2943,7 +2945,7 @@
                     </div>
                     <div class="header-action-item main-header--account hide-mb">
                         <div class="header-action_text">
-                            <a class="header-action__link" href="#" rel="nofollow" id="site-account-handle"
+                            <a class="header-action__link" href="{{ auth()->user() ? route("fe.profile") : '#' }}" rel="nofollow" id="site-account-handle"
                                aria-label="Tài khoản" title="Tài khoản">
 		<span class="box-icon">
 			<svg viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2959,7 +2961,7 @@
 			</span>
 		</span>
                                 <span class="box-text">
-					<span class="txtnw">Đăng nhập</span>
+					<span class="txtnw">{{ Auth::user() ? Auth::user()->name : "Đăng nhập" }}</span>
 {{--					<span class="txtbl">nhập</span>--}}
 		</span>
                             </a>
@@ -2996,13 +2998,23 @@
                                             </svg>
                                         </div>
                                         <div class="d-flex flex-column">
-                                            <div class="thing-name">Xin chào, vui lòng đăng nhập</div>
+                                            @if(Auth::user())
+                                                <div class="thing-name">Xin chào, {{ Auth::user()->name }}</div>
+                                            @else
+                                                <div class="thing-name">Xin chào, vui lòng đăng nhập</div>
+                                            @endif
                                         </div>
                                     </div>
-                                    <div class="actions">
-                                        <button class="js-account" data-box="acc-login-box">ĐĂNG NHẬP</button>
-                                        <button class="js-account" data-box="acc-register-box">ĐĂNG KÝ</button>
-                                    </div>
+                                    @if(!Auth::user())
+                                        <div class="actions">
+                                            <button class="js-account open-login" data-box="acc-login-box">ĐĂNG NHẬP</button>
+                                            <button class="js-account open-register" data-box="acc-register-box">ĐĂNG KÝ</button>
+                                        </div>
+                                    @else
+                                        <div class="actions">
+                                            <button class="js-account" onclick="window.location.href='{{ route("fe.logout") }}'" data-box="acc-login-box">ĐĂNG XUẤT</button>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="block block--3">
                                     <ul>
@@ -3036,39 +3048,46 @@
 
 @push('script')
     <script defer="">
-        var searchRequest = null
+        let searchRequest = null
+        let timer;
         $(document).ready(function () {
-            var minlength = 3
+            const minlength = 2
+            const delay = 500;
             $('.input-search-global').keyup(function () {
+                clearTimeout(timer);
                 var that = this,
                     value = $(this).val();
 
                 if (value.length <= minlength) {
                     $('.searchResult').hide();
+                    $('.ajaxSearchResults').hide();
                 }
 
-                if (value.length >= minlength) {
-                    if (searchRequest != null) {
-                        searchRequest.abort()
+                timer = setTimeout(function () {
+                    if (value.length >= minlength) {
+                        if (searchRequest != null) {
+                            searchRequest.abort()
+                        }
+                        searchRequest = $.ajax({
+                            type: 'GET',
+                            url: "{{ route('fe.search.suggest') }}",
+                            data: {
+                                'q': value,
+                            },
+                            dataType: 'text',
+                            success: function (msg) {
+                                const searchResult = jQuery('.searchResult');
+                                //we need to check if the value is the same
+                                if (value == $(that).val()) {
+                                    $('.ajaxSearchResults').show();
+                                    searchResult.show();
+
+                                    msg ? searchResult.html(msg) : searchResult.html(`<p style="text-align: center">Không tìm thấy sản phẩm phù hợp!</p>`);
+                                }
+                            },
+                        })
                     }
-                    searchRequest = $.ajax({
-                        type    : 'GET',
-                        url     : "{{ route('fe.search.suggest') }}",
-                        data    : {
-                            'q': value,
-                        },
-                        dataType: 'text',
-                        success : function (msg) {
-                            //we need to check if the value is the same
-                            if (value == $(that).val()) {
-                                //jQuery('.search-autocomplete').html(msg)
-                                jQuery('.searchResult').show();
-                                jQuery('.searchResult').html(msg);
-                                // console.log($(that))
-                            }
-                        },
-                    })
-                }
+                }, delay);
             })
 
             $('.input-search-global').on('focus', function () {
@@ -3086,24 +3105,27 @@
 
             const cateHeaderButton = $('#main-header-cate-btn');
             const cateHeaderList = $('.header-action_text .banner-home-left');
-            const wrapperHeaderCate = $('.main-header--left');
 
             // Handle show button cate when scroll behind
             $(window).scroll(function () {
-               if ($(window).width() > 1024) {
-                  if ($(this).scrollTop() > 50) {
-                     cateHeaderButton.fadeIn();
-                  } else {
-                     cateHeaderButton.fadeOut();
-                  }
-               } else {
-                  cateHeaderButton.fadeIn();
-               }
+                if ($(window).width() > 1024) {
+                    if ($(this).scrollTop() > 50) {
+                        cateHeaderButton.fadeIn();
+                    } else {
+                        cateHeaderButton.fadeOut();
+                    }
+                } else {
+                    cateHeaderButton.fadeIn();
+                }
             });
 
             // Handle hover button show list
             if ($(window).width() > 1024) {
-               wrapperHeaderCate.hover(function () {cateHeaderList.fadeIn()}, function () {cateHeaderList.fadeOut()});
+                cateHeaderButton.hover(function () {
+                    cateHeaderList.fadeIn()
+                }, function () {
+                    cateHeaderList.fadeOut()
+                });
             }
         })
     </script>
