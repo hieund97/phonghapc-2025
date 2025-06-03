@@ -172,7 +172,7 @@
                                                                         </p>
                                                                     </div>
                                                                 </div>
-                                                                @if(!empty($product->gift_product) || !empty($product->categories[0]->gift))
+                                                                @if(!empty($product->gift_product) || (!empty($product->categories) && !empty($product->categories[0]->gift)))
                                                                     <div class="tooltip-gift">
                                                                         <div class="header-wrapper">
                                                                             <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
@@ -180,7 +180,11 @@
                                                                             </p>
                                                                             <div class="content-gift">
                                                                                 <p>
-                                                                                    {!! $product->gift_product ?? $product->categories[0]->gift[0]->content !!}
+                                                                                    @if (!empty($product->gift_product))
+                                                                                        {!! $product->gift_product !!}
+                                                                                    @elseif (!empty($product->categories) && !empty($product->categories[0]->gift) && count($product->categories[0]->gift) > 0)
+                                                                                        {!! $product->categories[0]->gift[0]->content !!}
+                                                                                    @endif
                                                                                 </p>
                                                                             </div>
                                                                         </div>

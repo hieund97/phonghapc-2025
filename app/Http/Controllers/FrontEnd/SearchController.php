@@ -85,7 +85,7 @@ class SearchController extends Controller
         $products = Product::where('name', 'LIKE', "%" . $q . "%")
                            ->withoutGlobalScope('published')
                            ->orderBy('id', 'DESC')
-                           ->take(20)
+                           ->take(16)
                            ->get()
         ;
 
