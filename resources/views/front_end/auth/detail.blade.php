@@ -38,7 +38,7 @@
                         <a href="{{ route('fe.home') }}">{{ __('Home')  }}</a>/
                     </li>
                     <li>
-                        {{ __('Đăng ký')  }}
+                        {{ __('Profile')  }}
                     </li>
                 </ul>
             </div>
