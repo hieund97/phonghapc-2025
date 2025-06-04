@@ -42,19 +42,19 @@
                                         </span>
                                     </p>
                                     <p class="item-status">
-                                        <span style="color:#db0006;">Mã sản phẩm: {{ $item->attributes['serial'] }}</span>
+                                        <span style="color:#db0006;">Mã sản phẩm: {{ $item->attributes['serial'] ?? '' }}</span>
                                     </p>    
                                     <p class="item-status">
-                                        <span>{!! $item->attributes['description'] !!}</span>
+                                        <span>{!! $item->attributes['description'] ?? '' !!}</span>
                                     </p>
                                     <p class="item-status">
-                                        <span>{!! $item->attributes['technical_specification'] !!}</span>
+                                        <span>{!! $item->attributes['technical_specification'] ?? '' !!}</span>
                                     </p>
                                     <p class="item-status">
-                                        <span>{!! $item->attributes['outstanding_features'] !!}</span>
+                                        <span>{!! $item->attributes['outstanding_features'] ?? '' !!}</span>
                                     </p>
                                     <p class="item-status">
-                                        <span>{!! $item->attributes['gift_product'] !!}</span>
+                                        <span>{!! $item->attributes['gift_product'] ?? '' !!}</span>
                                     </p>
                                 </div>
                             </div>
