@@ -34,12 +34,27 @@
 
                                 <div class="item-text">
                                     <a href="{{ route("fe.product",["slug"=> $item->attributes['slug']]) }}"
-                                       class="item-name">{{ $item->name }}</a>
+                                       class="item-name bold"><h2>{{ $item->name }}</h2></a>
                                     <p class="item-status">
                                         <span style="color: #0DB866;">
                                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
                                             Còn hàng
                                         </span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span style="color:#db0006;">Mã sản phẩm: {{ $item->attributes['serial'] }}</span>
+                                    </p>    
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['description'] !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['technical_specification'] !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['outstanding_features'] !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['gift_product'] !!}</span>
                                     </p>
                                 </div>
                             </div>
@@ -90,20 +105,19 @@
                 </div>
 
                 <a href="{{ route('fe.cart.destroy.all') }}" class="btn-remove-group">Làm trống giỏ hàng</a>
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
             </div>
 
             <div class="col-xs-12 col-md-4 col-lg-4">
                 <div class="cart-customer-group">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="cart-customer-holder">
                         <p class="title blue-2">Thông tin thanh toán</p>
 
