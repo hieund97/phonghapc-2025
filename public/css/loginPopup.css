@@ -39,7 +39,7 @@
 
 .global-popup-login .btn-forgot-password{color:#697789;font-weight:600;font-size:14px;line-height:18px}
 
-.global-popup-login .popup-btn{width:100%;background:#1988EC;border-radius:8px;text-align:center;color:#fff;margin:16px 0 24px;line-height:40px;font-weight:600;font-size:16px;display:block}
+.global-popup-login .popup-btn{width:100%;background:#E30019;border-radius:8px;text-align:center;color:#fff;margin:16px 0 24px;line-height:40px;font-weight:600;font-size:16px;display:block}
 
 .global-popup-login .popup-icons-group{margin:24px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 
@@ -78,4 +78,6 @@
     }
 }
 
-
+.register-btn {
+    color: #E30019 !important;
+}
