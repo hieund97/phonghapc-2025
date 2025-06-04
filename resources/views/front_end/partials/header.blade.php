@@ -3017,6 +3017,9 @@
                                             <button class="js-account open-register" data-box="acc-register-box">ĐĂNG KÝ</button>
                                         </div>
                                     @else
+                                       <div class="thing-name" style="margin-bottom: 10px">
+                                          <a href="{{ route('fe.history') }}">Lịch sử đơn hàng</a>
+                                       </div>
                                         <div class="actions">
                                             <button class="js-account" onclick="window.location.href='{{ route("fe.logout") }}'" data-box="acc-login-box">ĐĂNG XUẤT</button>
                                         </div>

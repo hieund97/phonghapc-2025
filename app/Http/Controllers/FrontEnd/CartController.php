@@ -109,7 +109,12 @@ class CartController extends Controller
                     "picture" => !empty($aryConfig) ? get_image_url($config_image) : get_image_url($product->feature_img,
                         ''),
                     "slug"    => $product->slug,
-                    "config"  => $request->configType ?? 'original'
+                    "config"  => $request->configType ?? 'original',
+                    'serial'                   => $product->serial,
+                    'description'              => $product->description,
+                    'technical_specification'  => $product->technical_specification,
+                    'outstanding_features'     => $product->outstanding_features,
+                    'gift_product'             => $product->gift_product,
                 ],
                 'associatedModel' => Product::class,
             ]);
@@ -264,6 +269,11 @@ class CartController extends Controller
         return view('front_end.cart.check_out', compact('order'));
     }
 
+    public function history()
+    {
+        return redirect()->route('fe.profile')->with(['tab' => 'history_order']);
+    }
+
     /**
      * Add to cart for build PC
      * @param Request $request
@@ -290,6 +300,11 @@ class CartController extends Controller
                     'attributes'      => [
                         "picture" => get_image_url($itemProd['image'], ''),
                         "slug"    => $itemProd['slug'],
+                        'serial'                    => $itemProd['serial'],
+                        'description'               => $itemProd['description'],
+                        'technical_specification'   => $itemProd['technical_specification'],
+                        'outstanding_features'      => $itemProd['outstanding_features'],
+                        'gift_product'              => $itemProd['gift_product'],
                     ],
                     'associatedModel' => Product::class,
                 ]);

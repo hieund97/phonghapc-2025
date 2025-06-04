@@ -214,6 +214,7 @@ Route::put('/gio-hang', 'FrontEnd\CartController@update')->name('fe.cart.update'
 Route::delete('/gio-hang/remove_item', 'FrontEnd\CartController@destroy')->name('fe.cart.destroy');
 Route::get('/gio-hang/remove_all_item', 'FrontEnd\CartController@destroyAll')->name('fe.cart.destroy.all');
 Route::get('/dat-hang-thanh-cong', 'FrontEnd\CartController@checkOut')->name('fe.checkout');
+Route::get('/lich_su', 'FrontEnd\CartController@history')->name('fe.history');
 
 /** ----Tin tức --- */
 Route::get('/tin-tuc', [\App\Http\Controllers\FrontEnd\PostController::class, 'index'])->name('fe.post.index');
