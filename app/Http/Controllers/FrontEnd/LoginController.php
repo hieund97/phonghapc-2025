@@ -12,7 +12,6 @@ use App\Models\User;
 use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request as HttpRequest;
 
 class LoginController extends Controller
 {
