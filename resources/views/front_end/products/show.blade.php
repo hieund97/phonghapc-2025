@@ -326,7 +326,7 @@
                                     </div>
                                 </div>
                                 <div class="readmore">
-                                    <button type="button" class="btn btn-lg" data-toggle="modal"
+                                    <button type="button" class="btn btn-lg btn-seemore-tskt" data-toggle="modal"
                                             data-target="#myModal">Xem đầy đủ thông số kỹ thuật <i
                                             class="far fa-angle-down"></i>
                                     </button>
