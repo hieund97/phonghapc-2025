@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="inner-page-detail" style="background: #fff">
                     <div class="row">
-                        <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="nav-main-content">
                                 <div class="content-product">
                                     <div class="content-detail-product">
@@ -77,7 +77,7 @@
                                                                                     data-image="{{ $images[$i] }}">
                                                                                     <img
                                                                                         src="{{ get_image_url($images[$i], '') }}"
-                                                                                        style="height: 60px;width: 100%;object-fit: border">
+                                                                                        style="height: 60px;width: 100%;">
                                                                                 </div>
                                                                             </div>
                                                                         @endfor
@@ -193,9 +193,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-12 col-xs-12">
-                            @include('front_end.partials.content-right', ['contacts' => $contacts])
-                        </div>
+{{--                        <div class="col-md-3 col-sm-12 col-xs-12">--}}
+{{--                            @include('front_end.partials.content-right', ['contacts' => $contacts])--}}
+{{--                        </div>--}}
                     </div>
                     <div class="row row-col row-mobile" style="margin-top: 30px">
                         <div class="col-md-8 col-sm-12 col-xs-12">
@@ -216,7 +216,7 @@
                                                                 class="far fa-angle-down"></i></a>
                                                     </div>
                                                 </div>
-                                                <div class="content-box" id="5a">
+                                                <div class="content-box mt-5" id="5a">
                                                     <div class="form-cmt form-group">
                                                         <h2 class="h2-title" style="font-weight: bold;font-size: 20px">
                                                             Đánh giá bình luận</h2>

@@ -2889,9 +2889,9 @@ div.adfloat{top:205px !important;}
 .viewmore-area .viewmore{
     line-height:36px;
     background:#FFF;
-    color:#1988EC;
-    -webkit-box-shadow:0 0 0 1px #1988EC;
-    box-shadow:0 0 0 1px #1988EC;
+    color:#E30019;
+    -webkit-box-shadow:0 0 0 1px #E30019;
+    box-shadow:0 0 0 1px #E30019;
     border-radius:10px;
     font-size:16px;
     font-weight:600;
@@ -2908,7 +2908,7 @@ div.adfloat{top:205px !important;}
 }
 
 .viewmore-area .viewmore:hover{
-    background:#1988EC;
+    background:#E30019;
     color:#fff;
 }
 
