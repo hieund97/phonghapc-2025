@@ -46,7 +46,7 @@
                                                      src="{{ get_image_url($product->feature_img, "") }}">
                                             </div>
                                             <input type="hidden" value="1" class="bk-product-qty">
-                                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                                 <div class="slider">
                                                     <div class="slider__flex flex flex-wrap justify-between">
                                                         <div class="slider__images pl-0 md:pl-[20px]">
@@ -95,7 +95,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                                                 <div class="nav-img-detail">
                                                     <div class="pd-info-rating d-flex flex-wrap"
                                                          style="align-items: center;margin-bottom: 10px; display:flex">
