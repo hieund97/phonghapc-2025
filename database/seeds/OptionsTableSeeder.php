@@ -27,6 +27,7 @@ class OptionsTableSeeder extends Seeder
             'info_logo_footer'        => ['value' => asset('images/logo.png'), 'type' => 'upload', 'tab' => 'info'],
             'info_cover_image'        => ['value' => '', 'type' => 'upload', 'tab' => 'info'],
             'info_sale_prod_url'      => ['value' => '', 'type' => '', 'tab' => 'info'],
+            'banner_hompage'          => ['value' => asset('images/header.png'), 'type' => 'upload', 'tab' => 'info'],
             'info_installment'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_youtube_url'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'robots'                  => ['value' => 'noindex, nofollow', 'type' => '', 'tab' => 'seo'],

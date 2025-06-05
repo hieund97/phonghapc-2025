@@ -3401,14 +3401,6 @@ header .search .form .searchResult{
 .fixed-right img{
     width: 130px !important;
 }
-@media (max-width: 767px) {
-    .fixed-left img{
-        width: 110px !important;
-    }
-    .fixed-right img{
-        width: 110px !important;
-    }
-}
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .fixed-left img{
@@ -3419,6 +3411,23 @@ header .search .form .searchResult{
     }
 }
 
+@media (max-width: 767px) {
+    .fixed-left img{
+        width: 110px !important;
+    }
+    .fixed-right img{
+        width: 110px !important;
+    }
+}
+
+@media (max-width: 567px) {
+    .fixed-left img{
+        width: 0px !important;
+    }
+    .fixed-right img{
+        width: 0px !important;
+    }
+}
 /*Profile*/
 #profile-tabs li a:hover{
     color: #E30019 !important;

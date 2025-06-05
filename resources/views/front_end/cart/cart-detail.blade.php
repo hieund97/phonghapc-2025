@@ -12,7 +12,7 @@
     <div class="cart-page container">
 
         <div class="page-title d-inline-flex align-items-baseline">
-            <h1 class="mb-0 blue-2 font-700">Giỏ hàng của tôi</h1>
+            <h1 class="mb-0 pink-2 font-700">Giỏ hàng của tôi</h1>
             <span class="text-12 ml-2" id="js-cart-total-item">({{ \Cart::getTotalQuantity() }}  sản phẩm )</span>
         </div>
 
@@ -44,7 +44,7 @@
                                     <p class="item-status">
                                         <span style="color:#db0006;">Mã sản phẩm: {{ $item->attributes['serial'] ?? '' }}</span>
                                     </p>    
-                                    <p class="item-status">
+                                    {{-- <p class="item-status">
                                         <span>{!! $item->attributes['description'] ?? '' !!}</span>
                                     </p>
                                     <p class="item-status">
@@ -55,7 +55,7 @@
                                     </p>
                                     <p class="item-status">
                                         <span>{!! $item->attributes['gift_product'] ?? '' !!}</span>
-                                    </p>
+                                    </p> --}}
                                 </div>
                             </div>
 
@@ -119,7 +119,7 @@
                         </div>
                     @endif
                     <div class="cart-customer-holder">
-                        <p class="title blue-2">Thông tin thanh toán</p>
+                        <p class="title pink-2">Thông tin thanh toán</p>
 
                         <input type="text" placeholder="Họ tên người nhận hàng"
                                class="form-input @error('customer_name') is-invalid @enderror" name="customer_name"

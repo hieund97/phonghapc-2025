@@ -12,14 +12,14 @@
     <div class="cart-page container">
 
         <div class="page-title d-inline-flex align-items-baseline">
-            <h1 class="mb-0 blue-2 font-700">Đặt hàng thành công</h1>
+            <h1 class="mb-0 pink-2 font-700">Đặt hàng thành công</h1>
         </div>
 
         <div class="row">
             <div class="col-xs-12 col-md-4 col-lg-4">
                 <div class="cart-customer-group">
                     <div class="cart-customer-holder">
-                        <p class="title blue-2">Thông tin thanh toán</p>
+                        <p class="title pink-2">Thông tin thanh toán</p>
 
                         <label>Tên khách hàng</label>
                         <input type="text" class="form-input" disabled style="color:black; height:45px; font-size:20px" name="customer_name"
@@ -85,7 +85,7 @@
                                     <p class="item-status">
                                         <span style="color:#db0006;">Mã sản phẩm: {{ $item->product->serial }}</span>
                                     </p>    
-                                    <p class="item-status">
+                                    {{-- <p class="item-status">
                                         <span>{!! $item->product->description !!}</span>
                                     </p>
                                     <p class="item-status">
@@ -96,7 +96,7 @@
                                     </p>
                                     <p class="item-status">
                                         <span>{!! $item->product->gift_product !!}</span>
-                                    </p>
+                                    </p> --}}
                                 </div>
                             </div>
 
