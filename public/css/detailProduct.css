@@ -613,6 +613,10 @@
     width:100% !important;
 }
 
+.content-box-tskt {
+    border-radius: 10px 10px 0 0 !important;
+}
+
 .content-box-tskt table span{
     background:transparent !important;
 }
@@ -1053,8 +1057,12 @@ a.viewmoretskt{
 }
 
 .readmore button {
-    background: #FF2400;
+    background: #E30019;
     color: #fff
+}
+
+.readmore .btn-seemore-tskt {
+    border-radius: 0 0 10px 10px !important;
 }
 
 .readmore button:hover {
@@ -1063,7 +1071,7 @@ a.viewmoretskt{
 }
 
 #rateform button {
-    background: #FF2400;
+    background: #E30019;
     color: #fff
 }
 
