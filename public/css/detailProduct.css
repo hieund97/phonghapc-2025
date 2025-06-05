@@ -150,17 +150,20 @@
 .pd-offer-group{
     margin:12px 0;
     border-radius:10px;
-    -webkit-box-shadow:0 0 0 1px #fee8cb;
-    box-shadow:0 0 0 1px #fee8cb;
     overflow:hidden;
+    background-image: url(../images/background_offer_detail.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 4px;
+    min-height: 200px;
 }
 
 .pd-offer-group .title{
     background:linear-gradient(91.56deg, rgba(245, 33, 148, 0.1) 2.74%, rgba(250, 159, 44, 0.1) 96.84%);
     line-height:40px;
-    color:#FA5252;
+    color:#fff;
     font-weight:600;
-    font-size:14px;
+    font-size:20px;
     padding:0 10px;
     display:-webkit-box;
     display:-ms-flexbox;
@@ -185,6 +188,8 @@
 
 .pd-offer-list{
     padding:10px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
 }
 
 .top-box-comments h6{
@@ -857,7 +862,7 @@ div#gallery_01 .owl-prev{
     height:150px;
     padding-top:85px;
     text-align:center;
-    border-radius:0 0 5px 5px;
+    border-radius:0 0 10px 10px;
     background:rgba(255, 255, 255, 0);
     background:-moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .91) 50%, #fff 55%);
     /*background:-webkit-gradient(left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, .91)), color-stop(55%, #fff));*/
@@ -916,7 +921,7 @@ div#gallery_01 .owl-prev .fa:before{
     font-size:14px;
     color:#3d3d3d;
     background:#fff;
-    border:1px solid #005aff;
+    border:1px solid #E30019;
     -webkit-border-radius:2px;
     -moz-border-radius:2px;
     border-radius:2px;
@@ -924,6 +929,9 @@ div#gallery_01 .owl-prev .fa:before{
 
 .content-box{
     position:relative;
+    box-shadow:0 1px 8px 0 rgba(0,0,0,.25);
+    border-radius: 10px;
+    padding:20px;
 }
 
 .content-thong-so{
@@ -940,6 +948,7 @@ div#gallery_01 .owl-prev .fa:before{
 .content-dac-diem{
     height:500px;
     overflow:hidden;
+    border-radius: 0 0 10px 10px;
 }
 
 .content-dac-diem p {
