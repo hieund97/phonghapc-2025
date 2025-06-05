@@ -825,9 +825,9 @@
     object-fit:cover;
 }
 
-.content-detail-product .slider__images .slider__image img{
-    height:460px !important;
-}
+/*.content-detail-product .slider__images .slider__image img{*/
+/*    height:460px !important;*/
+/*}*/
 
 .content-detail-product .slider__thumbs .slider__image img{
     height:110px !important;
