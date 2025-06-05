@@ -60,6 +60,16 @@
     @include('front_end.partials.saleProd')
     <!-- End Sale Product -->
 
+    @if(isset($mainSettings['banner_hompage']) && $mainSettings['banner_hompage'])
+        <div class="container pd-10 my-3">
+            <img data-sizes="auto" class="lazyautosizes lazyloaded" style="border-radius: 8px;"
+                        src="{{ $mainSettings['banner_hompage'] ?? '' }}"
+                        data-src="{{ $mainSettings['banner_hompage'] ?? '' }}"
+                        alt="PC GVN KM T02" sizes="1200px">
+        </div>
+       
+    @endif
+
     <!-- Main Product Homepage -->
     @include('front_end.partials.mainContent')
     <!-- End Main Product Homepage -->

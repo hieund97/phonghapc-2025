@@ -64,8 +64,8 @@
     border-radius: 8px;
     background: #FFF;
     position: relative;
-    -webkit-box-shadow: 0 0 0 1px #1988EC;
-    box-shadow: 0 0 0 1px #1988EC;
+    -webkit-box-shadow: 0 0 0 1px #EE6A6A;
+    box-shadow: 0 0 0 1px #EE6A6A;
     overflow: hidden;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .cart-page .btn-submit-cart {
-    background: #1988EC;
+    background: #EE6A6A;
     color: #fff;
     text-align: center;
     border: 0;
@@ -105,6 +105,10 @@
 
 .blue-2, .p-item .p-price, .global-header-container .item-support-group b, .global-header-container .list-hotline-group .num, .header-search-group .search-option-list a:hover, .header-menu-group .item:hover .cat-title, .header-menu-group .sub-item .cat-2, .home-box-group .box-title, .product-page .product-sort-button a, .product-detail-page .pd-price-group .pd-price, .product-detail-page .box-address-list a:hover, .pd-art-group .item-title:hover, .cart-items-group .item-name:hover {
     color: #1988EC;
+}
+
+.pink-2 {
+    color: #EE6A6A;
 }
 
 .cart-page .form-input {
