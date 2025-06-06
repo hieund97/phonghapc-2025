@@ -1,7 +1,7 @@
 @if($products->isNotEmpty())
     <div class="listResult">
         @foreach ($products as $product)
-            <div class="result-item col-md-3">
+            <div class="result-item col-md-12">
                 <div class="product uk-clearfix">
                     <div class="thumb">
                         <a class="image img-cover"
