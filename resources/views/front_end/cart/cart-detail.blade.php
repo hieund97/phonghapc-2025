@@ -197,7 +197,8 @@
                         productId: product_id,
                         countItem: type,
                         isAjax   : true,
-                        _token   : '{{ csrf_token() }}'
+                        _token   : '{{ csrf_token() }}',
+                        configType: config,
                     }),
                     success: function (result) {
                         $('.quantity-id-' + product_id).val(countItem);
