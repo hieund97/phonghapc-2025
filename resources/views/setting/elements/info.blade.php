@@ -53,24 +53,43 @@
                             placeholder="Enter ..."
                     >{{$row->option_value}}</textarea>
                 @elseif($row->option_type == 'dropdown')
-                    <select
-                            name="{{ $view }}_status"
+                    @if($view != 'common')
+                        <select
+                                name="{{ $view }}_status"
+                                class="form-control select2bs4 @error('status') is-invalid @enderror"
+                                required
+                        >
+                            @if($view == 'info')
+                                <option
+                                        value="open"
+                                        @if($row->option_value === "open") selected @endif>
+                                    Mở cửa website
+                                </option>
+                                <option
+                                        value="close"
+                                        @if($row->option_value == "close") selected @endif>
+                                    Website bảo trì
+                                </option>
+                            @endif
+                            @if($view == 'popup')
+                                <option
+                                        value="on"
+                                        @if($row->option_value == "on") selected @endif>
+                                    Bật
+                                </option>
+                                <option
+                                        value="off"
+                                        @if($row->option_value == "off") selected @endif>
+                                    Tắt
+                                </option>
+                            @endif
+                        </select>
+                    @else
+                        <select
+                            name="{{ $row->option_name }}"
                             class="form-control select2bs4 @error('status') is-invalid @enderror"
                             required
-                    >
-                        @if($view == 'info')
-                            <option
-                                    value="open"
-                                    @if($row->option_value === "open") selected @endif>
-                                Mở cửa website
-                            </option>
-                            <option
-                                    value="close"
-                                    @if($row->option_value == "close") selected @endif>
-                                Website bảo trì
-                            </option>
-                        @endif
-                        @if($view == 'popup')
+                        >
                             <option
                                     value="on"
                                     @if($row->option_value == "on") selected @endif>
@@ -81,8 +100,8 @@
                                     @if($row->option_value == "off") selected @endif>
                                 Tắt
                             </option>
-                        @endif
-                    </select>
+                        </select>
+                    @endif
                 @else
                     <input
                             type="text"
