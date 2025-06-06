@@ -489,7 +489,7 @@
 
 .search-box .smart-search-wrapper{
     position:absolute;
-    height: 500px;
+    max-height: 500px;
     top:105%;
     left:0;
     right:0;
@@ -518,7 +518,6 @@
     background:rgba(105, 105, 105, 0.4); }
 
 .search-box .smart-search-wrapper .resultsContent{
-    height:150px;
     padding: 20px 0;
 }
 
@@ -940,7 +939,6 @@
 
 @media (max-width: 1024px) {
     .search-box .smart-search-wrapper .resultsContent{
-        height:500px;
         padding: 10px 0;
     }
 }

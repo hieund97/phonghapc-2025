@@ -1327,4 +1327,8 @@ a.viewmoretskt{
     .buy-item .action-button, .buy-now-btn .action-button {
         font-size:14px;
     }
+
+    .slider__images .slider__image img {
+        height:300px !important;
+    }
 }

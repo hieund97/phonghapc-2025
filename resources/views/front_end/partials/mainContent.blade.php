@@ -57,7 +57,7 @@
                                                              data-ll-status="loaded"
                                                              src=""
                                                              style="
-                                                                    @if ($product["is_border"])
+                                                                    @if ($product["is_border"] && !empty($product["border_image"]))
                                                                         border-style: solid;
                                                                         border-width: 2rem;
                                                                         border-image: url('{{ $product["border_image"] }}') 11% round;

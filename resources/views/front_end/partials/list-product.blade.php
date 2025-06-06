@@ -30,7 +30,7 @@
                                          alt="{{ $product->name }}"
                                          src="{{ get_image_url($product->feature_img, '') }}"
                                          style="
-                                                @if ($product->is_border)
+                                                @if ($product->is_border && !empty($product->border_image))
                                                     border-style: solid;
                                                     border-width: 2rem;
                                                     border-image: url('{{ $product->border_image }}') 11% round;

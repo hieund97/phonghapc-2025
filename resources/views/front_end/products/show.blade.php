@@ -46,13 +46,13 @@
                                                      src="{{ get_image_url($product->feature_img, "") }}">
                                             </div>
                                             <input type="hidden" value="1" class="bk-product-qty">
-                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="slider">
                                                     <div class="slider__flex flex flex-wrap justify-between">
                                                         <div class="slider__images pl-0 md:pl-[20px]">
                                                             <div class="slider__image" id="zoom">
                                                                 <img src="{{ get_image_url($product->feature_img, '') }}"
-                                                                     style="height: 300px;width: 100%;object-fit: contain">
+                                                                     style="height: 620px;width: 100%;object-fit: contain">
                                                             </div>
                                                         </div>
                                                         <div class="slider__col">
@@ -95,7 +95,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="nav-img-detail">
                                                     <div class="pd-info-rating d-flex flex-wrap"
                                                          style="align-items: center;margin-bottom: 10px; display:flex">
@@ -198,7 +198,7 @@
 {{--                        </div>--}}
                     </div>
                     <div class="row row-col row-mobile" style="margin-top: 30px">
-                        <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="nav-main-content wow fadeInUp">
                                 <div class="content-product">
                                     <div class="content-detail-product">
@@ -317,7 +317,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="sidebar wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                                 <div class="content-box content-box-tskt">
                                     <h3 style="margin-top: 0px">Thông số kỹ thuật</h3>
