@@ -3376,14 +3376,14 @@ header .search .form .searchResult{
 }
 .fixed-left{
     position: fixed;
-    top: 30%;
+    top: 170px;
     left: 0;
     text-align: left;
     z-index: 2;
 }
 .fixed-right {
     position: fixed;
-    top: 30%;
+    top: 170px;
     right: 0;
     text-align: right;
     z-index: 2;
