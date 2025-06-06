@@ -12,7 +12,7 @@
     <div class="cart-page container">
 
         <div class="page-title d-inline-flex align-items-baseline">
-            <h1 class="mb-0 pink-2 font-700">Đặt hàng thành công</h1>
+            <h1 class="mb-0 dark font-700">Đặt hàng thành công</h1>
         </div>
 
         <div class="row">

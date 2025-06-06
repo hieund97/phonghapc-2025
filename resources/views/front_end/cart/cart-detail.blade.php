@@ -12,7 +12,7 @@
     <div class="cart-page container">
 
         <div class="page-title d-inline-flex align-items-baseline">
-            <h1 class="mb-0 pink-2 font-700">Giỏ hàng của tôi</h1>
+            <h1 class="mb-0 dark font-700">Giỏ hàng của tôi</h1>
             <span class="text-12 ml-2" id="js-cart-total-item">({{ \Cart::getTotalQuantity() }}  sản phẩm )</span>
         </div>
 
