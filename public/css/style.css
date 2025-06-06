@@ -2368,6 +2368,16 @@ i{
     .searchResult .product .title {
         font-size: 12px;
     }
+
+    .searchResult .product .thumb{
+        height:auto;
+        width: 30%;
+    }
+
+    .searchResult .product .info{
+        height:auto;
+        width: 70%;
+    }
 }
 
 @media (min-width:768px){
