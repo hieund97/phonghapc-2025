@@ -2289,9 +2289,8 @@ i{
 }
 
 .searchResult .product{
-    min-height:150px;
-    padding:3px;
-    border:1px solid #d5d5d5
+    padding:0;
+    border-bottom:1px solid #d5d5d5;
 }
 
 .searchResult .product .thumb{
@@ -2311,7 +2310,7 @@ i{
 
 .searchResult .product .title{
     margin:0;
-    font-size:13px;
+    font-size:15px;
     line-height:18px;
     height:36px;
     font-weight:400;
@@ -2354,6 +2353,42 @@ i{
 
 .searchResult .viewmore a{
     color:#333
+}
+
+/*responsive search*/
+@media (max-width:767px){
+    .searchResult .product{
+        display: flex;
+    }
+
+    .searchResult .product .price .new, .searchResult .product .price .old {
+        font-size: 11px;
+    }
+
+    .searchResult .product .title {
+        font-size: 12px;
+    }
+}
+
+@media (min-width:768px){
+    .searchResult .product{
+        display: flex;
+        padding: 5px;
+    }
+
+    .searchResult .product .thumb{
+        height:80px;
+        width: auto;
+    }
+
+    .searchResult .product .info{
+        display: flex;
+        width: 100%;
+    }
+
+    .searchResult .product .title{
+        width: 100%;
+    }
 }
 
 .up-main .ho-tro .ht-child{
