@@ -67,14 +67,14 @@ class OptionsTableSeeder extends Seeder
                 'tab'   => 'common'
             ],
             'info_header_url'         => ['value' => '', 'type' => '', 'tab' => 'common'],
-            'info_header_status'      => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+            'info_header_status'      => ['value' => 'on', 'type' => 'dropdown', 'tab' => 'common'],
             'banner_hompage'          => [
                 'value' => 'https://placehold.co/1650x100',
                 'type'  => 'upload',
                 'tab'   => 'common'
             ],
             'banner_hompage_url'      => ['value' => '', 'type' => '', 'tab' => 'common'],
-            'banner_hompage_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+            'banner_hompage_status'   => ['value' => 'on', 'type' => 'dropdown', 'tab' => 'common'],
             'common_banner_1'         => ['value' => '', 'type' => 'upload', 'tab' => 'common'],
             'common_banner_2'         => ['value' => '', 'type' => '', 'tab' => 'common'],
             'common_banner_3'         => [
@@ -83,7 +83,7 @@ class OptionsTableSeeder extends Seeder
                 'tab'   => 'common'
             ],
             'common_banner_4'         => ['value' => '', 'type' => '', 'tab' => 'common'],
-            'common_banner_4_status'  => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+            'common_banner_4_status'  => ['value' => 'on', 'type' => 'dropdown', 'tab' => 'common'],
             'common_banner_5'         => [
                 'value' => 'https://placehold.co/130x400',
                 'type'  => 'upload',
@@ -97,7 +97,7 @@ class OptionsTableSeeder extends Seeder
                 'type'  => 'upload',
                 'tab'   => 'common'
             ],
-            'banner_build_pc_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+            'banner_build_pc_status'   => ['value' => 'on', 'type' => 'dropdown', 'tab' => 'common'],
 
             //Tab SEO
             'seo_meta_title'          => [
