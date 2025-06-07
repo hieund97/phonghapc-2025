@@ -29,7 +29,7 @@
         </div>
         <section class="main-content">
             <div class="container">
-                <div class="inner-page-detail" style="background: #fff">
+                <div class="inner-page-detail">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="nav-main-content">
@@ -345,8 +345,8 @@
 
                                     </div>
                                 </div>
-
-
+                            </div>
+                            <div class="sidebar wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;margin-top:30px">
                                 @include('front_end.partials.newpost_sidebar', ['newestPost' => $newestPost])
                             </div>
                         </div>
