@@ -1,15 +1,13 @@
 @if (isset($mainSettings['info_header_status']) && $mainSettings['info_header_status'] == 'on')
     <div class="top-header topbar-banner p-0 d-lg-block d-xl-block d-none">
         <div class="list-banners">
-            <div class="container-fluid p-0">
-                <div class="item-banner fade-box active" data-bg="background-color:#191B3B;">
-                    <a style="width: 100%" class="aspect-ratio" href="{{ $mainSettings['info_header_url'] ?? '' }}" aria-label="{{ $mainSettings['seo_meta_title'] ?? '' }}"
-                        title="{{ $mainSettings['seo_meta_title'] ?? '' }}">
-                        <img style="width: 100%" data-sizes="auto" class="lazyautosizes lazyloaded"
-                            src="{{ $mainSettings['info_header'] ?? '' }}"
-                            data-src="{{ $mainSettings['info_header'] ?? '' }}" alt="{{ $mainSettings['seo_meta_title'] ?? '' }}" sizes="1200px">
-                    </a>
-                </div>
+            <div class="item-banner fade-box active" data-bg="background-color:#191B3B;">
+                <a style="width: 100%" class="aspect-ratio" href="{{ $mainSettings['info_header_url'] ?? '' }}" aria-label="{{ $mainSettings['seo_meta_title'] ?? '' }}"
+                   title="{{ $mainSettings['seo_meta_title'] ?? '' }}">
+                    <img style="width: 100%" data-sizes="auto" class="lazyautosizes lazyloaded"
+                         src="{{ $mainSettings['info_header'] ?? '' }}"
+                         data-src="{{ $mainSettings['info_header'] ?? '' }}" alt="{{ $mainSettings['seo_meta_title'] ?? '' }}" sizes="1200px">
+                </a>
             </div>
         </div>
     </div>

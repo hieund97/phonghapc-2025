@@ -62,7 +62,7 @@ class OptionsTableSeeder extends Seeder
 
             //Tab Common
             'info_header'             => [
-                'value' => 'https://placehold.co/1422x56',
+                'value' => 'https://placehold.co/1920x60',
                 'type'  => 'upload',
                 'tab'   => 'common'
             ],
@@ -90,7 +90,7 @@ class OptionsTableSeeder extends Seeder
                 'tab'   => 'common'
             ],
             'common_banner_6'         => ['value' => '', 'type' => '', 'tab' => 'common'],
-            'common_banner_6_status'  => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+            'common_banner_6_status'  => ['value' => 'on', 'type' => 'dropdown', 'tab' => 'common'],
 
             'banner_build_PC'          => [
                 'value' => 'https://placehold.co/1650x100',

@@ -1,4 +1,4 @@
-<div class="container-benefit">
+<div class="container-benefit is-pc">
     <div class="ph-footer-policies">
         <div class="policy-container">
             <div class="policy-icon"><i class="fa fa-truck"></i></div>

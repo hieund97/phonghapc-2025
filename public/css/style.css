@@ -268,10 +268,6 @@ a{
     content:unset;
 }
 
-.top-header{
-    background-color:#0f1424;
-    padding:6px 0;
-}
 
 .top-header .item-top.right-top{
     text-align:right;
@@ -2130,7 +2126,7 @@ div.list-menu{
     }
 
     .is-pc{
-        display:none;
+        display:none !important;
     }
 
     .relative-category .nav-category-home{

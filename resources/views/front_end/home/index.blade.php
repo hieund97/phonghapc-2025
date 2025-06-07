@@ -61,7 +61,7 @@
     <!-- End Sale Product -->
 
     @if(isset($mainSettings['banner_hompage_status']) && $mainSettings['banner_hompage_status'] == 'on')
-        <div class="container pd-10 my-3">
+        <div class="container pd-10 my-3 is-pc">
             <a href="{{ $mainSettings['banner_hompage_url'] ?? '' }}">
                 <img data-sizes="auto" class="lazyautosizes lazyloaded" style="border-radius: 8px;width: 100%;"
                             src="{{ $mainSettings['banner_hompage'] ?? '' }}"
