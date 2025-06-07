@@ -33,10 +33,18 @@ class OptionsTableSeeder extends Seeder
                 'type'  => 'upload',
                 'tab'   => 'info'
             ],
-            'info_logo_footer'        => ['value' => asset('images/logo-black.png'), 'type' => 'upload', 'tab' => 'info'],
+            'info_logo_footer'        => [
+                'value' => asset('images/logo-black.png'),
+                'type'  => 'upload',
+                'tab'   => 'info'
+            ],
             'info_cover_image'        => ['value' => '', 'type' => 'upload', 'tab' => 'info'],
             'info_sale_prod_url'      => ['value' => '', 'type' => '', 'tab' => 'info'],
-            'banner_hompage'          => ['value' => 'https://placehold.co/1650x100', 'type' => 'upload', 'tab' => 'common'],
+            'banner_hompage'          => [
+                'value' => 'https://placehold.co/1650x100',
+                'type'  => 'upload',
+                'tab'   => 'common'
+            ],
             'banner_hompage_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'info_installment'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_youtube_url'        => ['value' => '', 'type' => '', 'tab' => 'info'],
@@ -44,7 +52,7 @@ class OptionsTableSeeder extends Seeder
             //'info_hotline_footer_1'   => [
             //    'value' => '<p><strong><span style="font-size:16px;">Tổng Đài Hỗ Trợ</span></strong></p>
             //
-            //                <p><a href="http://tel:02473063686"><span style="color:#ffffff;">024.730.63686</span></a>&nbsp;&nbsp;(8h00- 18h30)</p>
+            //                <p><a href="http://tel:078 692 6666"><span style="color:#ffffff;">024.730.63686</span></a>&nbsp;&nbsp;(8h00- 18h30)</p>
             //
             //                <p>- Nhánh 1 Phòng KD&nbsp;bán lẻ.</p>
             //
@@ -91,7 +99,7 @@ class OptionsTableSeeder extends Seeder
                 'tab'   => 'contact',
             ],
             'contact_work_time'       => ['value' => '', 'type' => '', 'tab' => 'contact'],
-            'contact_phone_company'   => ['value' => '', 'type' => '', 'tab' => 'contact'],
+            //'contact_phone_company'   => ['value' => '', 'type' => '', 'tab' => 'contact'],
             'contact_hotline'         => ['value' => '', 'type' => '', 'tab' => 'contact'],
             'contact_zalo'            => ['value' => '', 'type' => '', 'tab' => 'contact'],
             'contact_email'           => ['value' => '', 'type' => '', 'tab' => 'contact'],
@@ -101,6 +109,9 @@ class OptionsTableSeeder extends Seeder
                 'type'  => '',
                 'tab'   => 'contact'
             ],
+            'contact_bank'            => ['value' => '', 'type' => '', 'tab' => 'contact'],
+            'contact_bank_number'     => ['value' => '', 'type' => '', 'tab' => 'contact'],
+            'contact_bank_owner'      => ['value' => '', 'type' => '', 'tab' => 'contact'],
 
             //Tab Common
             'common_banner_1'         => ['value' => '', 'type' => 'upload', 'tab' => 'common'],
@@ -119,6 +130,13 @@ class OptionsTableSeeder extends Seeder
             ],
             'common_banner_6'         => ['value' => '', 'type' => '', 'tab' => 'common'],
             'common_banner_6_status'  => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+
+            'banner_build_PC'          => [
+                'value' => 'https://placehold.co/1650x100',
+                'type'  => 'upload',
+                'tab'   => 'common'
+            ],
+            'banner_build_pc_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
 
             //Tab Title
             'title_1'                 => ['value' => '', 'type' => '', 'tab' => 'title'],

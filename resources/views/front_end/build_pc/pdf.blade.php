@@ -23,22 +23,22 @@
         <tbody>
         <tr>
             <td colspan="8" valign="right">
-                <b>CÔNG TY CP CÔNG NGHỆ PHONG HÀ</b>
+                <b>{{ $mainSettings['info_company']}}</b>
             </td>
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Địa chỉ ĐKKD: Showroom số 68 Trần phú - Thường tín- Hà nội
+                {{ $mainSettings['contact_address_company']}}
             </td>
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Điện thoại: 02473063686
+                Điện thoại: {{ $mainSettings['info_company']}}
             </td>
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Email: phonghacomputer.vn@gmail.com
+                Email: {{ $mainSettings['contact_hotline']}}
             </td>
         </tr>
         <tr>
@@ -135,17 +135,17 @@
         </tr>
         <tr>
             <td>
-                Ngân hàng Vpbank – Chi nhánh Thường tín - Hà Nội
+                {{ $mainSettings['contact_bank'] }}
             </td>
         </tr>
         <tr>
             <td>
-                STK: 0986560586
+                STK: {{ $mainSettings['contact_bank_number']}}
             </td>
         </tr>
         <tr>
             <td>
-                CTK: NGUYEN VAN VUONG
+                CTK: {{ $mainSettings['contact_bank_owner']}}
             </td>
         </tr>
         </tbody>

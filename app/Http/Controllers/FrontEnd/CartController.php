@@ -19,7 +19,7 @@ class CartController extends Controller
 
         /* Set meta */
         $metaTitle       = 'Giỏ hàng - phonghacomputer.vn';
-        $metaDescription = 'PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
+        $metaDescription = 'PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 078 692 6666';
         meta()->set('title', $metaTitle)
               ->set('og:title', $metaTitle)
               ->set('description', $metaDescription)
@@ -255,7 +255,7 @@ class CartController extends Controller
 
         /* Set meta */
         $metaTitle       = 'Đặt hàng thành công - phonghacomputer.vn';
-        $metaDescription = 'ĐẶT HÀNG THÀNH CÔNG - PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
+        $metaDescription = 'ĐẶT HÀNG THÀNH CÔNG - PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 078 692 6666';
         meta()->set('title', $metaTitle)
               ->set('og:title', $metaTitle)
               ->set('description', $metaDescription)

@@ -1020,7 +1020,7 @@ i{
 }
 
 .top-footer .item .nav-item-adress ul li a:hover{
-    color:#1b76bd;
+    color:#E30019;
 }
 
 .top-footer .item .nav-item-adress ul li i{
@@ -1036,9 +1036,6 @@ i{
     font-size:16px;
 }
 
-.top-footer .item .nav-item-adress li a:hover{
-    color:#fff !important;
-}
 
 .top-footer .social-footer li{
     display:inline-block;
