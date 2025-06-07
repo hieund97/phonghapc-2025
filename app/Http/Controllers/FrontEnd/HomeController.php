@@ -127,18 +127,18 @@ class HomeController extends Controller
         if (count($metaData) > 0) {
             /* Set meta */
             $robots = getMetaRobots('', 0);
-            meta()->set('title', $metaData['seo_meta_title'])
-                  ->set('description', $metaData['seo_meta_description'])
-                  ->set('og:title', $metaData['seo_meta_title'])
-                  ->set('og:description', $metaData['seo_meta_description'])
-                  ->set('og:site_name', $metaData['info_site_name'])
-                  ->set('keywords', $metaData['seo_meta_keyword'])
-                  ->set('og:image', $metaData['seo_meta_image'] ?? asset('ccc.png'))
-                  ->set('canonical', route('fe.home'))
-                  ->set('twitter:title', $metaData['seo_meta_title'])
-                  ->set('twitter:description', $metaData['seo_meta_description'])
-                  ->set('twitter:image', $metaData['seo_meta_image'] ?? asset('ccc.png'))
-            ;
+            // meta()->set('title', $metaData['seo_meta_title'])
+            //       ->set('description', $metaData['seo_meta_description'])
+            //       ->set('og:title', $metaData['seo_meta_title'])
+            //       ->set('og:description', $metaData['seo_meta_description'])
+            //       ->set('og:site_name', $metaData['info_site_name'])
+            //       ->set('keywords', $metaData['seo_meta_keyword'])
+            //       ->set('og:image', $metaData['seo_meta_image'] ?? asset('ccc.png'))
+            //       ->set('canonical', route('fe.home'))
+            //       ->set('twitter:title', $metaData['seo_meta_title'])
+            //       ->set('twitter:description', $metaData['seo_meta_description'])
+            //       ->set('twitter:image', $metaData['seo_meta_image'] ?? asset('ccc.png'))
+            // ;
 
             if ($robots) {
                 meta()->set('robots', $robots);

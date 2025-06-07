@@ -205,39 +205,40 @@
 {{--    </div>--}}
 {{--</header>--}}
 
-
-<div class="top-header topbar-banner d-lg-block d-xl-block d-none">
-    <div class="list-banners" style="height: auto; background-color: rgb(25, 27, 59);">
-        <div class="container-fluid">
-            <div class="item-banner fade-box active" data-bg="background-color:#191B3B;">
-                <a class="aspect-ratio" href="/pages/pc-gvn" aria-label="PC GVN KM T02" title="PC GVN KM T02">
-                    <img data-sizes="auto" class="lazyautosizes lazyloaded"
-                         src="{{ $mainSettings['info_header'] ?? '' }}"
-                         data-src="{{ $mainSettings['info_header'] ?? '' }}"
-                         alt="PC GVN KM T02" sizes="1200px">
-                </a>
-            </div>
-            <div class="item-banner fade-box" data-bg="background-color:#29353a;">
-                <a class="aspect-ratio" href="/pages/man-hinh" aria-label="Màn hình máy tính tháng 04"
-                   title="Màn hình máy tính tháng 04">
-                    <img data-sizes="auto" class="lazyload"
-                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                         data-src="https://file.hstatic.net/200000722513/file/man_hinh_thang_04_banner_29353a.jpg"
-                         alt="Màn hình máy tính tháng 04">
-                </a>
-            </div>
-            <div class="item-banner fade-box" data-bg="background-color:#0087e9;">
-                <a class="aspect-ratio" href="/pages/laptop-gaming" aria-label="Laptop gaming Tháng 04"
-                   title="Laptop gaming Tháng 04">
-                    <img data-sizes="auto" class="lazyload"
-                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                         data-src="https://file.hstatic.net/200000722513/file/thang_04_laptop_gaming_banner_0087e9.jpg"
-                         alt="Laptop gaming Tháng 04">
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+@if(isset($mainSettings['info_header_status']) && $mainSettings['info_header_status'] == 'on')
+   <div class="top-header topbar-banner p-0 d-lg-block d-xl-block d-none">
+      <div class="list-banners">
+         <div class="container-fluid p-0">
+               <div class="item-banner fade-box active" data-bg="background-color:#191B3B;">
+                  <a style="width: 100%" class="aspect-ratio" href="/pages/pc-gvn" aria-label="PC GVN KM T02" title="PC GVN KM T02">
+                     <img style="width: 100%" data-sizes="auto" class="lazyautosizes lazyloaded"
+                           src="{{ $mainSettings['info_header'] ?? '' }}"
+                           data-src="{{ $mainSettings['info_header'] ?? '' }}"
+                           alt="PC GVN KM T02" sizes="1200px">
+                  </a>
+               </div>
+               <div class="item-banner fade-box" data-bg="background-color:#29353a;">
+                  <a class="aspect-ratio" href="/pages/man-hinh" aria-label="Màn hình máy tính tháng 04"
+                     title="Màn hình máy tính tháng 04">
+                     <img data-sizes="auto" class="lazyload"
+                           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                           data-src="https://file.hstatic.net/200000722513/file/man_hinh_thang_04_banner_29353a.jpg"
+                           alt="Màn hình máy tính tháng 04">
+                  </a>
+               </div>
+               <div class="item-banner fade-box" data-bg="background-color:#0087e9;">
+                  <a class="aspect-ratio" href="/pages/laptop-gaming" aria-label="Laptop gaming Tháng 04"
+                     title="Laptop gaming Tháng 04">
+                     <img data-sizes="auto" class="lazyload"
+                           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                           data-src="https://file.hstatic.net/200000722513/file/thang_04_laptop_gaming_banner_0087e9.jpg"
+                           alt="Laptop gaming Tháng 04">
+                  </a>
+               </div>
+         </div>
+      </div>
+   </div>
+@endif
 <header class="main-header">
     <div class="main-header--top">
         <div class="container-fluid">

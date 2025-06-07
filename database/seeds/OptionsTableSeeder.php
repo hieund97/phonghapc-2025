@@ -25,6 +25,7 @@ class OptionsTableSeeder extends Seeder
                 'type'  => 'upload',
                 'tab'   => 'common'
             ],
+            'info_header_status'      => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'info_slogan'             => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_logo'               => ['value' => asset('images/logo.png'), 'type' => 'upload', 'tab' => 'info'],
             'info_logo_mobile'        => [
@@ -36,6 +37,7 @@ class OptionsTableSeeder extends Seeder
             'info_cover_image'        => ['value' => '', 'type' => 'upload', 'tab' => 'info'],
             'info_sale_prod_url'      => ['value' => '', 'type' => '', 'tab' => 'info'],
             'banner_hompage'          => ['value' => 'https://placehold.co/1650x100', 'type' => 'upload', 'tab' => 'common'],
+            'banner_hompage_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'info_installment'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_youtube_url'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'robots'                  => ['value' => 'index, follow', 'type' => '', 'tab' => 'seo'],

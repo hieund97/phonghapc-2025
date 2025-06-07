@@ -690,6 +690,7 @@
   "info_logo": "Logo",
   "info_logo_footer": "Logo chân trang",
   "info_header": "Banner đầu trang",
+  "info_header_status": "Hiển thị banner đầu trang",
   "info_favicon": "Favicon",
   "info_cover_image": "Ảnh cover gửi email",
   "info_sale_prod_url": "Link sản phẩm khuyến mãi",
@@ -799,5 +800,7 @@
   "Enter product sale price": "Nhập giá khuyến mại",
   "Border image": "Khung ảnh sản phẩm",
   "Use border": "Sử dụng khung ảnh",
-  "Profile": "Hồ sơ người dùng"
+  "Profile": "Hồ sơ người dùng",
+  "banner_hompage": "Ảnh banner trang chủ",
+  "banner_hompage_status": "Hiển thị banner trang chủ"
 }
