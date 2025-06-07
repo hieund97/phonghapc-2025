@@ -61,7 +61,7 @@ class PostController extends Controller
                             ->take(6)
         ;
         /* Set meta */
-        $metaTitle       = 'Tin tức công nghệ cập nhật 24h - maytinhnamha.vn';
+        $metaTitle       = 'Tin tức công nghệ cập nhật 24h - phonghacomputer.vn';
         $metaDescription = 'Thông tin công nghệ, thiết bị mới nhất được cập nhật hằng giờ. Tin về sản phẩm mới mắt, đánh giá sản phẩm, mẹo hay sử dụng...';
         $robots          = getMetaRobots('', 0);
         meta()->set('title', $metaTitle)

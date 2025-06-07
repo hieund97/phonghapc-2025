@@ -1,6 +1,6 @@
 <div id="build-pc-image">
     <div style="height:50px">
-        <p style="display:none">NAM HÀ COMPUTER</p>
+        <p style="display:none">PHONG HÀ COMPUTER</p>
     </div>
     <div style="display:flex; justify-content:center; margin-bottom:30px; margin-top:50px">
         <img style="width:160px" src="{{ asset('images/logo-dark.png') }}">
@@ -66,6 +66,6 @@
         </p>
     </div>
     <div style="height:50px">
-        <p style="display:none">NAM HÀ COMPUTER</p>
+        <p style="display:none">PHONG HÀ COMPUTER</p>
     </div>
 </div>

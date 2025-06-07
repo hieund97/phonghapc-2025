@@ -200,7 +200,7 @@
                 <b>Version</b> 2
             </div>
 
-            <strong>Copyright &copy; 2018-{{date('Y')}} <a
+            <strong>Copyright &copy; {{date('Y')}} <a
                         href="{{ config('admin.copy_right.url') }}">{{ config('admin.copy_right.name') }}</a>.</strong>
             All rights reserved.
         </footer>

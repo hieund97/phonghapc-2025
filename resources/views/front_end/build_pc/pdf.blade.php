@@ -23,7 +23,7 @@
         <tbody>
         <tr>
             <td colspan="8" valign="right">
-                <b>CÔNG TY CP CÔNG NGHỆ NAM HÀ</b>
+                <b>CÔNG TY CP CÔNG NGHỆ PHONG HÀ</b>
             </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Email: maytinhnamha.vn@gmail.com
+                Email: phonghacomputer.vn@gmail.com
             </td>
         </tr>
         <tr>

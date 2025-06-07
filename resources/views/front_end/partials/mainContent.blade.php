@@ -126,8 +126,7 @@
                                                     <a href="javascript:void(0)"
                                                        class="ajax-addtocart button-single-cart pc-add-cart"
                                                        data-id="{{ $product['id'] }}">
-                                                        <i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào
-                                                        giỏ
+                                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                                     </a>
 
                                                     <a href="javascript:void(0)"

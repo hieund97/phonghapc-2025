@@ -51,16 +51,16 @@
     </div>
 
     @include('front_end.partials.footer')
-    <div class="holine-footer">
-        <div class="holine-footer1">
-            <span class="title-holine">Holine</span>
-            <span class="holine-phone">{{ $mainSettings['contact_hotline'] }}</span>
-        </div>
-    </div>
-    <div id="btn-top">
-        <button><i class="fa fa-chevron-up"></i></button>
+{{--    <div class="holine-footer">--}}
+{{--        <div class="holine-footer1">--}}
+{{--            <span class="title-holine">Holine</span>--}}
+{{--            <span class="holine-phone">{{ $mainSettings['contact_hotline'] }}</span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div id="btn-top">--}}
+{{--        <button><i class="fa fa-chevron-up"></i></button>--}}
 {{--        <img src="{{ asset('images/back-to-top-icon.jpg') }}" alt="">--}}
-    </div>
+{{--    </div>--}}
 
     @include('front_end.partials.banner')
 

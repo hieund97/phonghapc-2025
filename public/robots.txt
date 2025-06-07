@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /search/suggest?q=*
-Sitemap: https://maytinhnamha.vn/sitemap.xml
+Sitemap: https://phonghacomputer.vn/sitemap.xml

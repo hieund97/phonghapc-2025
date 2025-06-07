@@ -100,7 +100,7 @@
                                                             href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id]) }}">{{ $post->title }}</a>
                                                 </h3>
                                                 <p class="date">{{ Carbon\Carbon::parse($post->published_at)->format('d/m/Y') }}</p>
-                                                <p class="desc">{{ strip_tags($post->excerpt) }}</p>
+                                                <p class="desc">{!! strip_tags($post->excerpt)  !!} </p>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>

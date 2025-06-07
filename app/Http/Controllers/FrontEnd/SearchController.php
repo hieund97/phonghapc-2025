@@ -28,7 +28,7 @@ class SearchController extends Controller
         $type     = 'product';
         if ($q) {
             /* Set meta */
-            $metaTitle = 'Kết quả tìm kiếm ' . $q . ' | maytinhnamha.vn';
+            $metaTitle = 'Kết quả tìm kiếm ' . $q . ' | phonghacomputer.vn';
 
             meta()->set('title', $metaTitle)
                   ->set('og:title', $metaTitle)

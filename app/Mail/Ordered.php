@@ -31,6 +31,6 @@ class Ordered extends Mailable implements ShouldQueue
      */
     public function build(): self
     {
-        return $this->subject('Đặt hàng thành công - maytinhnamha.vn')->markdown('emails.orders.ordered');
+        return $this->subject('Đặt hàng thành công - phonghacomputer.vn')->markdown('emails.orders.ordered');
     }
 }

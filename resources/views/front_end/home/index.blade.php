@@ -75,7 +75,7 @@
     <!-- End Main Product Homepage -->
 
     <!-- Slider customer -->
-    @include('front_end.partials.customer-slide')
+{{--    @include('front_end.partials.customer-slide')--}}
     <!-- End Slider customer -->
 @endsection
 

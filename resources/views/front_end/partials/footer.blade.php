@@ -1,71 +1,16 @@
 <footer id="footer-site">
-    <div class="top-footer wow fadeInUp">
-        <div class="container pd-10">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="title-footer">TỔNG ĐÀI HỖ TRỢ</h3>
-                    <div class="box-sp">
-                        <div class="row">
-                            <div class="col-lg-6 hotline-support item">
-                                <div class="item-support">
-                                    {!! $mainSettings['info_hotline_footer_1'] !!}
-                                </div>
-                            </div>
-                            <div class="col-lg-5 hotline-support second-support item">
-                                <div class="item-support">
-                                    {!! $mainSettings['info_hotline_footer_2'] !!}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 item">
-                    <h3 class="title-footer">Fanpage Facebook</h3>
-                    <div class="nav-item-adress">
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FM%25C3%2581Y-T%25C3%258DNH-PHONG-H%25C3%2580-100057216169392%2F&tabs=timeline&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2700411746766380"
-                                width="340" height="130" style="border:none;overflow:hidden" scrolling="no"
-                                frameborder="0" allowfullscreen="true"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </div>
-                </div>
-                <div class="col-lg-3 item">
-                    <h4 class="title">Liên kết mạng xã hội</h4>
-                    <div class="nav-item-adress">
-                        <ul class="social-footer">
-                            <li><a href="{{ $mainSettings['social_facebook_url'] }}"><img style="width:40px"
-                                                                                          src="{{ asset('images/facebook.png') }}"></a>
-                            </li>
-                            <li style="display: none"><a href=""><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li style="display: none"><a href=""><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li><a href="{{ $mainSettings['social_youtube_url'] }}"><img style="width:40px"
-                                                                                         src="{{ asset('images/youtube-footer.png') }}"></a>
-                            </li>
-                            <li style="display: none"><a href=""><i class="fab fa-google"></i></a>
-                            </li>
-                        </ul>
-                        <div class="tb bo-cong-thuong">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @include('front_end.partials.block-benefit')
     <div class="top-footer footer-bottom wow fadeInUp">
         <div class="container">
             <div class="row">
-                <div class="col-md-2" style="margin-top:15px; padding:15px">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <a href="{{ route('fe.home') }}" class="logo-footer">
                         <img class="lazy entered loaded" data-src="/uploads/images/untitled-1.png"
-                             alt="CÔNG TY CP CÔNG NGHỆ NAM HÀ" data-ll-status="loaded"
+                             alt="CÔNG TY CP CÔNG NGHỆ PHONG HÀ" data-ll-status="loaded"
                              src="{{ $mainSettings['info_logo_footer'] }}">
                     </a>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="title-footer">
-                        {{ $mainSettings['info_company'] ?? 'CÔNG TY CP CÔNG NGHỆ NAM HÀ'}}
+                        {{ $mainSettings['info_company'] ?? 'CÔNG TY CP CÔNG NGHỆ PHONG HÀ'}}
                     </div>
                     <div class="nav-bottom">
                         <p><span>Địa chỉ: </span>{{ $mainSettings['contact_address_company'] }}</p>
@@ -99,9 +44,14 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-md-1 col-sm-4 col-xs-12">
+                <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="map-footer">
-                        <!--                        -->                    </div>
+                        <h3 class="title-footer">Fanpage Facebook</h3>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FM%25C3%2581Y-T%25C3%258DNH-PHONG-H%25C3%2580-100057216169392%2F&tabs=timeline&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2700411746766380"
+                                width="385" height="159" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,16 +59,92 @@
     </div>
 
 
-    <div class="copy-right">
-        <div class="container">
-            <div class="wp-copy text-center" style="color:#fff">
-                {{ $mainSettings['info_copyright'] }}
-            </div>
-        </div>
-    </div>
+    {{--    <div class="copy-right">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="wp-copy text-center" style="color:#fff">--}}
+    {{--                {{ $mainSettings['info_copyright'] }}--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
 </footer>
 
 <style type="text/css" media="screen">
+
+    @media (min-width:1650px){
+        .container-benefit{
+            width:100%;
+
+        }
+    }
+
+    .container-benefit{
+        width:100%;
+        max-width:100%;
+        padding:0 10px;
+        margin-right:auto;
+        margin-left:auto;
+        background:#e5e5e5;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .ph-footer-policies{
+        width: 1200px;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-moz-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+        -moz-box-align:center;
+        -ms-flex-align:center;
+        align-items:center;
+        -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+        -webkit-box-pack:justify;
+        -webkit-justify-content:space-between;
+        -moz-box-pack:justify;
+        -ms-flex-pack:justify;
+        justify-content:space-between;
+        padding-bottom:25px;
+        padding-top:0
+    }
+
+    .policy-container{
+        width:25%;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-moz-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+        -moz-box-align:center;
+        -ms-flex-align:center;
+        align-items:center;
+        margin-top:30px
+    }
+
+    .policy-icon{
+        color:#ed1b24;
+        font-size:32px;
+        margin-right:15px
+    }
+
+    .policy-info-title{
+        font-size:16px;
+        font-weight:700;
+        margin:0
+    }
+
+    .policy-info-content{
+        display:block;
+        font-size:13px
+    }
+
     .wp-copy.text-center{
         text-align:center;
     }
@@ -227,36 +253,45 @@
     .fillter_bl .content_fillter [class^="group-fillter fill-key-"] .attribute-title:after{
 
     }
+
+    }
 </style>
 <div class="right-pc-position is-pc">
-    <a class="contact-box-wrapper nut-chat-facebook" href="{{ $mainSettings['social_facebook_url'] }}" target="_blank"
-       rel="nofollow">
-        <div class="contact-icon-box" style="border: none;margin-right:10px"><img
-                    src="{{ asset('images/facebook.png') }}"></div>
-        <div class="contact-info">
-            <b>Fanpage Facebook</b>
-        </div>
-    </a>
+    @if($mainSettings['social_facebook_url'])
+        <a class="contact-box-wrapper nut-chat-facebook" href="{{ $mainSettings['social_facebook_url'] }}"
+           target="_blank"
+           rel="nofollow">
+            <div class="contact-icon-box" style="border: none;margin-right:10px"><img
+                        src="{{ asset('images/facebook.png') }}"></div>
+            <div class="contact-info">
+                <b>Fanpage Facebook</b>
+            </div>
+        </a>
+    @endif
 
-    <a class="contact-box-wrapper nut-chat-zalo" href="http://zalo.me/{{ $mainSettings['contact_zalo'] }}"
-       target="_blank" rel="nofollow">
-        <div class="contact-icon-box" style="border: none;">
-            <img style="margin-bottom:10px" src="{{ asset('images/logo-zalo.png') }}">
-        </div>
-        <div class="contact-info">
-            <b>Chat Zalo</b>
-            <span>({{ $mainSettings['contact_zalo'] }})</span>
-        </div>
-    </a>
+    @if($mainSettings['contact_zalo'])
+        <a class="contact-box-wrapper nut-chat-zalo" href="http://zalo.me/{{ $mainSettings['contact_zalo'] }}"
+           target="_blank" rel="nofollow">
+            <div class="contact-icon-box" style="border: none;">
+                <img style="margin-bottom:10px" src="{{ asset('images/logo-zalo.png') }}">
+            </div>
+            <div class="contact-info">
+                <b>Chat Zalo</b>
+                <span>{{ $mainSettings['contact_zalo'] }}</span>
+            </div>
+        </a>
+    @endif
 
-    <a class="contact-box-wrapper nut-goi-hotline" href="{{ $mainSettings['social_youtube_url'] }}" rel="nofollow">
-        <div class="contact-icon-box" style="color: #ed1b24;">
-            <img style="margin-bottom:10px" src="{{ asset('images/youtube-footer.png') }}">
-        </div>
-        <div class="contact-info">
-            <b>Kênh Youtube</b>
-        </div>
-    </a>
+    @if($mainSettings['social_youtube_url'])
+        <a class="contact-box-wrapper nut-goi-hotline" href="{{ $mainSettings['social_youtube_url'] }}" rel="nofollow">
+            <div class="contact-icon-box" style="color: #ed1b24;">
+                <img style="margin-bottom:10px" src="{{ asset('images/youtube-footer.png') }}">
+            </div>
+            <div class="contact-info">
+                <b>Kênh Youtube</b>
+            </div>
+        </a>
+    @endif
 </div>
 
 <div class="right-pc-position is-mobile">

@@ -6,6 +6,7 @@
                     <div class="header-new-bot">
                         <div class="list-content">
                             <div class="item-n menu-main item-n-first">
+                                @if(count($mainHeaders) > 0)
                                 <ul class="menu-main-sub">
                                     @foreach ($mainHeaders as $cate)
                                         @if ($cate->parent == null)
@@ -25,6 +26,7 @@
                                         @endif
                                     @endforeach
                                 </ul>
+                                @endif
                             </div>
                         </div>
                     </div>

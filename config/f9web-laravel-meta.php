@@ -23,7 +23,7 @@ return [
          'og:locale'=>'vi_VN',
          'og:locale:alternate'=>'vi_VN',
          'og:type'=>'website',
-         'og:site_name'=>'Showroom Máy Tính | maytinhnamha.vn',
+         'og:site_name'=>'Showroom Máy Tính | phonghacomputer.vn',
          
     ],
 

@@ -37372,7 +37372,7 @@ class WardsTableSeeder extends Seeder
             148 =>
                 [
                     'id'          => 4149,
-                    'name'        => 'Xã Nam Hà',
+                    'name'        => 'Xã PHONG HÀ',
                     'gso_id'      => '13054',
                     'district_id' => 239,
                     'created_at'  => '2020-07-10 10:44:52',
@@ -51493,7 +51493,7 @@ class WardsTableSeeder extends Seeder
             216 =>
                 [
                     'id'          => 5717,
-                    'name'        => 'Phường Nam Hà',
+                    'name'        => 'Phường PHONG HÀ',
                     'gso_id'      => '18073',
                     'district_id' => 314,
                     'created_at'  => '2020-07-10 10:44:53',
@@ -72532,7 +72532,7 @@ class WardsTableSeeder extends Seeder
             52  =>
                 [
                     'id'          => 8053,
-                    'name'        => 'Xã Nam Hà',
+                    'name'        => 'Xã PHONG HÀ',
                     'gso_id'      => '24925',
                     'district_id' => 490,
                     'created_at'  => '2020-07-10 10:44:55',

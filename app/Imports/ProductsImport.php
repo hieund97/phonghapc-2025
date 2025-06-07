@@ -27,7 +27,7 @@ class ProductsImport implements ToCollection
         //            if (!empty($row[14])) {
         //                $name =  $name . ' ' . $row[14];
         //            }
-        //            $urlOld = 'https://maytinhnamha.vn/products/' . $row[0];
+        //            $urlOld = 'https://phonghacomputer.vn/products/' . $row[0];
         //            $parentId = null;
         //            $firstParent = Product::where("url_old", $urlOld)->first();
         //            if (!empty($firstParent->id)) {

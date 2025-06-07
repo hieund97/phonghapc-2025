@@ -18,8 +18,8 @@ class CartController extends Controller
         $cartCollection = Cart::getContent();
 
         /* Set meta */
-        $metaTitle       = 'Giỏ hàng - maytinhnamha.vn';
-        $metaDescription = 'NAM HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
+        $metaTitle       = 'Giỏ hàng - phonghacomputer.vn';
+        $metaDescription = 'PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
         meta()->set('title', $metaTitle)
               ->set('og:title', $metaTitle)
               ->set('description', $metaDescription)
@@ -254,8 +254,8 @@ class CartController extends Controller
         $order   = Order::whereOrderId($orderId)->firstOrFail();
 
         /* Set meta */
-        $metaTitle       = 'Đặt hàng thành công - maytinhnamha.vn';
-        $metaDescription = 'ĐẶT HÀNG THÀNH CÔNG - NAM HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
+        $metaTitle       = 'Đặt hàng thành công - phonghacomputer.vn';
+        $metaDescription = 'ĐẶT HÀNG THÀNH CÔNG - PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
         meta()->set('title', $metaTitle)
               ->set('og:title', $metaTitle)
               ->set('description', $metaDescription)
