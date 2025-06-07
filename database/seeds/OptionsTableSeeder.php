@@ -25,6 +25,7 @@ class OptionsTableSeeder extends Seeder
                 'type'  => 'upload',
                 'tab'   => 'common'
             ],
+            'info_header_url'         => ['value' => '', 'type' => '', 'tab' => 'common'],
             'info_header_status'      => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'info_slogan'             => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_logo'               => ['value' => asset('images/logo.png'), 'type' => 'upload', 'tab' => 'info'],
@@ -45,6 +46,7 @@ class OptionsTableSeeder extends Seeder
                 'type'  => 'upload',
                 'tab'   => 'common'
             ],
+            'banner_hompage_url'      => ['value' => '', 'type' => '', 'tab' => 'common'],
             'banner_hompage_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'info_installment'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_youtube_url'        => ['value' => '', 'type' => '', 'tab' => 'info'],
