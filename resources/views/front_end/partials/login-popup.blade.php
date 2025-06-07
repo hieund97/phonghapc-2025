@@ -1,8 +1,6 @@
 {{--Pop up Login--}}
 <div class="global-popup-login" style="display: block; display:none">
     <div class="global-popup-content">
-        <div class="item-left-login"><img src="{{ asset('images/login-popup.png') }}" alt="popup"
-                                    class="lazy loading" data-was-processed="true"></div>
 
         <div class="item-right-login" id="js-popup-holder">
         </div>

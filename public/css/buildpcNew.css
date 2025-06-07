@@ -951,7 +951,9 @@ ul{
 }
 
 .build-pc .build-pc_content .list-drive{
-    list-style-type:none
+    list-style-type:none;
+    background-color:#fff;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.25);
 }
 
 .build-pc .build-pc_content .list-drive .item-drive{

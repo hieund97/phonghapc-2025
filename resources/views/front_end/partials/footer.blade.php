@@ -6,19 +6,15 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <a href="{{ route('fe.home') }}" class="logo-footer">
                         <img class="lazy entered loaded" data-src="/uploads/images/untitled-1.png"
-                             alt="CÔNG TY CP CÔNG NGHỆ PHONG HÀ" data-ll-status="loaded"
+                             alt="MÁY TÍNH PHONG HÀ" data-ll-status="loaded"
                              src="{{ $mainSettings['info_logo_footer'] }}">
                     </a>
                     <div class="title-footer">
-                        {{ $mainSettings['info_company'] ?? 'CÔNG TY CP CÔNG NGHỆ PHONG HÀ'}}
+                        {{ $mainSettings['info_company']}}
                     </div>
                     <div class="nav-bottom">
                         <p><span>Địa chỉ: </span>{{ $mainSettings['contact_address_company'] }}</p>
-                        <p>
-                            <span>Địa chỉ kinh doanh: </span>{{ $mainSettings['contact_address_company_for_sale'] ?? '' }}
-                        </p>
-                        <p style="color:#fff!important">
-                            <span>Điện thoại: </span>{{ $mainSettings['contact_phone_company'] }}</p>
+
                         <p><span>Email: </span>{{ $mainSettings['contact_email'] }}</p>
                         <p><span>Hotline: </span>{{ $mainSettings['contact_hotline'] }}</p>
                     </div>
@@ -90,7 +86,7 @@
     }
 
     .ph-footer-policies{
-        width: 1200px;
+        width: 1500px;
         display:-webkit-box;
         display:-webkit-flex;
         display:-moz-box;
