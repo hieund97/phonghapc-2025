@@ -151,17 +151,17 @@ class OptionsTableSeeder extends Seeder
 
             //Tab SEO
             'seo_meta_title'          => [
-                'value' => '',
+                'value' => 'Phong hà computer',
                 'type'  => '',
                 'tab'   => 'seo'
             ],
             'seo_meta_keyword'        => [
-                'value' => '',
+                'value' => 'Phong hà computer',
                 'type'  => '',
                 'tab'   => 'seo'
             ],
             'seo_meta_description'    => [
-                'value' => '',
+                'value' => 'Phong hà computer',
                 'type'  => '',
                 'tab'   => 'seo'
             ],
