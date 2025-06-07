@@ -20,13 +20,6 @@ class OptionsTableSeeder extends Seeder
             'info_site_name'          => ['value' => 'Phong Hà Computer', 'type' => '', 'tab' => 'info'],
             'info_company'            => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_site_description'   => ['value' => '', 'type' => '', 'tab' => 'info'],
-            'info_header'             => [
-                'value' => 'https://placehold.co/1422x56',
-                'type'  => 'upload',
-                'tab'   => 'common'
-            ],
-            'info_header_url'         => ['value' => '', 'type' => '', 'tab' => 'common'],
-            'info_header_status'      => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'info_slogan'             => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_logo'               => ['value' => asset('images/logo.png'), 'type' => 'upload', 'tab' => 'info'],
             'info_logo_mobile'        => [
@@ -39,59 +32,11 @@ class OptionsTableSeeder extends Seeder
                 'type'  => 'upload',
                 'tab'   => 'info'
             ],
-            'info_cover_image'        => ['value' => '', 'type' => 'upload', 'tab' => 'info'],
             'info_sale_prod_url'      => ['value' => '', 'type' => '', 'tab' => 'info'],
-            'banner_hompage'          => [
-                'value' => 'https://placehold.co/1650x100',
-                'type'  => 'upload',
-                'tab'   => 'common'
-            ],
-            'banner_hompage_url'      => ['value' => '', 'type' => '', 'tab' => 'common'],
-            'banner_hompage_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+
             'info_installment'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'info_youtube_url'        => ['value' => '', 'type' => '', 'tab' => 'info'],
             'robots'                  => ['value' => 'index, follow', 'type' => '', 'tab' => 'seo'],
-            //'info_hotline_footer_1'   => [
-            //    'value' => '<p><strong><span style="font-size:16px;">Tổng Đài Hỗ Trợ</span></strong></p>
-            //
-            //                <p><a href="http://tel:078 692 6666"><span style="color:#ffffff;">024.730.63686</span></a>&nbsp;&nbsp;(8h00- 18h30)</p>
-            //
-            //                <p>- Nhánh 1 Phòng KD&nbsp;bán lẻ.</p>
-            //
-            //                <p>- Nhánh 2 phòng KD dự án.</p>
-            //
-            //                <p>- Nhánh 3&nbsp;phòng kỹ thuật dịch vụ - bảo hành.</p>
-            //
-            //                <p>- Nhánh 4 hỗ trợ camera giám sát.</p>
-            //                ',
-            //    'type'  => 'textarea',
-            //    'tab'   => 'info'
-            //],
-            //'info_hotline_footer_2'   => [
-            //    'value' => '<p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial">Mr.Khải:&nbsp;<span style="box-sizing:border-box"><span style="color:#3498db"><u style="box-sizing:border-box; color:#ffffff">KD Laptop</u></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><img alt="zalo" data-src="/template/oct2020/images/zalo-icon-2020.png" data-was-processed="true" src="'.$iconZalo.'" style="box-sizing:border-box; border:0px; vertical-align:middle; max-width:100%; transition:all 0.7s ease 0s; color:#ffffff; width:21px; height:20px" />&nbsp;<a href="tel:0984.284.101" style="box-sizing:border-box; background:0px 0px; color:#ffffff; text-decoration:none"><span style="box-sizing:border-box"><span style="color:#ffffff">0984.284.101</span></span></a>&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial">Mr.Tuấn KD&nbsp;<span style="box-sizing:border-box"><span style="color:#3498db"><u style="box-sizing:border-box; color:#ffffff">PC - M&aacute;y T&iacute;nh Để B&agrave;n</u></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><img alt="zalo" data-src="/template/oct2020/images/zalo-icon-2020.png" data-was-processed="true" src="'.$iconZalo.'" style="box-sizing:border-box; border:0px; vertical-align:middle; max-width:100%; transition:all 0.7s ease 0s; color:#ffffff; width:21px; height:20px" />&nbsp;<a href="tel:0987.197.719" style="box-sizing:border-box; background:0px 0px; color:#ffffff; text-decoration:none"><span style="box-sizing:border-box"><span style="color:#ffffff">0987.197.719</span></span></a>&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial">Mr.Bắc KD&nbsp;<a href="https://phonghacomputer.vn/camera-giam-sat.html" style="box-sizing:border-box; background:0px 0px; color:#ffffff; text-decoration:none"><font color="#3498db"><font style="box-sizing:border-box; color:#ffffff"><u style="box-sizing:border-box; color:#ffffff">Camera Gi&aacute;m s&aacute;t</u></font></font></a></span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><img alt="zalo" data-src="/template/oct2020/images/zalo-icon-2020.png" data-was-processed="true" src="'.$iconZalo.'" style="box-sizing:border-box; border:0px; vertical-align:middle; max-width:100%; transition:all 0.7s ease 0s; color:#ffffff; width:21px; height:20px" />&nbsp;<a href="tel:0966.844.886" style="box-sizing:border-box; background:0px 0px; color:#ffffff; text-decoration:none">0966.844.886</a>&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p style="text-align:start; margin-bottom:10px"><span style="font-size:14px"><span style="box-sizing:border-box"><span style="color:#ffffff"><span style="font-family:Play, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#555555"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial">Mr Vương&nbsp;<span style="box-sizing:border-box"><span style="color:#3498db"><u style="box-sizing:border-box; color:#ffffff">KD Dự &Aacute;n - Doanh Nghiệp</u></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-            //
-            //                <p><img alt="zalo" data-src="/template/oct2020/images/zalo-icon-2020.png" data-was-processed="true" height="20" src="'.$iconZalo.'" width="21" />&nbsp;<a href="tel:0336.555.966">0336.555.966</a>&nbsp;</p>
-            //               ',
-            //    'type'  => 'textarea',
-            //    'tab'   => 'info'
-            //],
-            //'info_copyright'          => [
-            //    'value' => 'Mã số thuế: 0109810789 - Do sở kế hoạch và đầu tư thành phố Hà Nội Cấp ngày 10/11/2021',
-            //    'type'  => '',
-            //    'tab'   => 'info'
-            //],
             'info_status'             => ['value' => 'open', 'type' => 'dropdown', 'tab' => 'info'],
 
             //Tab Contact
@@ -116,6 +61,20 @@ class OptionsTableSeeder extends Seeder
             'contact_bank_owner'      => ['value' => '', 'type' => '', 'tab' => 'contact'],
 
             //Tab Common
+            'info_header'             => [
+                'value' => 'https://placehold.co/1422x56',
+                'type'  => 'upload',
+                'tab'   => 'common'
+            ],
+            'info_header_url'         => ['value' => '', 'type' => '', 'tab' => 'common'],
+            'info_header_status'      => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
+            'banner_hompage'          => [
+                'value' => 'https://placehold.co/1650x100',
+                'type'  => 'upload',
+                'tab'   => 'common'
+            ],
+            'banner_hompage_url'      => ['value' => '', 'type' => '', 'tab' => 'common'],
+            'banner_hompage_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
             'common_banner_1'         => ['value' => '', 'type' => 'upload', 'tab' => 'common'],
             'common_banner_2'         => ['value' => '', 'type' => '', 'tab' => 'common'],
             'common_banner_3'         => [
@@ -139,17 +98,6 @@ class OptionsTableSeeder extends Seeder
                 'tab'   => 'common'
             ],
             'banner_build_pc_status'   => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'common'],
-
-            //Tab Title
-            'title_1'                 => ['value' => '', 'type' => '', 'tab' => 'title'],
-            'title_2'                 => ['value' => '', 'type' => 'textarea', 'tab' => 'title'],
-            'title_3'                 => ['value' => '', 'type' => '', 'tab' => 'title'],
-            'title_4'                 => [
-                'value' => 'Liên Hệ Với Kinh Doanh Online',
-                'type'  => 'textarea',
-                'tab'   => 'title'
-            ],
-            'title_qr'                => ['value' => '', 'type' => '', 'tab' => 'title'],
 
             //Tab SEO
             'seo_meta_title'          => [
@@ -190,33 +138,6 @@ class OptionsTableSeeder extends Seeder
             'popup_image'             => ['value' => '', 'type' => 'upload', 'tab' => 'popup'],
             'popup_links'             => ['value' => '', 'type' => '', 'tab' => 'popup'],
             'popup_status'            => ['value' => 'off', 'type' => 'dropdown', 'tab' => 'popup'],
-
-            //'shop_list_url' => ['value' => '', 'type' => ''],
-            //'facebook_url'  => ['value' => 'https://www.facebook.com/phonghacomputer68', 'type' => '', 'tab' => ],
-            //'twitter_url'   => ['value' => 'https://twitter.com/home', 'type' => ''],
-            //'instagram_url' => ['value' => 'https://www.instagram.com//', 'type' => ''],
-            //'phone_company' => ['value' => '0359.71.74.68', 'type' => ''],
-            //
-            //'robots'              => ['value' => 'noindex, nofollow', 'type' => ''],
-            //'footer'              => ['value' => '', 'type' => 'textarea'],
-            //'header'              => ['value' => '', 'type' => 'textarea'],
-            //'messenger'           => ['value' => 'https://www.messenger.com/', 'type' => ''],
-            //'zalo'                => ['value' => '0925588666', 'type' => ''],
-            //'seo_schema'          => ['value' => '', 'type' => 'textarea'],
-            //'cart_successfull'    => ['value' => '', 'type' => 'textarea'],
-            //'is_popup'            => ['value' => '', 'type' => 'checkbox'],
-            //'popup'               => ['value' => '', 'type' => 'textarea'],
-            //'popup_start'         => ['value' => '', 'type' => ''],
-            //'popup_time'          => ['value' => '', 'type' => ''],
-            //'buy_contact'         => ['value' => '', 'type' => ''],
-            //'post_description'    => ['value' => '', 'type' => 'textarea'],
-            //'post_banner'         => ['value' => '', 'type' => 'upload'],
-            //'post_banner_url'     => ['value' => '', 'type' => ''],
-            //'captcha_secret'      => ['value' => '', 'type' => ''],
-            //'captcha_sitekey'     => ['value' => '', 'type' => ''],
-            //'policy_sell_product' => ['value' => '', 'type' => 'textarea'],
-            //'policy_exchange'     => ['value' => '', 'type' => 'textarea'],
-            //'dmca'                => ['value' => '', 'type' => 'textarea'],
         ];
 
         foreach ($options as $name => $row) {
