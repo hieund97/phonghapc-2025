@@ -613,9 +613,9 @@
     width:100% !important;
 }
 
-.content-box-tskt {
-    border-radius: 10px 10px 0 0 !important;
-}
+/*.content-box-tskt {*/
+/*    border-radius: 10px 10px 0 0 !important;*/
+/*}*/
 
 .content-box-tskt table span{
     background:transparent !important;
@@ -933,9 +933,6 @@ div#gallery_01 .owl-prev .fa:before{
 
 .content-box{
     position:relative;
-    box-shadow:0 1px 8px 0 rgba(0,0,0,.25);
-    border-radius: 10px;
-    padding:20px;
 }
 
 .content-thong-so{
@@ -1062,7 +1059,7 @@ a.viewmoretskt{
 }
 
 .readmore .btn-seemore-tskt {
-    border-radius: 0 0 10px 10px !important;
+    border-radius:10px !important;
 }
 
 .readmore button:hover {
