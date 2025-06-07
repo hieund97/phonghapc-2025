@@ -3,11 +3,11 @@
         <div class="list-banners">
             <div class="container-fluid p-0">
                 <div class="item-banner fade-box active" data-bg="background-color:#191B3B;">
-                    <a style="width: 100%" class="aspect-ratio" href="#" aria-label="Banner header"
-                        title="Banner header">
+                    <a style="width: 100%" class="aspect-ratio" href="{{ $mainSettings['info_header_url'] ?? '' }}" aria-label="{{ $mainSettings['seo_meta_title'] ?? '' }}"
+                        title="{{ $mainSettings['seo_meta_title'] ?? '' }}">
                         <img style="width: 100%" data-sizes="auto" class="lazyautosizes lazyloaded"
                             src="{{ $mainSettings['info_header'] ?? '' }}"
-                            data-src="{{ $mainSettings['info_header'] ?? '' }}" alt="Banner header" sizes="1200px">
+                            data-src="{{ $mainSettings['info_header'] ?? '' }}" alt="{{ $mainSettings['seo_meta_title'] ?? '' }}" sizes="1200px">
                     </a>
                 </div>
             </div>
