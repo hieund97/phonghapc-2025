@@ -172,7 +172,13 @@
                                                                 </a>
                                                             </div>
                                                             <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6" style="cursor: pointer">
-                                                                <a class="action-button">Trả góp</a>
+                                                                <a class="action-button ajax-addtocart"
+                                                                   data-id="{{ $product->id }}"
+                                                                   data-config="original"
+                                                                   data-checkConfig="{{ checkHasConfig($product->config) ? 1 : 0 }}"
+                                                                   data-buyNow="1"
+                                                                   data-installment="1"
+                                                                >Trả góp</a>
                                                             </div>
                                                             <div class="buy-item col-md-6 col-sm-6 col-xs-6 col-lg-6">
                                                                 <a href="javascript:void(0)"
@@ -193,9 +199,6 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="col-md-3 col-sm-12 col-xs-12">--}}
-{{--                            @include('front_end.partials.content-right', ['contacts' => $contacts])--}}
-{{--                        </div>--}}
                     </div>
                     <div class="row row-col row-mobile" style="margin-top: 30px">
                         <div class="col-md-6 col-sm-12 col-xs-12">

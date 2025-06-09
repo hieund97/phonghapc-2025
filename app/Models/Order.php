@@ -20,6 +20,11 @@ class Order extends Model
         8 => 'PaymentFailed',
     ];
 
+    public static $PAYMENTTYPE = [
+        "buy_directly" => 1,
+        "installment" => 2,
+    ];
+
     /* */
     /**
      * The attributes that are mass assignable.
@@ -49,6 +54,7 @@ class Order extends Model
         'payment_method',
         'provider_order_id',
         'provider_message',
+        'buy_type',
     ];
 
     public function orderProducts(): HasMany
@@ -72,7 +78,20 @@ class Order extends Model
     public function getCustomerAddressAttribute()
     {
         if (!empty($this->address)) {
-            return collect($this->address->only(['address', 'street', 'ward', 'district', 'province', 'country']))
+            $address = $this->address;
+            $province = $address->provinceDetail->name;
+            $district = $address->districtDetail->name;
+            $ward = $address->wardDetail->name;
+
+            $resultAddress = [
+                $address->address,
+                $ward,
+                $district,
+                $province,
+                $address->country,
+            ];
+
+            return collect($resultAddress)
                 ->filter()
                 ->values()
                 ->implode(', ');

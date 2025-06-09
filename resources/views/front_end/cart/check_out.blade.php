@@ -84,7 +84,7 @@
                                     </p>
                                     <p class="item-status">
                                         <span style="color:#db0006;">Mã sản phẩm: {{ $item->product->serial }}</span>
-                                    </p>    
+                                    </p>
                                     {{-- <p class="item-status">
                                         <span>{!! $item->product->description !!}</span>
                                     </p>
@@ -103,11 +103,16 @@
                             <div class="item-right">
                                 <div class="item-price-holder">
                                     <p class="total-item-price">
-                                <span class="js-total-item-price total-item-{{ $item->id }}">
-                                     {{ $item->amount }} x @money($item->price)
-                                </span>
+                                        <span class="js-total-item-price total-item-{{ $item->id }}">
+                                             {{ $item->amount }} x @money($item->price)
+                                        </span>
                                     </p>
                                 </div>
+                                @if(isset($order->buy_type) && $order->buy_type == \App\Models\Order::$PAYMENTTYPE["installment"])
+                                    <div class="image-installment" style="width: 140px;">
+                                        <img src="{{ asset('images/tra-gop.png') }}" alt="Trả góp">
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endforeach
