@@ -50,6 +50,7 @@ class Checkout extends FormRequest
             'address.country'             => 'required|string|max:30',
             'payment_method'              => 'nullable|string||in:' . implode(',',
                     array_keys(config('admin.payment_method'))),
+            'buy_type'                    => "required|in:1,2",
             'month'                       => 'nullable|integer',
             'bank_code'                   => [
                 'required_with:month',

@@ -22,13 +22,13 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>{{__('ID')}}</label>
-                            <input name="id" value="{{ request('id') }}" class="form-control" placeholder="{{__('ID')}}">         
+                            <input name="id" value="{{ request('id') }}" class="form-control" placeholder="{{__('ID')}}">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>{{__('Customer Name')}}</label>
-                            <input name="customer_name" value="{{ request('customer_name') }}" class="form-control" placeholder="{{__('Customer Name')}}">         
+                            <input name="customer_name" value="{{ request('customer_name') }}" class="form-control" placeholder="{{__('Customer Name')}}">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -50,8 +50,8 @@
                                         {{ __($row) }}
                                     </option>
                                 @endforeach
-                            </select>         
-                        </div>        
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-3">
                         <!-- Date range -->
@@ -66,22 +66,34 @@
                                 <input type="text" name="created_at" value="{{ request('created_at') }}" class="form-control float-right" id="reservation">
                             </div>
                         <!-- /.input group -->
-                        </div> 
+                        </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="order_id">Mã đơn hàng</label>
                             <input id="order_id" class="form-control" type="text" name="order_id" value="{{ request('order_Id') }}">
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="provider_order_id">Mã giao dịch</label>
                             <input id="provider_order_id" class="form-control" type="text" name="provider_order_id" value="{{ request('provider_order_id') }}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="buy_type">{{ __("Buy Type") }}</label>
+                            <select id="buy_type" class="form-control" type="text" name="buy_type">
+                                <option value="" selected disabled hidden></option>
+                                <option value="{{ \App\Models\Order::$PAYMENTTYPE["buy_directly"] }}"
+                                    {{ (int)request('buy_type') === \App\Models\Order::$PAYMENTTYPE["buy_directly"] ? "selected" : "" }}>{{ __("Buy Directly") }}</option>
+                                <option value="{{ \App\Models\Order::$PAYMENTTYPE["installment"] }}"
+                                    {{ (int)request('buy_type') === \App\Models\Order::$PAYMENTTYPE["installment"] ? "selected" : "" }}>{{ __("Installment") }}</option>
+                            </select>
                         </div>
                     </div>
                 </div>

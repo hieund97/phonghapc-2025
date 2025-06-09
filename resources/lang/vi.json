@@ -812,5 +812,8 @@
   "Profile": "Hồ sơ người dùng",
   "banner_hompage": "Ảnh banner trang chủ",
   "banner_hompage_url": "Url banner trang chủ",
-  "banner_hompage_status": "Hiển thị banner trang chủ"
+  "banner_hompage_status": "Hiển thị banner trang chủ",
+  "Buy Type": "Hình thức thanh toán",
+  "Installment": "Trả góp",
+  "Buy Directly": "Trả thẳng"
 }

@@ -46,6 +46,9 @@ class OrderController extends Controller
             ->when($request->provider_order_id, function ($query) use ($request) {
                 $query->where('provider_order_id', $request->provider_order_id);
             })
+            ->when($request->buy_type, function ($query) use ($request) {
+                $query->where('buy_type', $request->buy_type);
+            })
             ->with(['address', 'orderProducts.product:id,name'])
             ->orderBy('id', 'desc')
             ->paginate();
