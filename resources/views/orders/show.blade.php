@@ -39,12 +39,14 @@
               </address>
             </div>
             <!-- /.col -->
-            <div class="col-sm-4 invoice-col">
+            <div class="col-sm-4 invoice-col pb-2">
               <b>{{ __('ID') }}  #{{$order->id}}</b><br>
               <br>
-              <b>{{ __('Coupon Code') }}:</b> {{$order->coupon_code }}<br>
-              <b>{{ __('Created At') }}:</b> {{ formatDateTimeShow($order->created_at) }}<br>
-              <b>{{ __('Status') }}:</b> {{ __($orderStatus[$order->status]) }}
+              <b>{{ __('Coupon Code') }}: </b> {{$order->coupon_code }}<br>
+              <b>{{ __('Created At') }}: </b> {{ formatDateTimeShow($order->created_at) }}<br>
+              <b>{{ __('Status') }}: </b> {{ __($orderStatus[$order->status]) }}<br>
+              <b>{{ __('Buy Type') }}: </b>{{ $order->buy_type == \App\Models\Order::$PAYMENTTYPE["installment"] ? __("Installment") : __("Buy Directly") }}
+
             </div>
             <!-- /.col -->
           </div>
@@ -67,7 +69,7 @@
           <div class="row no-print" style="padding-top: 15px;">
             <div class="col-12">
             <a href="{{route('orders.print',['order'=>$order->id])}}" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-              
+
             </div>
           </div>
         </div>
