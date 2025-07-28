@@ -37,7 +37,7 @@
                             </label>
                             <textarea
                                     id="config_description_{{ $index }}"
-                                    name="config_description{{ $index }}"
+                                    name="config_description[{{ $index }}]"
                                     class="form-control"
                                     rows="3"
                                     required
