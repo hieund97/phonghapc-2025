@@ -127,6 +127,7 @@
             let hasConfig = $(this).data('checkconfig');
             let needCheckOut = $('#needCheckOut').val();
             const buyNowFlag = $(this).data('buynow');
+            const installment = $(this).data('installment');
 
             if(needCheckOut == 1) {
                 Swal.fire({
@@ -147,7 +148,11 @@
 
             setTimeout(function (){
                 if (buyNowFlag !== undefined) {
-                    window.location.href = window.location.origin + "/gio-hang";
+                    if (installment !== undefined) {
+                        window.location.href = window.location.origin + "/gio-hang?type=tra-gop";
+                    } else {
+                        window.location.href = window.location.origin + "/gio-hang";
+                    }
                 } else {
                     location.reload()
                 }

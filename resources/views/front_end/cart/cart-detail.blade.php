@@ -43,7 +43,7 @@
                                     </p>
                                     <p class="item-status">
                                         <span style="color:#db0006;">Mã sản phẩm: {{ $item->attributes['serial'] ?? '' }}</span>
-                                    </p>    
+                                    </p>
                                     {{-- <p class="item-status">
                                         <span>{!! $item->attributes['description'] ?? '' !!}</span>
                                     </p>
@@ -86,10 +86,13 @@
                                     </p>
 
                                     <p class="total-item-price">
-                                <span class="js-total-item-price total-item-{{ $item->id }}">
-                                     @money($item->price * $item->quantity)
-                                </span>
+                                        <span class="js-total-item-price total-item-{{ $item->id }}">
+                                             @money($item->price * $item->quantity)
+                                        </span>
                                     </p>
+                                </div>
+                                <div class="image-installment" style="width: 140px; display: none;">
+                                    <img src="{{ asset('images/tra-gop.png') }}" alt="Trả góp">
                                 </div>
                             </div>
                         </div>
@@ -146,6 +149,7 @@
 
                         <textarea class="form-input" placeholder="Ghi chú" name="customer_note"
                                   id="buyer_note"></textarea>
+                        <input type="hidden" name="buy_type" id="buy-type" value="1">
 
                         <p id="js-cart-note" class="font-500 red text-15"
                            style="color: #e00;line-height: 1.5;margin: 15px 0;"> <!-- // Báo lỗi --> </p>
@@ -153,7 +157,8 @@
 
                     <button type="submit" class="btn-submit-cart js-send-cart">
                         <b>Đặt hàng</b>
-                        <span>Tư vấn viên sẽ gọi điện thoại xác nhận đơn hàng của bạn</span>
+                        <span class="text-buy-now">Tư vấn viên sẽ gọi điện thoại xác nhận đơn hàng của bạn</span>
+                        <span class="text-installment" style="display: none;">Tư vấn viên sẽ gọi điện thoại xác nhận thủ tục trả góp đơn hàng của bạn</span>
                     </button>
                 </div>
             </div>
@@ -165,6 +170,19 @@
     @include('partials.js.locations')
     <script>
         $(function () {
+            const buyType = getUrlParameter('type');
+            const imageInstallment = $(".image-installment");
+            const textBuyNow = $(".text-buy-now");
+            const textInstallment = $(".text-installment");
+            const inputInstallment = $("#buy-type");
+
+            if (buyType === "tra-gop") {
+                imageInstallment.show();
+                textBuyNow.hide();
+                textInstallment.show();
+                inputInstallment.val(2);
+            }
+
             $('.js-quantity-change').on('click', function (e) {
                 var product_id = $(this).data('id');
                 var countItem = $('.quantity-id-' + product_id).val();
@@ -253,5 +271,20 @@
             return new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(money);
         }
 
+        function getUrlParameter(sParam) {
+            let sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        }
     </script>
 @endpush

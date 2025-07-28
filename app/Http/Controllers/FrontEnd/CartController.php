@@ -146,7 +146,7 @@ class CartController extends Controller
                 'bundle_saving'       => $getData['bundle_savings'],
             ]));
 
-            $address = $order->address()->create($data['address']);
+            $order->address()->create($data['address']);
             $order->orderProducts()->createMany($orderProducts);
 
             $this->addUser($data);
