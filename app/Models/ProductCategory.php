@@ -141,7 +141,7 @@ class ProductCategory extends Model
 
     public function childrenEnable()
     {
-        return $this->hasMany(static::class, 'parent_id')->whereNotIn('status' , static::$hiddenByStatus)->orderBy('ordering', 'ASC');;
+        return $this->hasMany(static::class, 'parent_id')->whereNotIn('status' , static::$hiddenByStatus)->orderBy('ordering', 'ASC');
     }
 
     public function childrenOrder()
