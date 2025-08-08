@@ -2716,7 +2716,7 @@ i{
 
 .content-product .nav-product .item-product .price-c{ /* order: 3; */transition:.3s;text-align:left;  font-family: "Play", sans-serif;;transform:scale(1, 1);}
 
-.content-product .nav-product .item-product .price-c *{font-family:'Roboto-Bold' !important;font-weight:bold;font-size:20px;text-shadow:0px 0px #b2b2b2;}
+.content-product .nav-product .item-product .price-c *{font-family: "Play", sans-serif;font-size:20px;text-shadow:0px 0px #b2b2b2;}
 
 .content-product .nav-product .item-product .price-c .gia-cu{font-size:14px;color:rgba(0, 0, 0, .2);  font-family: "Play", sans-serif !important;font-weight:400;}
 
