@@ -1,9 +1,9 @@
 <div id="build-pc-image">
     <div style="height:50px">
-        <p style="display:none">NAM HÀ COMPUTER</p>
+        <p style="display:none">PHONG HÀ COMPUTER</p>
     </div>
     <div style="display:flex; justify-content:center; margin-bottom:30px; margin-top:50px">
-        <img style="width:160px" src="{{ asset('images/logo-dark.png') }}">
+        <img style="width:160px" src="{{ asset('images/logo-white.png') }}">
     </div>
 
     @foreach($data as $key => $product)
@@ -12,10 +12,6 @@
                 <img style="width:16em;"
                      src="{{ get_image_url($product['image'], "") }}"
                      alt="{{ $product['name'] }}">
-            </div>
-            <div style="position:absolute;left:15%;">
-                <img style="width:18em;"
-                     src="{{ asset('/images/border.png') }}">
             </div>
             <div style="width: 36%; margin-left:10px">
                 <p style="font-size:25px; font-weight:bold">{{ $product['name'] }}</p>
@@ -62,10 +58,10 @@
     <div style="text-align:center; margin-bottom:50px;">
         <p style="font-size:15px">
             <b>Quý khách lưu ý: </b>Giá bán, khuyến mại và tình trạng hàng hoá có thể thay đổi mà không kịp báo trước
-            khách hàng vui lòng liên hệ nhân viên tư vấn hoặc hotline <b>02473063686</b>
+            khách hàng vui lòng liên hệ nhân viên tư vấn hoặc hotline <b>078 692 6666</b>
         </p>
     </div>
     <div style="height:50px">
-        <p style="display:none">NAM HÀ COMPUTER</p>
+        <p style="display:none">PHONG HÀ COMPUTER</p>
     </div>
 </div>

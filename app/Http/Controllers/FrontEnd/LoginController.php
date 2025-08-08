@@ -57,7 +57,7 @@ class LoginController extends Controller
             'mobile'   => $data['mobile'],
             'password' => bcrypt($data['password']),
         ]);
-        $user->assignRole('Customer');
+        $user->assignRole('Customers');
         session()->flash('register_successful', 'success');
 
         return response()->json(['message' => 'success'], 200);

@@ -85,10 +85,11 @@ class HomeController extends Controller
             $categories = Cache::remember('categories_of_homepage', 15, function () {
                 return ProductCategory::with([
                     'childrenEnable',
+                    'gift',
                     'manyProducts' =>
                         function ($q) {
                             return $q->where('show_on_top', 1)
-                                     ->select('id', 'name', 'price', 'sale_price', 'feature_img', 'status', 'slug')
+                                     ->select('id', 'name', 'price', 'sale_price', 'feature_img', 'status', 'slug', 'gift_product', 'border_image', 'is_border')
                                      ->orderBy('created_at', 'DESC')
                             ;
                         }

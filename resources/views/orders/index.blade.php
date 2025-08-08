@@ -26,7 +26,7 @@
                                 <tr>
                                     <td><a href="{{ route('orders.show', ['order' => $row->id]) }}">{{ $row->id }}</a></td>
                                     <td><b>{{ $row->customer_name }}</b></td>
-                                    <td><b>{{ number_format($row->total_payment_price) }}</b></td>
+                                    <td><b>@money($row->total_payment_price)</b></td>
                                     <td>
                                         <div class="col-md-12">
                                             <div class="form-group clearfix margin-bottom-10">
@@ -67,14 +67,15 @@
                                     </td>
 
                                     <td>
-                                        - Tổng: <b>{{ number_format($row->total_price) }}</b><br />
+                                        - Tổng: <b>@money($row->total_price)</b><br />
 
                                         @if (!empty($row->bundle_saving))
                                             - Giảm từ Bundle: <b>- {{ number_format($row->bundle_saving) }}</b><br />
                                         @endif
 
                                         {{--- Mua th&ecirc;m: <b>{{ !empty($row->extra_name) ? ($row->extra_name . '(' . number_format($row->extra_price) . ')') : 'Không' }}</b><br />--}}
-                                        - {{ __('Coupon Code') }}: <b>{{ $row->coupon_code ?: 'Không' }}</b>
+                                        - {{ __('Coupon Code') }}: <b>{{ $row->coupon_code ?: 'Không' }}</b><br>
+                                        - {{ __('Buy Type') }}: <b>{{ $row->buy_type == \App\Models\Order::$PAYMENTTYPE["installment"] ? __("Installment") : __("Buy Directly") }}</b>
                                     </td>
 
                                     <td>

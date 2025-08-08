@@ -11,11 +11,11 @@
     cursor:pointer
 }
 
-.global-popup-login .global-popup-content{max-width:800px;width:100%;margin:auto;background:#fff;border-radius:16px;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);z-index:10000;display:-webkit-box;display:-ms-flexbox;display:flex;color:#404D5F}
+.global-popup-login .global-popup-content{max-width:650px;width:100%;margin:auto;background:#fff;border-radius:16px;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);z-index:10000;display:-webkit-box;display:-ms-flexbox;display:flex;color:#404D5F}
 
 .global-popup-login .item-left-login{width:299px;background-position:center;border-right:1px solid #E5EAF1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 
-.global-popup-login .item-right-login{width:calc(100% - 300px);padding:21px 40px 25px;position:relative}
+.global-popup-login .item-right-login{width:100%;padding:21px 40px 25px;position:relative}
 
 .global-popup-login .close-popup{color:#404D5F;font-size:21px;margin-right:-20px}
 
@@ -39,7 +39,7 @@
 
 .global-popup-login .btn-forgot-password{color:#697789;font-weight:600;font-size:14px;line-height:18px}
 
-.global-popup-login .popup-btn{width:100%;background:#1988EC;border-radius:8px;text-align:center;color:#fff;margin:16px 0 24px;line-height:40px;font-weight:600;font-size:16px;display:block}
+.global-popup-login .popup-btn{width:100%;background:#E30019;border-radius:8px;text-align:center;color:#fff;margin:16px 0 24px;line-height:40px;font-weight:600;font-size:16px;display:block}
 
 .global-popup-login .popup-icons-group{margin:24px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 
@@ -78,4 +78,6 @@
     }
 }
 
-
+.register-btn {
+    color: #E30019 !important;
+}

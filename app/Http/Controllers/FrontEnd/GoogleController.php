@@ -44,7 +44,7 @@ class GoogleController extends Controller
                         'password'  => bcrypt('12345678'),
                     ]
                 );
-                $user->assignRole('Customer');
+                $user->assignRole('Customers');
             }
 
             if (Auth::attempt([

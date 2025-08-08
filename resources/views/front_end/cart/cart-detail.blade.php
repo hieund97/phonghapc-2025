@@ -12,7 +12,7 @@
     <div class="cart-page container">
 
         <div class="page-title d-inline-flex align-items-baseline">
-            <h1 class="mb-0 blue-2 font-700">Giỏ hàng của tôi</h1>
+            <h1 class="mb-0 dark font-700">Giỏ hàng của tôi</h1>
             <span class="text-12 ml-2" id="js-cart-total-item">({{ \Cart::getTotalQuantity() }}  sản phẩm )</span>
         </div>
 
@@ -34,13 +34,28 @@
 
                                 <div class="item-text">
                                     <a href="{{ route("fe.product",["slug"=> $item->attributes['slug']]) }}"
-                                       class="item-name">{{ $item->name }}</a>
+                                       class="item-name bold"><h2>{{ $item->name }}</h2></a>
                                     <p class="item-status">
                                         <span style="color: #0DB866;">
                                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
                                             Còn hàng
                                         </span>
                                     </p>
+                                    <p class="item-status">
+                                        <span style="color:#db0006;">Mã sản phẩm: {{ $item->attributes['serial'] ?? '' }}</span>
+                                    </p>
+                                    {{-- <p class="item-status">
+                                        <span>{!! $item->attributes['description'] ?? '' !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['technical_specification'] ?? '' !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['outstanding_features'] ?? '' !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->attributes['gift_product'] ?? '' !!}</span>
+                                    </p> --}}
                                 </div>
                             </div>
 
@@ -71,10 +86,13 @@
                                     </p>
 
                                     <p class="total-item-price">
-                                <span class="js-total-item-price total-item-{{ $item->id }}">
-                                     @money($item->price * $item->quantity)
-                                </span>
+                                        <span class="js-total-item-price total-item-{{ $item->id }}">
+                                             @money($item->price * $item->quantity)
+                                        </span>
                                     </p>
+                                </div>
+                                <div class="image-installment" style="width: 140px; display: none;">
+                                    <img src="{{ asset('images/tra-gop.png') }}" alt="Trả góp">
                                 </div>
                             </div>
                         </div>
@@ -90,22 +108,21 @@
                 </div>
 
                 <a href="{{ route('fe.cart.destroy.all') }}" class="btn-remove-group">Làm trống giỏ hàng</a>
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
             </div>
 
             <div class="col-xs-12 col-md-4 col-lg-4">
                 <div class="cart-customer-group">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="cart-customer-holder">
-                        <p class="title blue-2">Thông tin thanh toán</p>
+                        <p class="title pink-2">Thông tin thanh toán</p>
 
                         <input type="text" placeholder="Họ tên người nhận hàng"
                                class="form-input @error('customer_name') is-invalid @enderror" name="customer_name"
@@ -132,6 +149,7 @@
 
                         <textarea class="form-input" placeholder="Ghi chú" name="customer_note"
                                   id="buyer_note"></textarea>
+                        <input type="hidden" name="buy_type" id="buy-type" value="1">
 
                         <p id="js-cart-note" class="font-500 red text-15"
                            style="color: #e00;line-height: 1.5;margin: 15px 0;"> <!-- // Báo lỗi --> </p>
@@ -139,7 +157,8 @@
 
                     <button type="submit" class="btn-submit-cart js-send-cart">
                         <b>Đặt hàng</b>
-                        <span>Tư vấn viên sẽ gọi điện thoại xác nhận đơn hàng của bạn</span>
+                        <span class="text-buy-now">Tư vấn viên sẽ gọi điện thoại xác nhận đơn hàng của bạn</span>
+                        <span class="text-installment" style="display: none;">Tư vấn viên sẽ gọi điện thoại xác nhận thủ tục trả góp đơn hàng của bạn</span>
                     </button>
                 </div>
             </div>
@@ -151,6 +170,19 @@
     @include('partials.js.locations')
     <script>
         $(function () {
+            const buyType = getUrlParameter('type');
+            const imageInstallment = $(".image-installment");
+            const textBuyNow = $(".text-buy-now");
+            const textInstallment = $(".text-installment");
+            const inputInstallment = $("#buy-type");
+
+            if (buyType === "tra-gop") {
+                imageInstallment.show();
+                textBuyNow.hide();
+                textInstallment.show();
+                inputInstallment.val(2);
+            }
+
             $('.js-quantity-change').on('click', function (e) {
                 var product_id = $(this).data('id');
                 var countItem = $('.quantity-id-' + product_id).val();
@@ -183,7 +215,8 @@
                         productId: product_id,
                         countItem: type,
                         isAjax   : true,
-                        _token   : '{{ csrf_token() }}'
+                        _token   : '{{ csrf_token() }}',
+                        configType: config,
                     }),
                     success: function (result) {
                         $('.quantity-id-' + product_id).val(countItem);
@@ -238,5 +271,20 @@
             return new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(money);
         }
 
+        function getUrlParameter(sParam) {
+            let sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        }
     </script>
 @endpush

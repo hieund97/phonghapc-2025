@@ -355,11 +355,11 @@ class NavigationComposer
                         'link'       => route('users.index'),
                         'permission' => 'users.index',
                     ],
-                    //[
-                    //    'name'       => __('Add'),
-                    //    'link'       => route('users.create'),
-                    //    'permission' => 'users.store',
-                    //],
+                    [
+                       'name'       => __('Add'),
+                       'link'       => route('users.create'),
+                       'permission' => 'users.store',
+                    ],
                 ],
             ],
 

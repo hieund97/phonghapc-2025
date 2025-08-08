@@ -23,22 +23,22 @@
         <tbody>
         <tr>
             <td colspan="8" valign="right">
-                <b>CÔNG TY CP CÔNG NGHỆ NAM HÀ</b>
+                <b>{{ $mainSettings['info_company']}}</b>
             </td>
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Địa chỉ ĐKKD: Showroom số 68 Trần phú - Thường tín- Hà nội
+                {{ $mainSettings['contact_address_company']}}
             </td>
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Điện thoại: 02473063686
+                Điện thoại: {{ $mainSettings['info_company']}}
             </td>
         </tr>
         <tr>
             <td colspan="8" valign="right">
-                Email: maytinhnamha.vn@gmail.com
+                Email: {{ $mainSettings['contact_hotline']}}
             </td>
         </tr>
         <tr>
@@ -72,13 +72,13 @@
     <table width="900" class="list_table" border="1">
         <tbody>
         <tr align="center" style="color: #ffffff; background-color:#0676d8;font-weight: bold;">
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">STT</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">Mã sản phẩm</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff; width:300px" colspan="2">Tên sản phẩm</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">Bảo hành</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff;">Số lượng</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff; width:100px;">Đơn giá</td>
-            <td style="background-color:#0676da; border: 0.5px solid black;color:#ffffff; width:100px;">Thành tiền</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">STT</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">Mã sản phẩm</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff; width:300px" colspan="2">Tên sản phẩm</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">Bảo hành</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff;">Số lượng</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff; width:100px;">Đơn giá</td>
+            <td style="background-color:#555555; border: 0.5px solid black;color:#ffffff; width:100px;">Thành tiền</td>
         </tr>
 
         @php
@@ -135,17 +135,17 @@
         </tr>
         <tr>
             <td>
-                Ngân hàng Vpbank – Chi nhánh Thường tín - Hà Nội
+                {{ $mainSettings['contact_bank'] }}
             </td>
         </tr>
         <tr>
             <td>
-                STK: 0986560586
+                STK: {{ $mainSettings['contact_bank_number']}}
             </td>
         </tr>
         <tr>
             <td>
-                CTK: NGUYEN VAN VUONG
+                CTK: {{ $mainSettings['contact_bank_owner']}}
             </td>
         </tr>
         </tbody>

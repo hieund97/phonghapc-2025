@@ -2,7 +2,35 @@
     <div class="container pd-10">
         <div class="row">
             <div class="col-lg-12 col-12">
-                <div class="banner-home-left"></div>
+                <div class="banner-home-left">
+                    <div class="header-new-bot">
+                        <div class="list-content">
+                            <div class="item-n menu-main item-n-first">
+                                @if(count($mainHeaders) > 0)
+                                <ul class="menu-main-sub">
+                                    @foreach ($mainHeaders as $cate)
+                                        @if ($cate->parent == null)
+                                            <li>
+                                                <a href="{{ route('fe.product.category', ['slug' => $cate->slug, 'id' => $cate->id]) }}"
+                                                   class="itop"
+                                                   style="background: url('{{ get_image_url($cate->icon, '') }}') no-repeat;">{{ $cate->title }}</a>
+                                                <div class="box-sub-cat">
+                                                    @foreach ($cate->childrenEnable as $child)
+                                                        <div class="box-cat">
+                                                            <a href="{{ route('fe.product.category', ['slug' => $child->slug, 'id' => $child->id]) }}"
+                                                               class="cat2">{{ $child->title }}</a>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="banner-home-right">
                     <div class="slider-homepage">
                         @include('front_end.partials.slider')

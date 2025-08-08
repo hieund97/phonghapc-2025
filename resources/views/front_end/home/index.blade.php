@@ -60,12 +60,24 @@
     @include('front_end.partials.saleProd')
     <!-- End Sale Product -->
 
+    @if(isset($mainSettings['banner_hompage_status']) && $mainSettings['banner_hompage_status'] == 'on')
+        <div class="container pd-10 my-3 is-pc">
+            <a href="{{ $mainSettings['banner_hompage_url'] ?? '' }}">
+                <img data-sizes="auto" class="lazyautosizes lazyloaded" style="border-radius: 8px;width: 100%;"
+                            src="{{ $mainSettings['banner_hompage'] ?? '' }}"
+                            data-src="{{ $mainSettings['banner_hompage'] ?? '' }}"
+                            alt="PC GVN KM T02" sizes="1200px">
+            </a>
+        </div>
+       
+    @endif
+
     <!-- Main Product Homepage -->
     @include('front_end.partials.mainContent')
     <!-- End Main Product Homepage -->
 
     <!-- Slider customer -->
-    @include('front_end.partials.customer-slide')
+{{--    @include('front_end.partials.customer-slide')--}}
     <!-- End Slider customer -->
 @endsection
 

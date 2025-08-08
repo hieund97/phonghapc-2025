@@ -10,7 +10,7 @@
     background:#eee;
     font-weight:bold;
     padding:0 10px;
-    font-family:'Roboto', sans-serif;
+    font-family: "Play", sans-serif;
     font-size:16px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .attribute-group .fillter-label label{
-    padding-left:20px; font-family:'Roboto', sans-serif;
+    padding-left:20px; font-family: "Play", sans-serif;
 }
 
 .attribute-group input[type="checkbox"]{
@@ -58,7 +58,7 @@
     padding:12px 15px;
     font-weight:600;
     margin-bottom:0px;
-    background:#0676da;
+    background:#555555;
     color:#fff;
     border-top-right-radius:5px;
     border-top-left-radius:5px;
@@ -129,7 +129,7 @@
     text-align: center;
     margin-bottom: 30px;
     line-height: 42px;
-    border: 1px solid #1D94FF;
+    border: 1px solid #E30019;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 500;
@@ -235,10 +235,14 @@
 
 .product-page .product-sort-button a {
     margin-right: 8px;
-    border: 1px solid #1988EC;
-    border-radius: 500px;
     line-height: 34px;
     padding: 0 16px;
+    color:#fff;
+    background:#E30019;
+}
+
+.product-page .product-sort-button a:hover {
+    color: #000 !important;
 }
 
 .title-primary {

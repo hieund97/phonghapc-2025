@@ -15,7 +15,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="facebook-domain-verification" content="v1ihepcict7dat54xhl08gtx93isue" />
     {!! meta()->toHtml() !!}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts/font.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
@@ -23,13 +23,18 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ asset('css/demo.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.32/sweetalert2.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bk.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/loginPopup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/rightSideButton.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+
     @stack('css')
     <?php echo $mainSettings['script_header']; ?>
 </head>
@@ -46,15 +51,18 @@
     </div>
 
     @include('front_end.partials.footer')
-    <div class="holine-footer">
-        <div class="holine-footer1">
-            <span class="title-holine">Holine</span>
-            <span class="holine-phone">{{ $mainSettings['contact_hotline'] }}</span>
-        </div>
-    </div>
-    <div id="btn-top" style="width: 60px; display:none">
-        <img src="{{ asset('images/back-to-top-icon.jpg') }}" alt="">
-    </div>
+{{--    <div class="holine-footer">--}}
+{{--        <div class="holine-footer1">--}}
+{{--            <span class="title-holine">Holine</span>--}}
+{{--            <span class="holine-phone">{{ $mainSettings['contact_hotline'] }}</span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div id="btn-top">--}}
+{{--        <button><i class="fa fa-chevron-up"></i></button>--}}
+{{--        <img src="{{ asset('images/back-to-top-icon.jpg') }}" alt="">--}}
+{{--    </div>--}}
+
+    @include('front_end.partials.banner')
 
 </div>
 
@@ -69,6 +77,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <script src="{{ asset('js/hc-offcanvas-nav.js?ver=3.3.0') }}"></script>
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/swiper-bundle.min.js') }}"></script>
@@ -82,6 +92,8 @@
                 $('#btn-top').stop().fadeOut(200);
             }
         });
+
+        initTippyForProductImages();
 
         $('#btn-top').on('click', function (e) {
             e.preventDefault()
@@ -112,8 +124,10 @@
             e.preventDefault()
             let id = $(this).data('id');
             let configType = $(this).data('config');
-            let hasConfig = $(this).data('checkConfig');
+            let hasConfig = $(this).data('checkconfig');
             let needCheckOut = $('#needCheckOut').val();
+            const buyNowFlag = $(this).data('buynow');
+            const installment = $(this).data('installment');
 
             if(needCheckOut == 1) {
                 Swal.fire({
@@ -133,7 +147,15 @@
             addOneProductToCart(id, configType, hasConfig);
 
             setTimeout(function (){
-                location.reload()
+                if (buyNowFlag !== undefined) {
+                    if (installment !== undefined) {
+                        window.location.href = window.location.origin + "/gio-hang?type=tra-gop";
+                    } else {
+                        window.location.href = window.location.origin + "/gio-hang";
+                    }
+                } else {
+                    location.reload()
+                }
             }, 2000)
         })
     });
@@ -234,10 +256,33 @@
                 $('.product-catalogue-product').html(result)
                 localStorage.setItem("filter_array_attribute", arrAttribute);
                 localStorage.setItem("filter_category_id", categoryId);
+                initTippyForProductImages();
             },
             error  : function (error) {
 
             }
+        });
+    }
+
+    // Tooltip for product items
+    function initTippyForProductImages() {
+        $('.item-product .image').each(function () {
+            const image = $(this);
+
+            if (this._tippy) return;
+
+            const tooltip = image.closest('.item-product').find('.tooltip-wrapper');
+
+            tippy(this, {
+                content: tooltip.html(),
+                allowHTML: true,
+                followCursor: true,
+                placement: 'right',
+                theme: 'default',
+                trigger: 'mouseenter focus',
+                arrow: false,
+                maxWidth: 'none',
+            });
         });
     }
 </script>
@@ -269,5 +314,4 @@
     {!! $mainSettings['footer'] !!}
 @endif
 </body>
-
 </html>

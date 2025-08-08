@@ -48,7 +48,7 @@ return [
      | Define copy right for dev.
      |--------------------------------------------------------------------------
      */
-    'copy_right'             => ['url' => 'https://maytinhnamha.vn', 'name' => 'maytinhnamha.vn'],
+    'copy_right'             => ['url' => 'https://phonghacomputer.vn', 'name' => 'phonghacomputer.vn'],
 
 
     /*

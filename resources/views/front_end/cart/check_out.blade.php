@@ -12,14 +12,14 @@
     <div class="cart-page container">
 
         <div class="page-title d-inline-flex align-items-baseline">
-            <h1 class="mb-0 blue-2 font-700">Đặt hàng thành công</h1>
+            <h1 class="mb-0 dark font-700">Đặt hàng thành công</h1>
         </div>
 
         <div class="row">
             <div class="col-xs-12 col-md-4 col-lg-4">
                 <div class="cart-customer-group">
                     <div class="cart-customer-holder">
-                        <p class="title blue-2">Thông tin thanh toán</p>
+                        <p class="title pink-2">Thông tin thanh toán</p>
 
                         <label>Tên khách hàng</label>
                         <input type="text" class="form-input" disabled style="color:black; height:45px; font-size:20px" name="customer_name"
@@ -39,11 +39,11 @@
 
                         <label>Quận/huyện</label>
                         <input type="text" class="form-input" disabled style="color:black; height:45px; font-size:20px"
-                               name="district" id="buyer_tel" value="{{  $order->address->districtDetail->name }}">
+                               name="district" id="buyer_tel" value="{{  $order->address->districtDetail->name ?? '' }}">
 
                         <label>Xã/Phường</label>
                         <input type="text" class="form-input" disabled style="color:black; height:45px; font-size:20px"
-                               name="ward" id="buyer_tel" value="{{  $order->address->wardDetail->name }}">
+                               name="ward" id="buyer_tel" value="{{  $order->address->wardDetail->name ?? '' }}">
 
                         <label>Địa chỉ chi tiết</label>
                         <input type="text" class="form-input" disabled style="color:black; height:45px; font-size:20px" name="address[address]"
@@ -75,24 +75,44 @@
 
                                 <div class="item-text">
                                     <a href="{{ route("fe.product",["slug"=> $item->product->slug]) }}"
-                                       class="item-name">{{ $item->config_name ?? $item->product->name }}</a>
+                                       class="item-name"><h2>{{ $item->config_name ?? $item->product->name }}</h2></a>
                                     <p class="item-status">
                                         <span style="color: #0DB866;">
                                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
                                             Còn hàng
                                         </span>
                                     </p>
+                                    <p class="item-status">
+                                        <span style="color:#db0006;">Mã sản phẩm: {{ $item->product->serial }}</span>
+                                    </p>
+                                    {{-- <p class="item-status">
+                                        <span>{!! $item->product->description !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->product->technical_specification !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->product->outstanding_features !!}</span>
+                                    </p>
+                                    <p class="item-status">
+                                        <span>{!! $item->product->gift_product !!}</span>
+                                    </p> --}}
                                 </div>
                             </div>
 
                             <div class="item-right">
                                 <div class="item-price-holder">
                                     <p class="total-item-price">
-                                <span class="js-total-item-price total-item-{{ $item->id }}">
-                                     {{ $item->amount }} x @money($item->price)
-                                </span>
+                                        <span class="js-total-item-price total-item-{{ $item->id }}">
+                                             {{ $item->amount }} x @money($item->price)
+                                        </span>
                                     </p>
                                 </div>
+                                @if(isset($order->buy_type) && $order->buy_type == \App\Models\Order::$PAYMENTTYPE["installment"])
+                                    <div class="image-installment" style="width: 140px;">
+                                        <img src="{{ asset('images/tra-gop.png') }}" alt="Trả góp">
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endforeach

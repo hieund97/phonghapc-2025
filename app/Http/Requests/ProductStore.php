@@ -50,6 +50,8 @@ class ProductStore extends FormRequest
             'slug'                    => 'required|string|max:255|unique:products,slug',
             'warranty'                => 'nullable|string',
             'feature_img'             => 'required|string',
+            'border_image'            => 'nullable|string',
+            'is_border'               => 'nullable|boolean',
             'outstanding_features'    => 'nullable|string',
             'gift_product'            => 'nullable|string',
             'view_count'              => 'nullable|numeric',
@@ -145,6 +147,7 @@ class ProductStore extends FormRequest
         $this->merge([
             'hide_sale_time' => !empty($this->hide_sale_time),
             'show_on_top'    => !empty($this->show_on_top),
+            'is_border'      => !empty($this->is_border),
             'pin_to_top'     => !empty($this->pin_to_top),
             'videos'         => !empty($this->videos) && is_array($this->videos) ? array_values($this->videos) : null,
             'tags'           => array_filter(array_map('trim', explode(',', $this->tags))),

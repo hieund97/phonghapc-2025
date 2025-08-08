@@ -24,12 +24,19 @@
                     <div class="col-md-3 col-sm-6 col-xs-6 box-item-product wow fadeInUp"
                          style="visibility: visible; animation-name: fadeInUp;">
                         <div class="item-product">
-                            <div class="image border-image-namha">
-                                <a href="{{ route("fe.product",["slug"=>$product->slug]) }}l"
-                                   class="thubmail-img">
+                            <div class="image" style="position: relative">
+                                <a href="{{ route("fe.product",["slug"=>$product->slug]) }}" class="thubmail-img">
                                     <img class=""
                                          alt="{{ $product->name }}"
                                          src="{{ get_image_url($product->feature_img, '') }}"
+                                         style="
+                                                @if ($product->is_border && !empty($product->border_image))
+                                                    border-style: solid;
+                                                    border-width: 2rem;
+                                                    border-image: url('{{ $product->border_image }}') 11% round;
+                                                    border-image-repeat: stretch;
+                                                @endif
+                                             "
                                     >
                                 </a>
                                 <div class="new-pr {{ $product->status != config('front_end.product_status.new') ? 'hidden' : '' }}">
@@ -103,6 +110,70 @@
                                    data-redirect="redirect"
                                    data-quantity="1" data-id="1693" data-price="0">Mua hàng
                                 </a>
+                            </div>
+                            <div class="tooltip-wrapper d-none">
+                                <div class="tooltip-product">
+                                    <div class="tooltip-title">{{ $product->name }}</div>
+                                    <div class="tooltip-content">
+                                        <div class="tooltip-price">
+                                            @if(isset($product->sale_price))
+                                                <p>Giá niêm yết</p>
+                                            @endif
+                                            <p>Giá bán</p>
+                                            <p>Tình trạng</p>
+                                        </div>
+                                        <div class="tooltip-info">
+                                            @if(isset($product->sale_price))
+                                                <div class="d-flex align-items-center">
+                                                    <p class="text-black-50 position-relative"><s>@money($product->price)</s>
+                                                    </p>
+                                                    <span class="ml-2" style="color:red;">{{ '-' . $percent . '%' }}</span>
+                                                </div>
+                                            @endif
+                                            <p style="color: #2B76DA">@money($price)</p>
+                                            <p>
+                                                @if(isset($product))
+                                                    @switch($product->status)
+                                                        @case(config('front_end.product_status.new'))
+                                                            <span class="icon-is-stock" style="color: green">
+                                                                         Còn hàng
+                                                                    </span>
+                                                            @break
+                                                        @case(config('front_end.product_status.in_stock'))
+                                                            <span class="icon-is-stock text-green" style="color: green">
+                                                                        Còn hàng
+                                                                    </span>
+                                                            @break
+                                                        @case(config('front_end.product_status.out_of_stock'))
+                                                            <span class="icon-none-is-stock" style="color: red">
+                                                                         Hết hàng
+                                                                    </span>
+                                                            @break
+                                                        @case(config('front_end.product_status.coming_soon'))
+                                                            <span class="icon-coming-in-stock" style="color: #d0ac01">
+                                                                         Hàng sắp về
+                                                                    </span>
+                                                            @break
+                                                    @endswitch
+                                                @endif
+                                            </p>
+                                        </div>
+                                    </div>
+                                    @if(!empty($product->gift_product) || !empty($gift))
+                                        <div class="tooltip-gift">
+                                            <div class="header-wrapper">
+                                                <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
+                                                    Quà tặng và ưu đãi kèm theo
+                                                </p>
+                                                <div class="content-gift">
+                                                    <p>
+                                                        {!! $product->gift_product ?? $gift->content !!}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -18,8 +18,8 @@ class CartController extends Controller
         $cartCollection = Cart::getContent();
 
         /* Set meta */
-        $metaTitle       = 'Giỏ hàng - maytinhnamha.vn';
-        $metaDescription = 'NAM HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
+        $metaTitle       = 'Giỏ hàng - phonghacomputer.vn';
+        $metaDescription = 'PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 078 692 6666';
         meta()->set('title', $metaTitle)
               ->set('og:title', $metaTitle)
               ->set('description', $metaDescription)
@@ -109,7 +109,12 @@ class CartController extends Controller
                     "picture" => !empty($aryConfig) ? get_image_url($config_image) : get_image_url($product->feature_img,
                         ''),
                     "slug"    => $product->slug,
-                    "config"  => $request->configType ?? 'original'
+                    "config"  => $request->configType ?? 'original',
+                    'serial'                   => $product->serial,
+                    'description'              => $product->description,
+                    'technical_specification'  => $product->technical_specification,
+                    'outstanding_features'     => $product->outstanding_features,
+                    'gift_product'             => $product->gift_product,
                 ],
                 'associatedModel' => Product::class,
             ]);
@@ -141,7 +146,7 @@ class CartController extends Controller
                 'bundle_saving'       => $getData['bundle_savings'],
             ]));
 
-            $address = $order->address()->create($data['address']);
+            $order->address()->create($data['address']);
             $order->orderProducts()->createMany($orderProducts);
 
             $this->addUser($data);
@@ -249,8 +254,8 @@ class CartController extends Controller
         $order   = Order::whereOrderId($orderId)->firstOrFail();
 
         /* Set meta */
-        $metaTitle       = 'Đặt hàng thành công - maytinhnamha.vn';
-        $metaDescription = 'ĐẶT HÀNG THÀNH CÔNG - NAM HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 02473063686';
+        $metaTitle       = 'Đặt hàng thành công - phonghacomputer.vn';
+        $metaDescription = 'ĐẶT HÀNG THÀNH CÔNG - PHONG HÀ COMPUTER LÀ THƯƠNG HIỆU HÀNG ĐẦU VỀ LAPTOP ,MÁY TÍNH GAMING, MÁY TÍNH VĂN PHÒNG, VỚI ĐỘI NGŨ KỸ THUẬT CHUYÊN NGHIỆP NHIỆT TÌNH. UY TÍN - CHẤT LƯỢNG - CAO CẤP 078 692 6666';
         meta()->set('title', $metaTitle)
               ->set('og:title', $metaTitle)
               ->set('description', $metaDescription)
@@ -262,6 +267,11 @@ class CartController extends Controller
         /* Hết Set meta */
 
         return view('front_end.cart.check_out', compact('order'));
+    }
+
+    public function history()
+    {
+        return redirect()->route('fe.profile')->with(['tab' => 'history_order']);
     }
 
     /**
@@ -290,6 +300,11 @@ class CartController extends Controller
                     'attributes'      => [
                         "picture" => get_image_url($itemProd['image'], ''),
                         "slug"    => $itemProd['slug'],
+                        'serial'                    => $itemProd['serial'],
+                        'description'               => $itemProd['description'],
+                        'technical_specification'   => $itemProd['technical_specification'],
+                        'outstanding_features'      => $itemProd['outstanding_features'],
+                        'gift_product'              => $itemProd['gift_product'],
                     ],
                     'associatedModel' => Product::class,
                 ]);
@@ -326,7 +341,7 @@ class CartController extends Controller
                 'password'    => bcrypt('123456'),
             ]);
 
-            $user->assignRole('Customer');
+            $user->assignRole('Customers');
         }
 
         return $user;

@@ -26,7 +26,38 @@
     <section class="main-content">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <div class="nav-main-content page-article-catalogues">
+                        <h2 class="h2 products-section-title text-uppercase">
+                            <span>Tin nổi bật</span>
+                        </h2>
+                        @if($featurePosts)
+                            <div class="slider-large owl-carousel owl-theme owl-loaded owl-drag">
+                                @foreach($featurePosts as $post)
+                                    <div class="item-new wow fadeInUp"
+                                        style="visibility: visible; animation-name: fadeInUp;">
+                                        <div>
+                                            <a href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id]) }}">
+                                                <img src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <h3 class="title">
+                                                <a href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id]) }}">
+                                                    {{ $post->title }}
+                                                </a>
+                                            </h3>
+                                            <p class="date">{{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}</p>
+                                            <p class="desc">{!! strip_tags($post->excerpt) !!}</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-8  col-xs-12">
                     <div class="nav-main-content page-article-catalogues">
                         <div class="new-home">
                             <h2 class="title22 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
@@ -37,12 +68,12 @@
                                     @foreach($postPaginate as $post)
                                         <div class="item-new wow fadeInUp col-md-6 col-sm-6 col-xs-12"
                                              style="visibility: visible; animation-name: fadeInUp;">
-                                            <div class="image">
+                                            <div class="">
                                                 <a href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id]) }}"><img
                                                             src="{{ $post->thumbnail }}" alt="{{ $post->title }}">
                                                 </a>
                                             </div>
-                                            <div class="nav-image">
+                                            <div class="">
                                                 <h3 class="title"><a
                                                             href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id]) }}">{{ $post->title }}</a>
                                                 </h3>

@@ -38,7 +38,7 @@
                         <a href="{{ route('fe.home') }}">{{ __('Home')  }}</a>/
                     </li>
                     <li>
-                        {{ __('Đăng ký')  }}
+                        {{ __('Profile')  }}
                     </li>
                 </ul>
             </div>
@@ -57,7 +57,7 @@
                                href="#tabs-password" role="tab" aria-controls="tabs-password"
                                aria-selected="false">Đổi mật khẩu</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ session()->get('tab') == 'history_order' ? 'active' : '' }}">
                             <a class="nav-link" id="tabs-order-tab" data-toggle="pill"
                                href="#tabs-order" role="tab" aria-controls="tabs-order"
                                aria-selected="false">Đơn hàng</a>
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tabs-order" role="tabpanel" aria-labelledby="tabs-order-tab">
+                        <div class="tab-pane fade {{ session()->get('tab') == 'history_order' ? 'active in' : '' }}" id="tabs-order" role="tabpanel" aria-labelledby="tabs-order-tab">
                             <div class="main-inner">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -228,6 +228,9 @@
                                         </span>
                                     </div>
                                     @forelse($listOrder as $order)
+                                        <div>
+                                            <h3 style="margin-left:10px">{{ date('d/m/Y H:i', strtotime($order->created_at)) }}</h3>
+                                        </div>
                                         <div class="cart-items-group">
                                             @foreach($order->orderProducts as $item)
                                                 <div class="item js-item-row" data-variant_id="0" data-item_id="2903"

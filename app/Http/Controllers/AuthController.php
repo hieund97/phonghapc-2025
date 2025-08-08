@@ -15,6 +15,6 @@ class AuthController extends Controller
      */
     public function redirectTo(): string
     {
-        return '/cp_admin';
+        return '/ph_admin';
     }
 }

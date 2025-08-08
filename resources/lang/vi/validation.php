@@ -185,5 +185,8 @@ return [
         'products.*.id' => 'id sản phẩm',
         'products.*.quantity' => 'số lượng sản phẩm',
         'coupon_code' => 'mã giảm giá',
+        'customer_email' => 'email',
+        'address.address' => 'địa chỉ',
+        'address.province' => 'thành phố',
     ],
 ];

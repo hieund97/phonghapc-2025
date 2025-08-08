@@ -433,7 +433,7 @@ if (!function_exists('getMetaRobots')) {
 function addNofollowContent($content)
 {
     $content = preg_replace_callback('/]*href=["|\']([^"|\']*)["|\'][^>]*>([^<]*)<\/a>/i', function ($m) {
-        if (strpos($m[1], "maytinhnamha.vn") === false) {
+        if (strpos($m[1], "phonghacomputer.vn") === false) {
             return ' href="' . $m[1] . '" rel="nofollow" target="_blank">' . $m[2] . '</a>';
         } else {
             return ' href="' . $m[1] . '">' . $m[2] . '</a>';

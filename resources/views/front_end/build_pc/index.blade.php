@@ -19,6 +19,15 @@
                     <h1>
                         Xây Dựng Cấu Hình Máy Tính - Build PC Chuyên Nghiệp
                     </h1>
+                    @if(isset($mainSettings['banner_build_pc_status']) && $mainSettings['banner_build_pc_status'] == 'on')
+                        <div class="container pd-10 my-3">
+                            <img data-sizes="auto" class="lazyautosizes lazyloaded" style="border-radius: 8px;width: 100%;"
+                                 src="{{ $mainSettings['banner_build_PC'] ?? '' }}"
+                                 data-src="{{ $mainSettings['banner_build_PC'] ?? '' }}"
+                                 alt="Build PC tại Phong Hà Computer" sizes="1200px">
+                        </div>
+
+                    @endif
                     <input type="hidden" id="id_tab" name="id_tab" value="1">
 
                     <ul class="list-btn-action" style="width:100%">
@@ -208,7 +217,7 @@
         function screenshot(html) {
             document.body.appendChild(html[0]);
             html2canvas(html[0]).then(function (canvas) {
-                downloadImage(canvas.toDataURL(), "NamHaComputer_buildPc.png");
+                downloadImage(canvas.toDataURL(), "phonghacomputer_buildPc.png");
             });
         }
 

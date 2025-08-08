@@ -61,7 +61,7 @@ class PostController extends Controller
                             ->take(6)
         ;
         /* Set meta */
-        $metaTitle       = 'Tin tức công nghệ cập nhật 24h - maytinhnamha.vn';
+        $metaTitle       = 'Tin tức công nghệ cập nhật 24h - phonghacomputer.vn';
         $metaDescription = 'Thông tin công nghệ, thiết bị mới nhất được cập nhật hằng giờ. Tin về sản phẩm mới mắt, đánh giá sản phẩm, mẹo hay sử dụng...';
         $robots          = getMetaRobots('', 0);
         meta()->set('title', $metaTitle)
@@ -131,7 +131,7 @@ class PostController extends Controller
 
         $tags        = $post->postTags;
         $randomPosts = Post::with('categories')->whereHas('categories', function ($q) {
-            $q->where('highlight', 1);
+            // $q->where('highlight', 1);
         })->where('status', array_search('publish', Post::STATUS))
                            ->where('id', '!=', $id)
                            ->inRandomOrder()
@@ -181,6 +181,12 @@ class PostController extends Controller
             meta()->set('robots', $robots);
         }
 
+        $featurePosts = Post::where('status', array_search('publish', Post::STATUS))
+                            ->where('published_at', '<', now())
+                            ->where('is_featured', 1)
+                            ->get()
+                            ->take(6);
+
         /* Hết Set meta */
 
         return view('front_end.posts.show', compact(
@@ -192,6 +198,7 @@ class PostController extends Controller
             'tags',
             'productRelateds',
             'cateNavBar',
+            'featurePosts',
         ));
     }
 

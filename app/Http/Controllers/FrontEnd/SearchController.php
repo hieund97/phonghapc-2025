@@ -28,7 +28,7 @@ class SearchController extends Controller
         $type     = 'product';
         if ($q) {
             /* Set meta */
-            $metaTitle = 'Kết quả tìm kiếm ' . $q . ' | maytinhnamha.vn';
+            $metaTitle = 'Kết quả tìm kiếm ' . $q . ' | phonghacomputer.vn';
 
             meta()->set('title', $metaTitle)
                   ->set('og:title', $metaTitle)
@@ -85,7 +85,7 @@ class SearchController extends Controller
         $products = Product::where('name', 'LIKE', "%" . $q . "%")
                            ->withoutGlobalScope('published')
                            ->orderBy('id', 'DESC')
-                           ->take(20)
+                           ->take(16)
                            ->get()
         ;
 
