@@ -15,9 +15,22 @@ class SiteMapController extends Controller
 {
     public function index()
     {
-        $data = [];
+        public function index()
+    {
+        $sitemaps = [
+            'sitemap-product-categories.xml',
+            'sitemap-products.xml',
+            'sitemap-product-tags.xml',
+            'sitemap-post-categories.xml',
+            'sitemap-post-tags.xml',
+            'sitemap-posts.xml',
+            'sitemap-pages.xml',
+        ];
 
-        return response()->view('front_end.sitemap.index', $data)->header('Content-Type', 'text/xml');
+        return response()
+            ->view('front_end.sitemap.index', compact('sitemaps'))
+            ->header('Content-Type', 'text/xml');
+    }
     }
 
     public function productCategories()
