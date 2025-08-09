@@ -75,7 +75,7 @@
 
                                 <div class="item-text">
                                     <a href="{{ route("fe.product",["slug"=> $item->product->slug]) }}"
-                                       class="item-name"><h2>{{ $item->config_name ?? $item->product->name }}</h2></a>
+                                       class="item-name"><h4>{{ $item->config_name ?? $item->product->name }}</h4></a>
                                     <p class="item-status">
                                         <span style="color: #0DB866;">
                                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
