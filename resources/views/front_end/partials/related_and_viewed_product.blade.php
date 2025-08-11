@@ -136,7 +136,7 @@
                                                                         <p>Tình trạng</p>
                                                                     </div>
                                                                     <div class="tooltip-info">
-                                                                        @if(isset($product->sale_price))
+                                                                        @if(isset($product->sale_price) || $similarProd->price != 0 )
                                                                             <div class="d-flex align-items-center">
                                                                                 <p class="text-black-50 position-relative"><s>@money($product->price)</s>
                                                                                 </p>
@@ -245,7 +245,7 @@
                                                         <div class="price-c"><p
                                                                     class="price">
 
-                                                                @if(!empty($prod['sale_price']))
+                                                                @if(!empty($prod['sale_price']) || $prod['price'] != 0 )
                                                                     <span class="gia-moi">@money($prod['sale_price'])</span>
                                                                     <span class="gia-cu">@money($prod['price'])</span>
                                                                     <span class="tiet-kiem">(Tiết kiệm: {{ round(($prod['price'] - $prod['sale_price']) / $prod['price'] * 100) }}%)</span>
