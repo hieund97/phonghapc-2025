@@ -52,7 +52,7 @@
 
                                                         <div class="price-c"><p class="price">
 
-                                                                @if(!empty($similarProd->sale_price))
+                                                                @if(!empty($similarProd->sale_price) || $similarProd->price != 0 )
                                                                     <span class="gia-moi">@money($similarProd->sale_price)</span>
                                                                     <span class="gia-cu">@money($similarProd->price)</span>
                                                                     <span class="tiet-kiem">(Tiết kiệm: {{ round(($similarProd->price - $similarProd->sale_price) / $similarProd->price * 100) }}%)</span>
