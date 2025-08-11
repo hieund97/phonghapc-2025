@@ -18,7 +18,7 @@
                                 {{ $product->name }}
                             </a>
                         </h2>
-                        <div class="price">
+                        <div class="price" style="width:10%">
                             <div class="new">@money($product->getRealPriceAttribute())</div>
                             @if(!empty($product->sale_price))
                                 <div class="old">@money($product->price)</div>
