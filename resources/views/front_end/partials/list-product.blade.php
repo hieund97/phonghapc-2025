@@ -15,7 +15,7 @@
                     @php
                         $checkSale = false;
                         $price = $product->price;
-                        if(!empty($product->sale_price)) {
+                        if(!empty($product->sale_price) && $product->price > 0) {
                             $checkSale = true;
                             $price = $product->sale_price;
                             $percent = round(($product->price - $product->sale_price) * 100 / ($product->price));

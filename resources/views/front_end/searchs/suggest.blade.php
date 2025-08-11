@@ -20,7 +20,9 @@
                         </h2>
                         <div class="price">
                             <div class="new">@money($product->getRealPriceAttribute())</div>
-                            <div class="old">@money($product->price)</div>
+                            @if(!empty($product->sale_price))
+                                <div class="old">@money($product->price)</div>
+                            @endif
                         </div>
                     </div>
                 </div>
