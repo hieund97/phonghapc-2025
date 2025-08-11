@@ -136,7 +136,7 @@
                                                                         <p>Tình trạng</p>
                                                                     </div>
                                                                     <div class="tooltip-info">
-                                                                        @if(isset($product->sale_price) || $similarProd->price != 0 )
+                                                                        @if(isset($product->sale_price) || $product->price != 0 )
                                                                             <div class="d-flex align-items-center">
                                                                                 <p class="text-black-50 position-relative"><s>@money($product->price)</s>
                                                                                 </p>
