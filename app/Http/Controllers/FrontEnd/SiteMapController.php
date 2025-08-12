@@ -15,8 +15,6 @@ class SiteMapController extends Controller
 {
     public function index()
     {
-        public function index()
-    {
         $sitemaps = [
             'sitemap-product-categories.xml',
             'sitemap-products.xml',
@@ -30,7 +28,6 @@ class SiteMapController extends Controller
         return response()
             ->view('front_end.sitemap.index', compact('sitemaps'))
             ->header('Content-Type', 'text/xml');
-    }
     }
 
     public function productCategories()
