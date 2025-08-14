@@ -2479,7 +2479,7 @@ i{
 }
 
 /* banner home*/
-.banner-home{background:#f1f1f1;margin:5px 0 25px 0;padding:0 0 25px 0;}
+.banner-home{background:#f1f1f1;margin:5px 0 25px 0;}
 
 .banner-home .banner-home-right{width:1325px;float:right;}
 
@@ -2597,7 +2597,7 @@ i{
 
 .header-new-bot .list-content .item-n.item-n-first .menu-main-sub li{width:100%;float:left;position:relative;}
 
-.header-new-bot .list-content .item-n.item-n-first .menu-main-sub li a{width:100%;float:left;line-height:52px;padding-left:65px;background-position:25px center !important;background-size:20px auto !important;font-size:15px;font-weight:500;color:#222222;position:relative;font-weight:700;}
+.header-new-bot .list-content .item-n.item-n-first .menu-main-sub li a{width:100%;float:left;line-height:45px;padding-left:65px;background-position:25px center !important;background-size:20px auto !important;font-size:15px;font-weight:500;color:#222222;position:relative;font-weight:700;}
 
 .header-new-bot .list-content .item-n.item-n-first .menu-main-sub > li:hover{background:#E30019;}
 
