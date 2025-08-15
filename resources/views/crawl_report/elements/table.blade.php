@@ -16,10 +16,8 @@
         <tbody>
         @foreach($aryCrawlData as $value)
             @php
-                // Lấy sản phẩm, có thể là null
                 $myProduct = $value->product->first();
             @endphp
-
             @if($myProduct)
                 @php
                     $myPrice            =  $myProduct->sale_price == 0 || $myProduct->sale_price == null ? $myProduct->price : $myProduct->sale_price;
