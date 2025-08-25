@@ -89,7 +89,7 @@
                                                             <span class="gia-cu">{{ number_format($product['price'], 0, '', ',') }} đ</span>
                                                             <span class="tiet-kiem">(Tiết kiệm: {{ round(($product['price'] - $product['sale_price']) / $product['price'] * 100) }}%)</span>
                                                         @else
-                                                            <span class="gia-moi">{{ number_format($product['price'], 0, '', ',') }} đ</span>
+                                                            <span class="gia-moi">{{ $product['price'] == 0 ? 'Liên hệ' : number_format($product['price'], 0, '', ',') .'đ' }}</span>
                                                         @endif
                                                     </p>
                                                     <div class="sale-off-show">-100%</div>

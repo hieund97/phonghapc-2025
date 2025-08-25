@@ -57,7 +57,13 @@
 
                             <div class="price-c">
                                 <p class="price">
-                                    <span class="gia-moi">@money($price)</span>
+                                    <span class="gia-moi">
+                                        @if($price == 0)
+                                            Liên hệ
+                                        @else
+                                            @money($price)
+                                        @endif
+                                    </span>
                                     @if($checkSale)
                                         <span class="gia-cu">@money($product->price)</span>
                                         <span class="tiet-kiem">(Tiết kiệm: {{ $percent }}%)</span>

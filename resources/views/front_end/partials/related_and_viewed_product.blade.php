@@ -59,7 +59,15 @@
                                                                         (Tiết kiệm: {{ ($similarProd->price > 0) ? round(($similarProd->price - $similarProd->sale_price) / $similarProd->price * 100) : 0 }}%)
                                                                     </span>
                                                                 @else
-                                                                    <span class="gia-moi">@money($similarProd->price)</span>
+                                                                    <span class="gia-moi">
+                                                                        <span class="gia-moi">
+                                                                            @if($similarProd->price == 0)
+                                                                                Liên hệ
+                                                                            @else
+                                                                                @money($similarProd->price)
+                                                                            @endif
+                                                                        </span>
+                                                                    </span>
                                                                 @endif
 
                                                             </p>
@@ -262,7 +270,13 @@
                                                                         (Tiết kiệm: {{ ($prod['price'] > 0) ? round(($prod['price'] - $prod['sale_price']) / $prod['price'] * 100) : 0 }}%)
                                                                     </span>
                                                                 @else
-                                                                    <span class="gia-moi">@money($prod['price'])</span>
+                                                                    <span class="gia-moi">
+                                                                        @if($prod['price'] == 0)
+                                                                            Liên hệ
+                                                                        @else
+                                                                            @money($prod['price'])
+                                                                        @endif
+                                                                    </span>
                                                                 @endif
 
                                                             </p>
