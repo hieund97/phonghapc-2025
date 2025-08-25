@@ -120,6 +120,7 @@ class ProductController extends Controller
                 : null,
             'is_border'      => $product->is_border,
             'border_image'   => $product->border_image,
+            'description'    => $product->description,
         ];
 
         $cookieProduct         = 'recentlyProductViewed';
@@ -147,6 +148,7 @@ class ProductController extends Controller
                     'gift_category'  => $pro['gift_category'] ?? '',
                     'is_border'      => $pro['is_border'] ?? '',
                     'border_image'   => $pro['border_image'] ?? '',
+                    'description'    => $pro['description'] ?? '',
                 ];
             }
 
