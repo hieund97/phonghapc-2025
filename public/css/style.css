@@ -3367,6 +3367,11 @@ header .search .form .searchResult{
     margin: 10px;
 }
 
+.tooltip-description {
+    padding: 0 8px;
+    margin: 10px;
+}
+
 .title-gift {
     box-shadow: unset;
     border-radius: unset;

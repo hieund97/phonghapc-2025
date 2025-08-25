@@ -208,6 +208,9 @@
                                                                         </div>
                                                                     </div>
                                                                 @endif
+                                                                <div class="tooltip-description">
+                                                                    {!! $product['description'] !!}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -411,6 +414,9 @@
                                                                         </div>
                                                                     </div>
                                                                 @endif
+                                                                <div class="tooltip-description">
+                                                                    {!! $product['description'] !!}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
