@@ -122,9 +122,9 @@
                                                         <div class="pd-price-group">
                                                         <span class="pd-price">
                                                             @if(!empty($product->sale_price))
-                                                                {{ number_format($product->sale_price,0,'.',',') }}đ
+                                                                {{ $product->sale_price == 0 ? 'Liên hệ' : number_format($product->sale_price,0,'.',',').'đ' }}
                                                             @else
-                                                                {{  number_format($product->price,0,'.',',') }}đ
+                                                                {{ $product->price == 0 ? 'Liên hệ' : number_format($product->price,0,'.',',').'đ' }}
                                                             @endif
                                                         </span>
                                                             @if(!empty($product->sale_price))
