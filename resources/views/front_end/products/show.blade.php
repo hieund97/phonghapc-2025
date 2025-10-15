@@ -146,13 +146,14 @@
                                                         <br>
                                                         <div style="clear: both;"></div>
 
+                                                        @if ($product->warranty)
                                                         <div class="guarantee">
                                                             <span class="title">Bảo hành:</span>
                                                             <span class="content">
                                                                 {{ $product->warranty }}
                                                             </span>
                                                         </div>
-
+                                                        @endif
                                                         @include('front_end.products.element.config')
 
                                                         @if(!empty($htmlGift))
