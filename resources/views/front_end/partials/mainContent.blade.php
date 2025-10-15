@@ -152,6 +152,7 @@
                                                                 @endif
                                                                 <p>Giá bán</p>
                                                                 <p>Tình trạng</p>
+                                                                <p>Bảo hành</p>
                                                             </div>
                                                             <div class="tooltip-info">
                                                                 @if(isset($product["sale_price"]))
@@ -188,6 +189,7 @@
                                                                         @endswitch
                                                                     @endif
                                                                 </p>
+                                                                <p style="color: red">{{ $product['warranty'] }}</p>
                                                             </div>
                                                         </div>
                                                         @if(!empty($product["gift_product"]) || !empty($category["gift"]))

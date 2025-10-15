@@ -121,6 +121,7 @@ class ProductController extends Controller
             'is_border'      => $product->is_border,
             'border_image'   => $product->border_image,
             'description'    => $product->description,
+            'warranty'       => $product->warranty,
         ];
 
         $cookieProduct         = 'recentlyProductViewed';
@@ -149,6 +150,7 @@ class ProductController extends Controller
                     'is_border'      => $pro['is_border'] ?? '',
                     'border_image'   => $pro['border_image'] ?? '',
                     'description'    => $pro['description'] ?? '',
+                    'warranty'       => $pro['warranty'] ?? '',
                 ];
             }
 
