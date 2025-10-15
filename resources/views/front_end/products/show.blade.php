@@ -138,12 +138,20 @@
                                                         <div class="p-short-description">
                                                             {!! $product->description !!}
                                                         </div>
+
                                                         <a href="javascript:" class="viewmoretskt"
                                                            data-content="#js-tskt-item">Xem thêm <i
                                                                 class="far fa-angle-down"></i></a>
 
                                                         <br>
                                                         <div style="clear: both;"></div>
+
+                                                        <div class="guarantee">
+                                                            <span class="title">Bảo hành:</span>
+                                                            <span class="content">
+                                                                {{ $product->warranty }}
+                                                            </span>
+                                                        </div>
 
                                                         @include('front_end.products.element.config')
 

@@ -17,6 +17,7 @@
 
                         <p><span>Email: </span>{{ $mainSettings['contact_email'] }}</p>
                         <p><span>Hotline: </span>{{ $mainSettings['contact_hotline'] }}</p>
+                        <p><span>Mã số thuế: </span>{{ $mainSettings['tax_code'] ?? '' }}</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">

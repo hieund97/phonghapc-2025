@@ -3484,3 +3484,9 @@ header .search .form .searchResult{
 #profile-tabs li a:hover{
     color: #E30019 !important;
 }
+
+.guarantee {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+}
