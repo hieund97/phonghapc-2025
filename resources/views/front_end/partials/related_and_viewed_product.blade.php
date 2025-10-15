@@ -144,7 +144,9 @@
                                                                         @endif
                                                                         <p>Giá bán</p>
                                                                         <p>Tình trạng</p>
+                                                                        @if($product->warranty )
                                                                         <p>Bảo hành</p>
+                                                                        @endif
                                                                     </div>
                                                                     <div class="tooltip-info">
                                                                         @if(isset($product->sale_price) || $product->price != 0 || $similarProd->price != 0)
