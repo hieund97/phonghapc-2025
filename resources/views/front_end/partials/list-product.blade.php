@@ -164,7 +164,9 @@
                                                     @endswitch
                                                 @endif
                                             </p>
+                                            @if($product->warranty )
                                             <p style="color: red">{{ $product->warranty }}</p>
+                                            @endif
                                         </div>
                                     </div>
                                     @if(!empty($product->gift_product) || !empty($gift))
