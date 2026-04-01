@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+use App\Models\Option;
 
 class CheckForMaintenanceMode
 {
@@ -26,12 +28,30 @@ class CheckForMaintenanceMode
      */
     public function handle(Request $request, Closure $next)
     {
-        if (env('MAINTENANCE_MODE', false) && !$this->isExcluded($request)) {
+        if ($this->isMaintenanceMode() && !$this->isExcluded($request)) {
             return response(file_get_contents(public_path('maintenance.html')), 503)
                 ->header('Content-Type', 'text/html');
         }
 
         return $next($request);
+    }
+
+    /**
+     * Check if maintenance mode is enabled from database settings.
+     *
+     * @return bool
+     */
+    protected function isMaintenanceMode(): bool
+    {
+        $settings = Cache::get('main-setting');
+
+        if ($settings && isset($settings['info_status'])) {
+            return $settings['info_status'] === 'close';
+        }
+
+        $option = Option::where('option_name', 'info_status')->first();
+
+        return $option && $option->option_value === 'close';
     }
 
     /**
