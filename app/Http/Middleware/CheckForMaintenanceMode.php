@@ -27,7 +27,8 @@ class CheckForMaintenanceMode
     public function handle(Request $request, Closure $next)
     {
         if (env('MAINTENANCE_MODE', false) && !$this->isExcluded($request)) {
-            return response()->file(public_path('maintenance.html'), 503);
+            return response(file_get_contents(public_path('maintenance.html')), 503)
+                ->header('Content-Type', 'text/html');
         }
 
         return $next($request);
