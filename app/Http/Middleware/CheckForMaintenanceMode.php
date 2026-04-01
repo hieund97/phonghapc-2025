@@ -17,6 +17,8 @@ class CheckForMaintenanceMode
     protected $except = [
         'ph_admin',
         'ph_admin/*',
+        'admin',
+        'admin/*',
     ];
 
     /**
