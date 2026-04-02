@@ -85,6 +85,7 @@
                                                             @endif
                                                         </a>
 
+                                                        @if(!config('front_end.landing_page_mode'))
                                                         <a href="javascript:void(0)"
                                                            class="ajax-addtocart button-single-cart pc-add-cart"
                                                            data-id="{{ $saleProd->id }}">
@@ -104,6 +105,7 @@
                                                            data-price="0">
                                                             Mua hàng
                                                         </a>
+                                                        @endif
 
                                                     </div>
 

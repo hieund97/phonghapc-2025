@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'landing_page_mode' => env('LANDING_PAGE_MODE', false),
+
     /**
      * id of slider in home page
      */

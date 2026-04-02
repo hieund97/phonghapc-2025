@@ -100,6 +100,7 @@
                                     @endif
                                 </a>
 
+                                @if(!config('front_end.landing_page_mode'))
                                 <a href="javascript:void(0)" class="ajax-addtocart button-single-cart pc-add-cart"
                                    data-id="{{ $product->id }}">
                                     <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -116,6 +117,7 @@
                                    data-redirect="redirect"
                                    data-quantity="1" data-id="1693" data-price="0">Mua hàng
                                 </a>
+                                @endif
                             </div>
                             <div class="tooltip-wrapper d-none">
                                 <div class="tooltip-product">

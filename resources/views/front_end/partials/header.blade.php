@@ -457,6 +457,7 @@
                             </a>
                         </div>
                     </div>
+                    @if(!config('front_end.landing_page_mode'))
                     <div class="header-action-item main-header--cart">
                         <div class="header-action_text">
                             <a class="header-action__link header-action_clicked" id="site-cart-handle"
@@ -497,6 +498,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     <div class="header-action-item main-header--account hide-mb">
                         <div class="header-action_text">
                             <a class="header-action__link" href="{{ auth()->user() ? route('fe.profile') : '#' }}"

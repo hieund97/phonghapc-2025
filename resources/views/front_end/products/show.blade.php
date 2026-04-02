@@ -168,6 +168,7 @@
                                                                 </div>
                                                             </div>
                                                         @endif
+                                                        @if(!config('front_end.landing_page_mode'))
                                                         <div class="d-flex align-items-center justify-content-between flex-wrap" style="gap: 20px">
                                                             <div class="buy-now-btn col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <a href="{{ route("fe.cart") }}"
@@ -198,6 +199,7 @@
                                                                 >Thêm vào giỏ hàng</a>
                                                             </div>
                                                         </div>
+                                                        @endif
                                                         <input type="hidden" name="needCheckOut" id="needCheckOut"
                                                                value="{{ checkNeedCheckOut($product) ? 1 : 0 }}">
                                                     </form>

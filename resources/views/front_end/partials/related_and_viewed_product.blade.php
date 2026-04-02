@@ -111,6 +111,7 @@
                                                                 @endif
                                                             </a>
 
+                                                            @if(!config('front_end.landing_page_mode'))
                                                             <a href="javascript:void(0)"
                                                                class="ajax-addtocart button-single-cart pc-add-cart"
                                                                data-id="{{ $similarProd->id }}">
@@ -133,6 +134,7 @@
                                                                data-quantity="1"
                                                                data-id="1693"
                                                                data-price="0">Mua hàng</a>
+                                                            @endif
                                                         </div>
                                                         <div class="tooltip-wrapper d-none">
                                                             <div class="tooltip-product">
@@ -327,6 +329,7 @@
                                                                     @endswitch
                                                                 @endif
                                                             </a>
+                                                            @if(!config('front_end.landing_page_mode'))
                                                             <a href=""
                                                                class="ajax-addtocart button-single-cart pc-add-cart"
                                                                data-id="{{ $prod['id'] }}"
@@ -349,6 +352,7 @@
                                                                data-quantity="1"
                                                                data-id="1478"
                                                                data-price="0">Mua hàng</a>
+                                                            @endif
                                                         </div>
                                                         <div class="tooltip-wrapper d-none">
                                                             <div class="tooltip-product">
