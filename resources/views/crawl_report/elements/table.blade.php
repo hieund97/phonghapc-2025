@@ -16,10 +16,13 @@
         <tbody>
         @foreach($aryCrawlData as $value)
             @php
-                $myProduct          = $value->product->first();
-                $myPrice            =  $myProduct->sale_price == 0 || $myProduct->sale_price == null ? $myProduct->price : $myProduct->sale_price;
-                $aryCrawledProduct  = json_decode($value->info_product_url, true);
+                $myProduct = $value->product->first();
             @endphp
+            @if($myProduct)
+                @php
+                    $myPrice            =  $myProduct->sale_price == 0 || $myProduct->sale_price == null ? $myProduct->price : $myProduct->sale_price;
+                    $aryCrawledProduct  = json_decode($value->info_product_url, true);
+                @endphp
             <tr>
                 <td>{{ $value->id }}</td>
                 <td style="white-space: normal; max-width:40em;">
@@ -114,6 +117,7 @@
                     </div>
                 </td>
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>

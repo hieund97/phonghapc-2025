@@ -34,7 +34,7 @@
 
                                 <div class="item-text">
                                     <a href="{{ route("fe.product",["slug"=> $item->attributes['slug']]) }}"
-                                       class="item-name bold"><h2>{{ $item->name }}</h2></a>
+                                       class="item-name bold"><h4>{{ $item->name }}</h4></a>
                                     <p class="item-status">
                                         <span style="color: #0DB866;">
                                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>

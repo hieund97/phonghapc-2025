@@ -85,9 +85,9 @@ class ProductController extends Controller
         //Newest Post
         $data['newestPost'] = Post::where('status', array_search('publish', Post::STATUS))
                                   ->where('id', '!=', $product->id)
-                                  ->orderBy('id', 'desc')
+                                  ->orderBy('created_at', 'desc')
                                   ->get()
-                                  ->take(2)
+                                  ->take(5)
         ;
         //End Newest Post
 
@@ -120,6 +120,8 @@ class ProductController extends Controller
                 : null,
             'is_border'      => $product->is_border,
             'border_image'   => $product->border_image,
+            'description'    => $product->description,
+            'warranty'       => $product->warranty,
         ];
 
         $cookieProduct         = 'recentlyProductViewed';
@@ -147,6 +149,8 @@ class ProductController extends Controller
                     'gift_category'  => $pro['gift_category'] ?? '',
                     'is_border'      => $pro['is_border'] ?? '',
                     'border_image'   => $pro['border_image'] ?? '',
+                    'description'    => $pro['description'] ?? '',
+                    'warranty'       => $pro['warranty'] ?? '',
                 ];
             }
 

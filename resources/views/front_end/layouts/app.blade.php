@@ -120,6 +120,7 @@
             filterProduct(categoryID, column, sort, true);
         })
 
+        @if(!config('front_end.landing_page_mode'))
         $('.ajax-addtocart').on('click', function (e) {
             e.preventDefault()
             let id = $(this).data('id');
@@ -158,6 +159,7 @@
                 }
             }, 2000)
         })
+        @endif
     });
 
     function addOneProductToCart(productId, configType = 'original', hasConfig = 0) {

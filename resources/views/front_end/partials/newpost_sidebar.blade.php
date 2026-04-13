@@ -1,27 +1,45 @@
-<div class="item-sb item-sb-mobile-hinden">
-    <h3 class="title-sb">
-        Tin tức mới nhất
-    </h3>
-    <div class="nav-right-new">
-        @if($newestPost)
-            @foreach($newestPost as $post)
-                <div class="item" style="margin-bottom: 20px">
-                    <div class="image" style="width: 100%">
-                        <a href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id] ) }}">
-                            <img src="{{ get_image_url($post->thumbnail, '') }}"
-                                 alt="{{ $post->title }}"
-                                 style="height: auto;width: 100%">
-                        </a>
+<div class="row" style="margin-top: 30px">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="nav-main-content">
+            <div class="content-product">
+                <div class="content-detail-product">
+                    <div style="margin-top: 0px">
+                        <ul class="nav nav-tabs nav-tp-custom">
+                            <li class="active">
+                                <a data-toggle="tab" href="#new-post-tab">Tin tức mới nhất</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="new-post-tab" class="tab-pane fade in active">
+                                <div class="content-box">
+                                    <div class="nav-product">
+                                        <div id="news-slider-detail" class="owl-carousel owl-theme owl-loaded owl-drag">
+                                            @if($newestPost)
+                                                @foreach($newestPost as $post)
+                                                    <div class="item-product">
+                                                        <div class="image">
+                                                            <a href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id] ) }}" class="thubmail-img">
+                                                                <img class="lazy"
+                                                                     data-src="{{ get_image_url($post->thumbnail, '') }}"
+                                                                     alt="{{ $post->title }}"
+                                                                     src=""
+                                                                     style="height: 200px; width: 100%; object-fit: cover;">
+                                                            </a>
+                                                        </div>
+                                                        <h3 class="title" style="height: 48px; overflow: hidden; margin-top: 10px; line-height: 24px;">
+                                                            <a href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id] ) }}">{{ $post->title }}</a>
+                                                        </h3>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="nav-img"
-                         style="width: 100%;padding-left: 0px;padding-top: 10px">
-                        <h3 class="title"><a
-                                    href="{{ route('fe.post', ['slug' => $post->slug, 'id' => $post->id] ) }}">{{ $post->title }}</a>
-                        </h3>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
-            @endforeach
-        @endif
+            </div>
+        </div>
     </div>
 </div>

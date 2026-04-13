@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        if (config('front_end.landing_page_mode')) {
+            abort(redirect()->route('fe.home'));
+        }
+    }
+
     public function index()
     {
         $cartCollection = Cart::getContent();
