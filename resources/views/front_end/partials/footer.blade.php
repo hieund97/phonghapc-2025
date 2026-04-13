@@ -18,6 +18,9 @@
                         <p><span>Email: </span>{{ $mainSettings['contact_email'] }}</p>
                         <p><span>Hotline: </span>{{ $mainSettings['contact_hotline'] }}</p>
                         <p><span>Mã số thuế: </span>{{ $mainSettings['tax_code'] ?? '' }}</p>
+                        <a href="http://online.gov.vn/Home/WebDetails/141706" target="_blank" rel="noopener">
+                            <img src="{{ asset('images/logo-bct.png') }}" alt="Đã thông báo Bộ Công Thương" style="margin-top: 10px; max-width: 160px;">
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
