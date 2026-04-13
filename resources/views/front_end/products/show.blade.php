@@ -360,11 +360,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;margin-top:30px">
-                                @include('front_end.partials.newpost_sidebar', ['newestPost' => $newestPost])
-                            </div>
                         </div>
                     </div>
+                    @include('front_end.partials.newpost_sidebar', ['newestPost' => $newestPost])
                     @include('front_end.partials.related_and_viewed_product', ['similarProducts' => $similarProducts, 'recentlyViewed' => $recentlyViewed ?? []])
                 </div>
             </div>
@@ -596,6 +594,31 @@
                     direction: "horizontal",
                 },
             },
+        });
+
+        $('#news-slider-detail').owlCarousel({
+            loop:true,
+            margin:10,
+            dots:false,
+            nav:true,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplaySpeed:1500,
+            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+            responsive:{
+                0:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },
+                1024:{
+                    items:4
+                },
+                1440:{
+                    items:5
+                }
+            }
         });
 
         var countI = 0;
