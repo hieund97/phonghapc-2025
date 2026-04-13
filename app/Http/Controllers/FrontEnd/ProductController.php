@@ -85,9 +85,9 @@ class ProductController extends Controller
         //Newest Post
         $data['newestPost'] = Post::where('status', array_search('publish', Post::STATUS))
                                   ->where('id', '!=', $product->id)
-                                  ->orderBy('id', 'desc')
+                                  ->orderBy('created_at', 'desc')
                                   ->get()
-                                  ->take(2)
+                                  ->take(5)
         ;
         //End Newest Post
 
