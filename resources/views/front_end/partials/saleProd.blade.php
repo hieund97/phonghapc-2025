@@ -48,8 +48,10 @@
                                                         <p class="price">
                                                             @if(!empty($saleProd->sale_price))
                                                                 <span class="gia-moi" style="display:inline-block">{{ number_format($saleProd->sale_price, 0, '', ',') }} đ</span>
-                                                                <span class="gia-cu">{{ number_format($saleProd->price, 0, '', ',') }} đ</span>
-                                                                <span class="tiet-kiem">(Tiết kiệm: {{ round(($saleProd->price - $saleProd->sale_price) / $saleProd->price * 100) }}%)</span>
+                                                                @if(!empty($saleProd->price) && $saleProd->price > 0)
+                                                                    <span class="gia-cu">{{ number_format($saleProd->price, 0, '', ',') }} đ</span>
+                                                                    <span class="tiet-kiem">(Tiết kiệm: {{ round(($saleProd->price - $saleProd->sale_price) / $saleProd->price * 100) }}%)</span>
+                                                                @endif
                                                             @else
                                                                 <span class="gia-moi">{{ $saleProd->price == 0 ? 'Liên hệ' : number_format($saleProd->price, 0, '', ','). 'đ' }}</span>
                                                             @endif

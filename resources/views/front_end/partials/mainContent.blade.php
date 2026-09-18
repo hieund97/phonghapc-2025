@@ -40,10 +40,13 @@
                                         @php
                                             $checkSale = false;
                                             $price = $product["price"];
+                                            $percent = 0;
                                             if(!empty($product["sale_price"])) {
                                                 $checkSale = true;
                                                 $price = $product["sale_price"];
-                                                $percent = round(($product["price"] - $product["sale_price"]) * 100 / ($product["price"]));
+                                                if(!empty($product["price"]) && $product["price"] > 0) {
+                                                    $percent = round(($product["price"] - $product["sale_price"]) * 100 / ($product["price"]));
+                                                }
                                             }
                                         @endphp
                                         <div class="col-md-2 col-sm-6 col-xs-6 box-item-product wow fadeInUp">
@@ -86,8 +89,10 @@
                                                 <div class="price-c"><p class="price">
                                                         @if(!empty($product['sale_price']))
                                                             <span class="gia-moi">{{ number_format($product['sale_price'], 0, '', ',') }} đ</span>
-                                                            <span class="gia-cu">{{ number_format($product['price'], 0, '', ',') }} đ</span>
-                                                            <span class="tiet-kiem">(Tiết kiệm: {{ round(($product['price'] - $product['sale_price']) / $product['price'] * 100) }}%)</span>
+                                                            @if(!empty($product['price']) && $product['price'] > 0)
+                                                                <span class="gia-cu">{{ number_format($product['price'], 0, '', ',') }} đ</span>
+                                                                <span class="tiet-kiem">(Tiết kiệm: {{ $percent }}%)</span>
+                                                            @endif
                                                         @else
                                                             <span class="gia-moi">{{ $product['price'] == 0 ? 'Liên hệ' : number_format($product['price'], 0, '', ',') .'đ' }}</span>
                                                         @endif
@@ -149,7 +154,7 @@
                                                         <div class="tooltip-title">{{ $product["name"] }}</div>
                                                         <div class="tooltip-content">
                                                             <div class="tooltip-price">
-                                                                @if(isset($product["sale_price"]))
+                                                                @if(isset($product["sale_price"]) && !empty($product["price"]) && $product["price"] > 0)
                                                                     <p>Giá niêm yết</p>
                                                                 @endif
                                                                 <p>Giá bán</p>
@@ -159,11 +164,11 @@
                                                                 @endif
                                                             </div>
                                                             <div class="tooltip-info">
-                                                                @if(isset($product["sale_price"]))
+                                                                @if(isset($product["sale_price"]) && !empty($product["price"]) && $product["price"] > 0)
                                                                     <div class="d-flex align-items-center">
                                                                         <p class="text-black-50 position-relative"><s>@money($product["price"])</s>
                                                                         </p>
-                                                                        <span class="ml-2" style="color:red;">{{ '-' . round(($product['price'] - $product['sale_price']) / $product['price'] * 100) . '%' }}</span>
+                                                                        <span class="ml-2" style="color:red;">{{ '-' . $percent . '%' }}</span>
                                                                     </div>
                                                                 @endif
                                                                 <p style="color: #2B76DA">@money($price)</p>

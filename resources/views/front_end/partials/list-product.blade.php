@@ -15,6 +15,7 @@
                     @php
                         $checkSale = false;
                         $price = $product->price;
+                        $percent = 0;
                         if(!empty($product->sale_price) && $product->price > 0) {
                             $checkSale = true;
                             $price = $product->sale_price;
@@ -124,7 +125,7 @@
                                     <div class="tooltip-title">{{ $product->name }}</div>
                                     <div class="tooltip-content">
                                         <div class="tooltip-price">
-                                            @if(isset($product->sale_price))
+                                            @if($checkSale)
                                                 <p>Giá niêm yết</p>
                                             @endif
                                             <p>Giá bán</p>
@@ -134,7 +135,7 @@
                                             @endif
                                         </div>
                                         <div class="tooltip-info">
-                                            @if(isset($product->sale_price))
+                                            @if($checkSale)
                                                 <div class="d-flex align-items-center">
                                                     <p class="text-black-50 position-relative"><s>@money($product->price)</s>
                                                     </p>
