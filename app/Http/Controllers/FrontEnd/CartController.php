@@ -96,7 +96,7 @@ class CartController extends Controller
 
         $item      = Cart::get($productId);
         $countItem = !empty($countItem) ? $countItem : 1;
-        if ($item && $item['attributes']['config'] == $configType) {
+        if ($item && ($item['attributes']['config'] ?? null) == $configType) {
             if (!empty($request->get('countItem'))) {
                 Cart::update($product->id, [
                     'quantity' => (int)$countItem,
@@ -308,10 +308,10 @@ class CartController extends Controller
                         "picture" => get_image_url($itemProd['image'], ''),
                         "slug"    => $itemProd['slug'],
                         'serial'                    => $itemProd['serial'],
-                        'description'               => $itemProd['description'],
-                        'technical_specification'   => $itemProd['technical_specification'],
-                        'outstanding_features'      => $itemProd['outstanding_features'],
-                        'gift_product'              => $itemProd['gift_product'],
+                        'description'               => $itemProd['description'] ?? '',
+                        'technical_specification'   => $itemProd['technical_specification'] ?? '',
+                        'outstanding_features'      => $itemProd['outstanding_features'] ?? '',
+                        'gift_product'              => $itemProd['gift_product'] ?? '',
                     ],
                     'associatedModel' => Product::class,
                 ]);

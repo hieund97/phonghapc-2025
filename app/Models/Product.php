@@ -338,7 +338,7 @@ class Product extends Model
 
     public function salePercent()
     {
-        if ($this->isSale()) {
+        if ($this->isSale() && !empty($this->price)) {
             return '-' . round(($this->price - $this->sale_price) * 100 / ($this->price)) . '%';
         }
 

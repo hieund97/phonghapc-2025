@@ -90,7 +90,7 @@ class PostController extends Controller
 
     public function getPost(Request $request)
     {
-        $ids       = $request->ids;
+        $ids       = $request->ids ?? [];
         $posts     = Post::where('status', array_search('publish', Post::STATUS))
                          ->whereNotIn('id', $ids)
                          ->where('published_at', '<', now())
@@ -294,7 +294,7 @@ class PostController extends Controller
 
     public function getPostCategory(Request $request, $id)
     {
-        $ids       = $request->ids;
+        $ids       = $request->ids ?? [];
         $posts     = Category::with(['posts'])
                              ->findOrFail($id)
                              ->posts()

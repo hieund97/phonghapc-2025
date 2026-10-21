@@ -37,10 +37,11 @@ class AppServiceProvider extends ServiceProvider
 
            $price ="
            <?php
-            if($amount==0){
+            \$__money = is_numeric($amount) ? (float) $amount : 0;
+            if(\$__money==0){
                 echo 'Liên hệ';
             }else { 
-             echo number_format($amount,0,',','.').'₫'; 
+             echo number_format(\$__money,0,',','.').'₫'; 
             }
            ?>
            ";
