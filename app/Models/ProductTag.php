@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Traits\SearchableTrait;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class ProductTag extends Model

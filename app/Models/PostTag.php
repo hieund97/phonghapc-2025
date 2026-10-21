@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
-use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Traits\SearchableTrait;
 
 class PostTag extends Model
 {

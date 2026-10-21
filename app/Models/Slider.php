@@ -6,7 +6,7 @@ use App\Traits\ForgetResponseCache;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Traits\SearchableTrait;
 
 class Slider extends Model
 {

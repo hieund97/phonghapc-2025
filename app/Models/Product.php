@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
-use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Traits\SearchableTrait;
 use Spatie\Tags\HasTags;
 use Yadakhov\InsertOnDuplicateKey;
 
