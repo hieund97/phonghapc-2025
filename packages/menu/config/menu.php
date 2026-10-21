@@ -3,7 +3,7 @@
 return [
 /* you can add your own middleware here */
 	
-   'middleware' => [],
+   'middleware' => ['web', 'auth', 'admin'],
 
 /* you can set your own table prefix here */
     'table_prefix' => 'admin_',

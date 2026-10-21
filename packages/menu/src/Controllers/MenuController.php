@@ -43,6 +43,20 @@ class MenuController extends Controller
         }
     }
 
+    /**
+     * Chỉ nhận đường dẫn tương đối, http(s), mailto, tel. Link khác (javascript:, data:...) thành '#'.
+     */
+    protected function safeLink($link)
+    {
+        $link = trim((string) $link);
+
+        if ($link === '' || preg_match('#^(https?://|mailto:|tel:|/|\#|\?)#i', $link)) {
+            return $link;
+        }
+
+        return preg_match('#^[a-z][a-z0-9+.-]*:#i', $link) ? '#' : $link;
+    }
+
     public function updateitem()
     {
         $arraydata = request()->input("arraydata");
@@ -50,7 +64,7 @@ class MenuController extends Controller
             foreach ($arraydata as $value) {
                 $menuitem = MenuItems::find($value['id']);
                 $menuitem->label = $value['label'];
-                $menuitem->link = $value['link'];
+                $menuitem->link = $this->safeLink($value['link']);
                 $menuitem->class = $value['class'];
                 if (config('menu.use_roles')) {
                     $menuitem->role_id = $value['role_id'] ? $value['role_id'] : 0 ;
@@ -60,7 +74,7 @@ class MenuController extends Controller
         } else {
             $menuitem = MenuItems::find(request()->input("id"));
             $menuitem->label = request()->input("label");
-            $menuitem->link = request()->input("url");
+            $menuitem->link = $this->safeLink(request()->input("url"));
             $menuitem->class = request()->input("clases");
             if (config('menu.use_roles')) {
                 $menuitem->role_id = request()->input("role_id") ? request()->input("role_id") : 0 ;
@@ -74,7 +88,7 @@ class MenuController extends Controller
 
         $menuitem = new MenuItems();
         $menuitem->label = request()->input("labelmenu");
-        $menuitem->link = request()->input("linkmenu");
+        $menuitem->link = $this->safeLink(request()->input("linkmenu"));
         if (config('menu.use_roles')) {
             $menuitem->role_id = request()->input("rolemenu") ? request()->input("rolemenu")  : 0 ;
         }
