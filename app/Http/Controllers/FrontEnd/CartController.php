@@ -288,22 +288,28 @@ class CartController extends Controller
      */
     public function addItemToCartForBuildPC(Request $request)
     {
-        $data = json_decode($request->add_to_cart_build_pc, true);
+        $data = json_decode($request->add_to_cart_build_pc, true) ?: [];
         foreach ($data as $key => $itemProd) {
             if ($key == 'total') {
                 continue;
             }
-            $item = Cart::get($itemProd['product_id']);
+            $product = Product::find($itemProd['product_id'] ?? null);
+            if (!$product) {
+                continue;
+            }
+            $quantity = max(1, (int)($itemProd['quantity'] ?? 1));
+
+            $item = Cart::get($product->id);
             if ($item) {
-                Cart::update($itemProd['product_id'], [
-                    'quantity' => $itemProd['quantity'],
+                Cart::update($product->id, [
+                    'quantity' => $quantity,
                 ]);
             } else {
                 Cart::add([
-                    'id'              => $itemProd['product_id'],
-                    'name'            => $itemProd['name'],
-                    'price'           => $itemProd['price'],
-                    'quantity'        => $itemProd['quantity'],
+                    'id'              => $product->id,
+                    'name'            => $product->name,
+                    'price'           => $product->getRealPriceAttribute(),
+                    'quantity'        => $quantity,
                     'attributes'      => [
                         "picture" => get_image_url($itemProd['image'], ''),
                         "slug"    => $itemProd['slug'],
