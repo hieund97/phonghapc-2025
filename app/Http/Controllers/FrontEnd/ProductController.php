@@ -126,6 +126,7 @@ class ProductController extends Controller
 
         $cookieProduct         = 'recentlyProductViewed';
         $data["cookieProduct"] = $cookieProduct;
+        $productListNew        = [];
         if (isset($_COOKIE[$cookieProduct])) {
             $productList            = json_decode($_COOKIE[$cookieProduct], true);
             $data['recentlyViewed'] = $productList;
