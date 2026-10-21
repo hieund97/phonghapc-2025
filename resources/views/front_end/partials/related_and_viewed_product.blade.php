@@ -52,12 +52,22 @@
 
                                                         <div class="price-c"><p class="price">
 
-                                                                @if(!empty($similarProd->sale_price))
+                                                                @if(!empty($similarProd->sale_price) || $similarProd->price != 0 )
                                                                     <span class="gia-moi">@money($similarProd->sale_price)</span>
                                                                     <span class="gia-cu">@money($similarProd->price)</span>
-                                                                    <span class="tiet-kiem">(Tiết kiệm: {{ round(($similarProd->price - $similarProd->sale_price) / $similarProd->price * 100) }}%)</span>
+                                                                    <span class="tiet-kiem">
+                                                                        (Tiết kiệm: {{ ($similarProd->price > 0) ? round(($similarProd->price - $similarProd->sale_price) / $similarProd->price * 100) : 0 }}%)
+                                                                    </span>
                                                                 @else
-                                                                    <span class="gia-moi">@money($similarProd->price)</span>
+                                                                    <span class="gia-moi">
+                                                                        <span class="gia-moi">
+                                                                            @if($similarProd->price == 0)
+                                                                                Liên hệ
+                                                                            @else
+                                                                                @money($similarProd->price)
+                                                                            @endif
+                                                                        </span>
+                                                                    </span>
                                                                 @endif
 
                                                             </p>
@@ -101,6 +111,7 @@
                                                                 @endif
                                                             </a>
 
+                                                            @if(!config('front_end.landing_page_mode'))
                                                             <a href="javascript:void(0)"
                                                                class="ajax-addtocart button-single-cart pc-add-cart"
                                                                data-id="{{ $similarProd->id }}">
@@ -123,6 +134,7 @@
                                                                data-quantity="1"
                                                                data-id="1693"
                                                                data-price="0">Mua hàng</a>
+                                                            @endif
                                                         </div>
                                                         <div class="tooltip-wrapper d-none">
                                                             <div class="tooltip-product">
@@ -134,48 +146,62 @@
                                                                         @endif
                                                                         <p>Giá bán</p>
                                                                         <p>Tình trạng</p>
+                                                                        @if($product->warranty )
+                                                                        <p>Bảo hành</p>
+                                                                        @endif
                                                                     </div>
                                                                     <div class="tooltip-info">
-                                                                        @if(isset($product->sale_price))
+                                                                        @if(isset($product->sale_price) || $product->price != 0 || $similarProd->price != 0)
                                                                             <div class="d-flex align-items-center">
-                                                                                <p class="text-black-50 position-relative"><s>@money($product->price)</s>
-                                                                                </p>
-                                                                                <span class="ml-2" style="color:red;">{{ '-' . round(($similarProd->price - $similarProd->sale_price) / $similarProd->price * 100) . '%' }}</span>
+                                                                                <p class="text-black-50 position-relative">
+                                                                                    <s>@money($product->price)</s></p>
+                                                                                <span class="ml-2" style="color:red;">
+                                                                                    {{ '-' . (($similarProd->price > 0) ? round(($similarProd->price - $similarProd->sale_price) / $similarProd->price * 100) : 0) . '%' }}
+                                                                                </span>
                                                                             </div>
                                                                         @endif
-                                                                        <p style="color: #2B76DA">@money($similarProd->sale_price)</p>
+                                                                        <p style="color: #2B76DA">
+                                                                            @money($similarProd->sale_price)</p>
                                                                         <p>
                                                                             @if(isset($product))
                                                                                 @switch($product->status)
                                                                                     @case(config('front_end.product_status.new'))
-                                                                                        <span class="icon-is-stock" style="color: green">
+                                                                                        <span class="icon-is-stock"
+                                                                                              style="color: green">
                                                                                              Còn hàng
                                                                                         </span>
                                                                                         @break
                                                                                     @case(config('front_end.product_status.in_stock'))
-                                                                                        <span class="icon-is-stock text-green" style="color: green">
+                                                                                        <span class="icon-is-stock text-green"
+                                                                                              style="color: green">
                                                                                             Còn hàng
                                                                                         </span>
                                                                                         @break
                                                                                     @case(config('front_end.product_status.out_of_stock'))
-                                                                                        <span class="icon-none-is-stock" style="color: red">
+                                                                                        <span class="icon-none-is-stock"
+                                                                                              style="color: red">
                                                                                              Hết hàng
                                                                                         </span>
                                                                                         @break
                                                                                     @case(config('front_end.product_status.coming_soon'))
-                                                                                        <span class="icon-coming-in-stock" style="color: #d0ac01">
+                                                                                        <span class="icon-coming-in-stock"
+                                                                                              style="color: #d0ac01">
                                                                                              Hàng sắp về
                                                                                         </span>
                                                                                         @break
                                                                                 @endswitch
                                                                             @endif
                                                                         </p>
+                                                                        @if($product->warranty )
+                                                                        <p style="color: red">{{ $product->warranty }}</p>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                                 @if(!empty($product->gift_product) || (!empty($product->categories) && !empty($product->categories[0]->gift)))
                                                                     <div class="tooltip-gift">
                                                                         <div class="header-wrapper">
-                                                                            <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
+                                                                            <p class="title-gift"><i
+                                                                                        class="fa-solid fa-gift">&nbsp</i>
                                                                                 Quà tặng và ưu đãi kèm theo
                                                                             </p>
                                                                             <div class="content-gift">
@@ -190,6 +216,9 @@
                                                                         </div>
                                                                     </div>
                                                                 @endif
+                                                                <div class="tooltip-description">
+                                                                    {!! $product['description'] !!}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -245,12 +274,20 @@
                                                         <div class="price-c"><p
                                                                     class="price">
 
-                                                                @if(!empty($prod['sale_price']))
+                                                                @if(!empty($prod['sale_price']) || $prod['price'] != 0 )
                                                                     <span class="gia-moi">@money($prod['sale_price'])</span>
                                                                     <span class="gia-cu">@money($prod['price'])</span>
-                                                                    <span class="tiet-kiem">(Tiết kiệm: {{ round(($prod['price'] - $prod['sale_price']) / $prod['price'] * 100) }}%)</span>
+                                                                    <span class="tiet-kiem">
+                                                                        (Tiết kiệm: {{ ($prod['price'] > 0) ? round(($prod['price'] - $prod['sale_price']) / $prod['price'] * 100) : 0 }}%)
+                                                                    </span>
                                                                 @else
-                                                                    <span class="gia-moi">@money($prod['price'])</span>
+                                                                    <span class="gia-moi">
+                                                                        @if($prod['price'] == 0)
+                                                                            Liên hệ
+                                                                        @else
+                                                                            @money($prod['price'])
+                                                                        @endif
+                                                                    </span>
                                                                 @endif
 
                                                             </p>
@@ -292,6 +329,7 @@
                                                                     @endswitch
                                                                 @endif
                                                             </a>
+                                                            @if(!config('front_end.landing_page_mode'))
                                                             <a href=""
                                                                class="ajax-addtocart button-single-cart pc-add-cart"
                                                                data-id="{{ $prod['id'] }}"
@@ -314,6 +352,7 @@
                                                                data-quantity="1"
                                                                data-id="1478"
                                                                data-price="0">Mua hàng</a>
+                                                            @endif
                                                         </div>
                                                         <div class="tooltip-wrapper d-none">
                                                             <div class="tooltip-product">
@@ -329,32 +368,39 @@
                                                                     <div class="tooltip-info">
                                                                         @if(isset($prod['sale_price']))
                                                                             <div class="d-flex align-items-center">
-                                                                                <p class="text-black-50 position-relative"><s>@money($prod['price'])</s>
+                                                                                <p class="text-black-50 position-relative">
+                                                                                    <s>@money($prod['price'])</s>
                                                                                 </p>
-                                                                                <span class="ml-2" style="color:red;">{{ $prod['sale_percent'] }}</span>
+                                                                                <span class="ml-2"
+                                                                                      style="color:red;">{{ $prod['sale_percent'] }}</span>
                                                                             </div>
                                                                         @endif
-                                                                        <p style="color: #2B76DA">@money($prod['sale_price'])</p>
+                                                                        <p style="color: #2B76DA">
+                                                                            @money($prod['sale_price'])</p>
                                                                         <p>
                                                                             @if(isset($prod))
                                                                                 @switch($prod['status'])
                                                                                     @case(config('front_end.product_status.new'))
-                                                                                        <span class="icon-is-stock" style="color: green">
+                                                                                        <span class="icon-is-stock"
+                                                                                              style="color: green">
                                                                                              Còn hàng
                                                                                         </span>
                                                                                         @break
                                                                                     @case(config('front_end.product_status.in_stock'))
-                                                                                        <span class="icon-is-stock text-green" style="color: green">
+                                                                                        <span class="icon-is-stock text-green"
+                                                                                              style="color: green">
                                                                                             Còn hàng
                                                                                         </span>
                                                                                         @break
                                                                                     @case(config('front_end.product_status.out_of_stock'))
-                                                                                        <span class="icon-none-is-stock" style="color: red">
+                                                                                        <span class="icon-none-is-stock"
+                                                                                              style="color: red">
                                                                                              Hết hàng
                                                                                         </span>
                                                                                         @break
                                                                                     @case(config('front_end.product_status.coming_soon'))
-                                                                                        <span class="icon-coming-in-stock" style="color: #d0ac01">
+                                                                                        <span class="icon-coming-in-stock"
+                                                                                              style="color: #d0ac01">
                                                                                              Hàng sắp về
                                                                                         </span>
                                                                                         @break
@@ -366,7 +412,8 @@
                                                                 @if(!empty($prod['gift_product']) || !empty($prod['gift_category']))
                                                                     <div class="tooltip-gift">
                                                                         <div class="header-wrapper">
-                                                                            <p class="title-gift"><i class="fa-solid fa-gift">&nbsp</i>
+                                                                            <p class="title-gift"><i
+                                                                                        class="fa-solid fa-gift">&nbsp</i>
                                                                                 Quà tặng và ưu đãi kèm theo
                                                                             </p>
                                                                             <div class="content-gift">
@@ -377,6 +424,9 @@
                                                                         </div>
                                                                     </div>
                                                                 @endif
+                                                                <div class="tooltip-description">
+                                                                    {!! $product['description'] !!}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -12,6 +12,260 @@
         </div>
     </div>
 @endif
+
+{{-- Top Header Row with Tags --}}
+<div class="top-info-bar is-pc">
+    <div class="container-fluid">
+        <div class="top-info-content">
+            {{-- Left: Contact Info --}}
+            <div class="top-info-left">
+                @if (isset($mainSettings['contact_hotline']) && !empty($mainSettings['contact_hotline']))
+                    <a href="tel:{{ $mainSettings['contact_hotline'] }}" class="top-info-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="currentColor"/>
+                        </svg>
+                        <span>{{ $mainSettings['contact_hotline'] }}</span>
+                    </a>
+                @endif
+                @if (isset($mainSettings['contact_email']) && !empty($mainSettings['contact_email']))
+                    <a href="mailto:{{ $mainSettings['contact_email'] }}" class="top-info-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>{{ $mainSettings['contact_email'] }}</span>
+                    </a>
+                @endif
+                @if (isset($mainSettings['contact_address']) && !empty($mainSettings['contact_address']))
+                    <span class="top-info-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span>{{ $mainSettings['contact_address'] }}</span>
+                    </span>
+                @endif
+            </div>
+
+            {{-- Center: Promotional Tags --}}
+            <div class="top-info-center">
+                @if ($mainMenus)
+                    @foreach ($mainMenus as $menu)
+                        @if ($menu->id == config('front_end.menu.top_header'))
+                            @foreach ($menu->items as $item)
+                                <a href="{{ $item->link }}" class="promo-tag">
+                                    {{ $item->label }}
+                                </a>
+                            @endforeach
+                        @endif
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.top-info-bar {
+    background: #E30019;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 10px 0;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+/* Adjust main header z-index */
+.main-header {
+    z-index: 10 !important;
+}
+
+/* Adjust main header to stick below top info bar - PC only */
+@media (min-width: 992px) {
+    .main-header {
+        top: 44px !important;
+    }
+}
+
+.top-info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-info-left,
+.top-info-center,
+.top-info-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.top-info-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+}
+
+.top-info-item:hover {
+    color: #fff5e6;
+    transform: translateY(-1px);
+}
+
+.top-info-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.promo-tag {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #000000;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.promo-tag:hover {
+    background: linear-gradient(135deg, #FFE55C 0%, #FFB347 50%, #FF9F3A 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+}
+
+.promo-tag svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.top-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.top-link:hover {
+    color: #fff5e6;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.top-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff5e6;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.top-link:hover::after {
+    width: 80%;
+}
+
+@media (max-width: 1200px) {
+    .top-info-bar {
+        font-size: 11px;
+        padding: 4px 0;
+    }
+
+    .top-info-content {
+        gap: 12px;
+    }
+
+    .top-info-center {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .promo-tag {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+}
+
+@media (max-width: 991px) {
+    .top-info-bar {
+        font-size: 10px;
+        padding: 4px 0;
+    }
+
+    .top-info-content {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .top-info-left,
+    .top-info-right {
+        display: none;
+    }
+
+    .top-info-center {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .promo-tag {
+        font-size: 9px;
+        padding: 3px 6px;
+        gap: 3px;
+    }
+
+    .promo-tag svg {
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-info-bar {
+        font-size: 9px;
+        padding: 3px 0;
+    }
+
+    .top-info-content {
+        gap: 5px;
+    }
+
+    .promo-tag {
+        font-size: 8px;
+        padding: 2px 5px;
+    }
+
+    .promo-tag svg {
+        display: none;
+    }
+}
+</style>
+
 <header class="main-header">
     <div class="main-header--top">
         <div class="container-fluid">
@@ -203,6 +457,7 @@
                             </a>
                         </div>
                     </div>
+                    @if(!config('front_end.landing_page_mode'))
                     <div class="header-action-item main-header--cart">
                         <div class="header-action_text">
                             <a class="header-action__link header-action_clicked" id="site-cart-handle"
@@ -243,6 +498,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     <div class="header-action-item main-header--account hide-mb">
                         <div class="header-action_text">
                             <a class="header-action__link" href="{{ auth()->user() ? route('fe.profile') : '#' }}"

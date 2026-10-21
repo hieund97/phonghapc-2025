@@ -22,9 +22,7 @@
                     <div class="row">
                         <div class="col-md-9 col-sm-9 col-xs-12 rounded animation-element fade-left animated fadeInLeft">
                             <div class="map-contact">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.0736221396473!2d105.86086851467554!3d20.869082598586672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135b23293abd205%3A0xff0b8c0543ddfbdf!2zNjggxJAuIFRy4bqnbiBQaMO6LCBUVC4gVGjGsOG7nW5nIFTDrW4sIFRoxrDhu51uZyBUw61uLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1635579400663!5m2!1svi!2s"
-                                        width="100%" height="180" frameborder="0" style="border:0"
-                                        allowfullscreen=""></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.4621120933466!2d105.89997799999999!3d20.7725846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135b7d0fcb5d511%3A0xf468313b2e2c039!2zUGhvbmcgSMOgIENvbXB1dGVyIDU1IMSQ4buXIFjDoQ!5e0!3m2!1sen!2s!4v1762766941887!5m2!1sen!2s" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-12 rounded animation-element fade-right animated fadeInRight contact-custom-form">

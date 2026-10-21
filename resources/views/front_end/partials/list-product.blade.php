@@ -15,7 +15,8 @@
                     @php
                         $checkSale = false;
                         $price = $product->price;
-                        if(!empty($product->sale_price)) {
+                        $percent = 0;
+                        if(!empty($product->sale_price) && $product->price > 0) {
                             $checkSale = true;
                             $price = $product->sale_price;
                             $percent = round(($product->price - $product->sale_price) * 100 / ($product->price));
@@ -57,7 +58,13 @@
 
                             <div class="price-c">
                                 <p class="price">
-                                    <span class="gia-moi">@money($price)</span>
+                                    <span class="gia-moi">
+                                        @if($price == 0)
+                                            Liên hệ
+                                        @else
+                                            @money($price)
+                                        @endif
+                                    </span>
                                     @if($checkSale)
                                         <span class="gia-cu">@money($product->price)</span>
                                         <span class="tiet-kiem">(Tiết kiệm: {{ $percent }}%)</span>
@@ -94,6 +101,7 @@
                                     @endif
                                 </a>
 
+                                @if(!config('front_end.landing_page_mode'))
                                 <a href="javascript:void(0)" class="ajax-addtocart button-single-cart pc-add-cart"
                                    data-id="{{ $product->id }}">
                                     <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -110,20 +118,24 @@
                                    data-redirect="redirect"
                                    data-quantity="1" data-id="1693" data-price="0">Mua hàng
                                 </a>
+                                @endif
                             </div>
                             <div class="tooltip-wrapper d-none">
                                 <div class="tooltip-product">
                                     <div class="tooltip-title">{{ $product->name }}</div>
                                     <div class="tooltip-content">
                                         <div class="tooltip-price">
-                                            @if(isset($product->sale_price))
+                                            @if($checkSale)
                                                 <p>Giá niêm yết</p>
                                             @endif
                                             <p>Giá bán</p>
                                             <p>Tình trạng</p>
+                                            @if($product->warranty )
+                                            <p>Bảo hành</p>
+                                            @endif
                                         </div>
                                         <div class="tooltip-info">
-                                            @if(isset($product->sale_price))
+                                            @if($checkSale)
                                                 <div class="d-flex align-items-center">
                                                     <p class="text-black-50 position-relative"><s>@money($product->price)</s>
                                                     </p>
@@ -157,6 +169,9 @@
                                                     @endswitch
                                                 @endif
                                             </p>
+                                            @if($product->warranty )
+                                            <p style="color: red">{{ $product->warranty }}</p>
+                                            @endif
                                         </div>
                                     </div>
                                     @if(!empty($product->gift_product) || !empty($gift))
@@ -173,6 +188,9 @@
                                             </div>
                                         </div>
                                     @endif
+                                    <div class="tooltip-description">
+                                        {!! $product['description'] !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>

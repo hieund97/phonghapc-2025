@@ -145,6 +145,7 @@
                                 </button>
                             </form>
                         </li>
+                        @if(!config('front_end.landing_page_mode'))
                         <li style="background: #ce0707;">
                             <form id="add_to_cart_build_pc_form" action="{{ route('fe.cart.add.buildpc') }}"
                                   method="POST">
@@ -157,6 +158,7 @@
                                 </button>
                             </form>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>

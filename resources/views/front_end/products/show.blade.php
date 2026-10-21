@@ -122,9 +122,9 @@
                                                         <div class="pd-price-group">
                                                         <span class="pd-price">
                                                             @if(!empty($product->sale_price))
-                                                                {{ number_format($product->sale_price,0,'.',',') }}đ
+                                                                {{ $product->sale_price == 0 ? 'Liên hệ' : number_format($product->sale_price,0,'.',',').'đ' }}
                                                             @else
-                                                                {{  number_format($product->price,0,'.',',') }}đ
+                                                                {{ $product->price == 0 ? 'Liên hệ' : number_format($product->price,0,'.',',').'đ' }}
                                                             @endif
                                                         </span>
                                                             @if(!empty($product->sale_price))
@@ -138,6 +138,7 @@
                                                         <div class="p-short-description">
                                                             {!! $product->description !!}
                                                         </div>
+
                                                         <a href="javascript:" class="viewmoretskt"
                                                            data-content="#js-tskt-item">Xem thêm <i
                                                                 class="far fa-angle-down"></i></a>
@@ -145,6 +146,14 @@
                                                         <br>
                                                         <div style="clear: both;"></div>
 
+                                                        @if ($product->warranty)
+                                                        <div class="guarantee">
+                                                            <span class="title">Bảo hành:</span>
+                                                            <span class="content">
+                                                                {{ $product->warranty }}
+                                                            </span>
+                                                        </div>
+                                                        @endif
                                                         @include('front_end.products.element.config')
 
                                                         @if(!empty($htmlGift))
@@ -159,6 +168,7 @@
                                                                 </div>
                                                             </div>
                                                         @endif
+                                                        @if(!config('front_end.landing_page_mode'))
                                                         <div class="d-flex align-items-center justify-content-between flex-wrap" style="gap: 20px">
                                                             <div class="buy-now-btn col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <a href="{{ route("fe.cart") }}"
@@ -189,6 +199,7 @@
                                                                 >Thêm vào giỏ hàng</a>
                                                             </div>
                                                         </div>
+                                                        @endif
                                                         <input type="hidden" name="needCheckOut" id="needCheckOut"
                                                                value="{{ checkNeedCheckOut($product) ? 1 : 0 }}">
                                                     </form>
@@ -349,11 +360,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;margin-top:30px">
-                                @include('front_end.partials.newpost_sidebar', ['newestPost' => $newestPost])
-                            </div>
                         </div>
                     </div>
+                    @include('front_end.partials.newpost_sidebar', ['newestPost' => $newestPost])
                     @include('front_end.partials.related_and_viewed_product', ['similarProducts' => $similarProducts, 'recentlyViewed' => $recentlyViewed ?? []])
                 </div>
             </div>
@@ -585,6 +594,31 @@
                     direction: "horizontal",
                 },
             },
+        });
+
+        $('#news-slider-detail').owlCarousel({
+            loop:true,
+            margin:10,
+            dots:false,
+            nav:true,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplaySpeed:1500,
+            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+            responsive:{
+                0:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },
+                1024:{
+                    items:4
+                },
+                1440:{
+                    items:5
+                }
+            }
         });
 
         var countI = 0;

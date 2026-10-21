@@ -587,7 +587,7 @@
     .search-box .searchform-product .input-search:focus{
         background:#ffffff;
         outline:none;
-        border-color:var(--color-primary); }
+        border-color:white; }
 
     .search-box .btn-search{
         width:40px; }

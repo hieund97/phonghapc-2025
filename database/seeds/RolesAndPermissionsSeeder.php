@@ -125,15 +125,15 @@ class RolesAndPermissionsSeeder extends Seeder
             'crawl_report.destroy',
         ];
 
-        foreach ($permissions as $permission) {
-            if (!Permission::whereName($permission)->exists()) {
-                Permission::create(['name' => $permission]);
-            }
-        }
+        //foreach ($permissions as $permission) {
+        //    if (!Permission::whereName($permission)->exists()) {
+        //        Permission::create(['name' => $permission]);
+        //    }
+        //}
 
         // create roles and assign created permissions
-        if (!Role::whereName('Super Admin')->exists()) {
-            Role::create(['name' => 'Super Admin'])->givePermissionTo(Permission::all());
+        //if (!Role::whereName('Super Admin')->exists()) {
+        //    Role::create(['name' => 'Super Admin'])->givePermissionTo(Permission::all());
 
             // create default admin
             $user = User::create([
@@ -143,10 +143,10 @@ class RolesAndPermissionsSeeder extends Seeder
             ]);
 
             $user->assignRole('Super Admin');
-        }
+        //}
 
-        if (!Role::whereName('Customers')->exists()) {
-            Role::create(['name' => 'Customers']);
-        }
+        //if (!Role::whereName('Customers')->exists()) {
+        //    Role::create(['name' => 'Customers']);
+        //}
     }
 }

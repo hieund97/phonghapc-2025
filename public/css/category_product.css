@@ -49,7 +49,7 @@
 }
 
 .fillter-label.tpInputLabel.checked label::before{
-    background:url('/templates/frontend/resources/img/checked.png');
+    background:url('../templates/frontend/resources/img/checked.png');
     border:0;
 }
 
@@ -169,7 +169,7 @@
     margin: 8px 0 0;
 }
 
-@media (min-width: 1624px)
+@media (min-width: 1624px){
 .filter-container a {
     font-size: 14px;
     line-height: 20px;
@@ -296,7 +296,7 @@
     }
 
     .icons {
-        background: url(/images/sprite.png) no-repeat;
+        background: url('../images/sprite.png') no-repeat;
         background-size: 250px 300px;
     }
 
@@ -330,7 +330,7 @@
     }
 
     .mb-icons {
-        background: url(/images/mb-sprite.png) no-repeat;
+        background: url('../images/mb-sprite.png') no-repeat;
         background-size: 150px 150px;
     }
 
@@ -345,6 +345,6 @@
         text-align: center;
         font-size: 12px;
     }
-}
+}}
 
 

@@ -25,7 +25,7 @@ class NavigationUpdate extends FormRequest
     {
         return [
             'name' => 'required|string|max:100|unique:navigations,name,' .$this->navigation->id,
-            'link' => 'required|string|max:100|unique:navigations,link,' .$this->navigation->id,
+            'link' => 'required|string|unique:navigations,link,' .$this->navigation->id,
             'group' => 'required|string',
             'order' => 'integer|numeric',
             'display_in'=>'required|string',

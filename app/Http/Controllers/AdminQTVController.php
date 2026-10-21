@@ -30,7 +30,9 @@ class AdminQTVController extends Controller
 
         return view('users.admin.index', [
             // 'users' => User::search($request->get('q'))->whereHas('roles')->orWhereHas('permissions')->with('roles')->paginate(),
-            'users' => User::role('Super Admin')->paginate(),
+            'users' => User::whereHas('roles', function ($query) {
+                $query->where('name', '!=', 'Customer');
+            })->paginate(),
         ]);
     }
 

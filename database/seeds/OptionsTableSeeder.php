@@ -56,6 +56,7 @@ class OptionsTableSeeder extends Seeder
                 'type'  => '',
                 'tab'   => 'contact'
             ],
+            'tax_code'                => ['value' => '', 'type' => '', 'tab' => 'contact'],
             'contact_bank'            => ['value' => '', 'type' => '', 'tab' => 'contact'],
             'contact_bank_number'     => ['value' => '', 'type' => '', 'tab' => 'contact'],
             'contact_bank_owner'      => ['value' => '', 'type' => '', 'tab' => 'contact'],
