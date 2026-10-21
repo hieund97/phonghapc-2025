@@ -35,7 +35,6 @@
         "laravel/telescope": "^4.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "lorisleiva/laravel-deployer": "^0.3.2",
         "maatwebsite/excel": "^3.1",
         "nicolaslopezj/searchable": "1.*",
         "orangehill/iseed": "^3.0",
@@ -48,7 +47,7 @@
         "spatie/laravel-missing-page-redirector": "^2.7",
         "spatie/laravel-permission": "^3.11",
         "spatie/laravel-responsecache": "^6.0",
-        "spatie/laravel-tags": "^2.6",
+        "spatie/laravel-tags": "^3.1",
         "tucker-eric/eloquentfilter": "^2.3",
         "yadakhov/insert-on-duplicate-key": "^1.2"
     },
@@ -56,7 +55,7 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-ide-helper": "^2.9",
         "facade/ignition": "^2.0",
-        "fzaninotto/faker": "^1.9.1",
+        "fakerphp/faker": "^1.23",
         "kitloong/laravel-migrations-generator": "^4.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^5.0",
@@ -68,7 +67,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.33"
+        }
     },
     "extra": {
         "laravel": {

@@ -27,7 +27,7 @@ abstract class CacheAbstractDecorator implements RepositoryInterface
      * @param string|null $cacheGroup
      * @author Sang Nguyen
      */
-    public function __construct(RepositoryInterface $repository, string $cacheGroup = null)
+    public function __construct(RepositoryInterface $repository, ?string $cacheGroup = null)
     {
         $this->repository = $repository;
         $this->cache = new Cache(app('cache'), $cacheGroup ?? get_class($repository));

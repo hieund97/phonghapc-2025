@@ -7,7 +7,7 @@ use Ladifire\LaravelPayment\Contracts\Factory;
 use Ladifire\LaravelPayment\Contracts\Provider;
 
 /**
- * @method static Provider driver(string $driver = null)
+ * @method static Provider driver(?string $driver = null)
  * @see \Ladifire\LaravelPayment\PaymentManager
  */
 class Payment extends Facade

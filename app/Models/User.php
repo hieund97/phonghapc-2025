@@ -164,7 +164,7 @@ class User extends Authenticatable implements HasMedia
      *
      * @throws \Spatie\Image\Exceptions\InvalidManipulation
      */
-    public function registerMediaConversions(Media $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')->fit(Manipulations::FIT_STRETCH, 100, 100)->performOnCollections('avatar');
     }
