@@ -45,16 +45,24 @@ class MenuController extends Controller
 
     /**
      * Chỉ nhận đường dẫn tương đối, http(s), mailto, tel. Link khác (javascript:, data:...) thành '#'.
+     * Bỏ ký tự điều khiển/khoảng trắng trước khi kiểm tra vì trình duyệt bỏ qua chúng trong scheme
+     * (vd "java\tscript:").
      */
     protected function safeLink($link)
     {
-        $link = trim((string) $link);
+        $link = preg_replace('/[\x00-\x20\x7F]+/u', '', (string) $link);
 
-        if ($link === '' || preg_match('#^(https?://|mailto:|tel:|/|\#|\?)#i', $link)) {
+        if ($link === null || $link === '') {
+            return '';
+        }
+
+        if (preg_match('#^(https?://|mailto:|tel:|/|\#|\?)#i', $link)) {
             return $link;
         }
 
-        return preg_match('#^[a-z][a-z0-9+.-]*:#i', $link) ? '#' : $link;
+        $beforeDelimiter = preg_split('#[/?\#]#', $link, 2)[0];
+
+        return strpos($beforeDelimiter, ':') !== false ? '#' : $link;
     }
 
     public function updateitem()
