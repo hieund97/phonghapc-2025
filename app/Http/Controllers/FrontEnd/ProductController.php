@@ -126,25 +126,34 @@ class ProductController extends Controller
 
         $cookieProduct         = 'recentlyProductViewed';
         $data["cookieProduct"] = $cookieProduct;
+        $productListNew        = [];
         if (isset($_COOKIE[$cookieProduct])) {
-            $productList            = json_decode($_COOKIE[$cookieProduct], true);
-            $data['recentlyViewed'] = $productList;
+            $productList = json_decode($_COOKIE[$cookieProduct], true);
+
+            if (!is_array($productList)) {
+                $productList = [];
+            }
+
             foreach ($productList as $pro) {
+                if (!is_array($pro) || !isset($pro['id'], $pro['slug'])) {
+                    continue;
+                }
+
                 $productListNew[$pro['id']] = [
                     'id'             => $pro['id'],
                     'slug'           => $pro['slug'],
-                    'name'           => $pro['name'],
-                    'price'          => $pro['price'],
-                    'real_price'     => $pro['real_price'],
-                    'label_status'   => $pro['label_status'],
-                    'sale_percent'   => $pro['sale_percent'],
-                    'is_sale'        => $pro['is_sale'],
-                    'include_in_box' => $pro['include_in_box'],
-                    'productMedias'  => $pro['productMedias'],
-                    'status'         => $pro['status'],
-                    'status_note'    => $pro['status_note'],
-                    'feature_img'    => $pro['feature_img'],
-                    'sale_price'     => $pro['sale_price'],
+                    'name'           => $pro['name'] ?? '',
+                    'price'          => $pro['price'] ?? 0,
+                    'real_price'     => $pro['real_price'] ?? 0,
+                    'label_status'   => $pro['label_status'] ?? '',
+                    'sale_percent'   => $pro['sale_percent'] ?? '',
+                    'is_sale'        => $pro['is_sale'] ?? false,
+                    'include_in_box' => $pro['include_in_box'] ?? '',
+                    'productMedias'  => $pro['productMedias'] ?? '',
+                    'status'         => $pro['status'] ?? '',
+                    'status_note'    => $pro['status_note'] ?? '',
+                    'feature_img'    => $pro['feature_img'] ?? '',
+                    'sale_price'     => $pro['sale_price'] ?? null,
                     'gift_product'   => $pro['gift_product'] ?? '',
                     'gift_category'  => $pro['gift_category'] ?? '',
                     'is_border'      => $pro['is_border'] ?? '',
@@ -154,10 +163,10 @@ class ProductController extends Controller
                 ];
             }
 
-            setcookie($cookieProduct, json_encode($productListNew), time() + (86400 * 90), '/');
-        } else {
-            setcookie($cookieProduct, json_encode($productListNew), time() + (86400 * 90), '/');
+            $data['recentlyViewed'] = $productListNew;
         }
+
+        setcookie($cookieProduct, json_encode($productListNew), time() + (86400 * 90), '/');
 
         // Hết sản phẩm vừa xem
 
@@ -539,7 +548,7 @@ class ProductController extends Controller
         if (!$request->has('price') && !$request->has('sort_type')) {
             $productOnTop = $productTag->products
                 ->where('show_on_top', true)
-                ->sortByDesc($sortSql)
+                ->when(is_string($sortSql), fn ($products) => $products->sortByDesc($sortSql))
                 ->sortByDesc('pin_to_top')
                 ->take(20)
             ;
@@ -611,7 +620,7 @@ class ProductController extends Controller
         if (!$request->has('price') && !$request->has('sort_type')) {
             $productOnTop = $productTag->products
                 ->where('show_on_top', true)
-                ->sortByDesc($sortSql)
+                ->when(is_string($sortSql), fn ($products) => $products->sortByDesc($sortSql))
                 ->sortByDesc('pin_to_top')
                 ->take(20)
             ;
@@ -659,6 +668,7 @@ class ProductController extends Controller
     public function filterAttribute(Request $request)
     {
         $isAjax       = true;
+        $title        = null;
         $category     = null;
         $isCategory   = false;
         $arrAttribute = request('array_attribute');
@@ -694,6 +704,7 @@ class ProductController extends Controller
         $isFilterCategory = true;
         $isCategory       = true;
         $listIdProd       = [];
+        $aryProduct       = collect();
         $listAllAttribute = Attribute::all();
         $q                = $request->get('q');
         $column           = $request->column ?? 'id';

@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
-use Nicolaslopezj\Searchable\SearchableTrait;
-use Spatie\Image\Manipulations;
+use App\Traits\SearchableTrait;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -162,10 +162,9 @@ class User extends Authenticatable implements HasMedia
      *
      * @param \Spatie\MediaLibrary\MediaCollections\Models\Media|null $media
      *
-     * @throws \Spatie\Image\Exceptions\InvalidManipulation
      */
-    public function registerMediaConversions(Media $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
-        $this->addMediaConversion('thumb')->fit(Manipulations::FIT_STRETCH, 100, 100)->performOnCollections('avatar');
+        $this->addMediaConversion('thumb')->fit(Fit::Stretch, 100, 100)->performOnCollections('avatar');
     }
 }

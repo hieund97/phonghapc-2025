@@ -239,10 +239,9 @@ return [
         'View'          => Illuminate\Support\Facades\View::class,
         'Image'         => Intervention\Image\Facades\Image::class,
         'ResponseCache' => Spatie\ResponseCache\Facades\ResponseCache::class,
-        'HTMLMin'       => HTMLMin\HTMLMin\Facades\HTMLMin::class,
         'Cart'          => Darryldecode\Cart\Facades\CartFacade::class,
         'Excel'         => Maatwebsite\Excel\Facades\Excel::class,
-        'PDF'           => Barryvdh\DomPDF\Facade::class,
+        'PDF'           => Barryvdh\DomPDF\Facade\Pdf::class,
         'Socialite'     => Laravel\Socialite\Facades\Socialite::class,
 
     ],

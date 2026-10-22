@@ -27,7 +27,7 @@ use Illuminate\Routing\Middleware\ValidateSignature;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use JacobBennett\Pjax\PjaxMiddleware;
+use App\Http\Middleware\PjaxMiddleware;
 use Spatie\ResponseCache\Middlewares\CacheResponse;
 
 class Kernel extends HttpKernel
@@ -80,7 +80,7 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
-    protected $routeMiddleware = [
+    protected $middlewareAliases = [
         'auth' => Authenticate::class,
         'auth.basic' => AuthenticateWithBasicAuth::class,
         'bindings' => SubstituteBindings::class,

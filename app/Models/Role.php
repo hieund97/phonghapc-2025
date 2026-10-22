@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Traits\SearchableTrait;
 
 class Role extends \Spatie\Permission\Models\Role
 {

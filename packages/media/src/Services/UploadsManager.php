@@ -4,7 +4,7 @@ namespace Botble\Media\Services;
 
 use Carbon\Carbon;
 use File;
-use Mimey\MimeTypes;
+use Symfony\Component\Mime\MimeTypes;
 use Storage;
 
 class UploadsManager
@@ -27,7 +27,7 @@ class UploadsManager
         config()->set('filesystems.disks.local.root', config('media.driver.local.root'));
 
         $this->disk = Storage::disk(config('filesystems.default'));
-        $this->mime_type = new MimeTypes;
+        $this->mime_type = MimeTypes::getDefault();
     }
 
     /**
@@ -81,7 +81,7 @@ class UploadsManager
      */
     public function fileMimeType($path)
     {
-        return $this->mime_type->getMimeType(File::extension($this->uploadPath($path)));
+        return $this->mime_type->getMimeTypes(File::extension($this->uploadPath($path)))[0] ?? null;
     }
 
     /**

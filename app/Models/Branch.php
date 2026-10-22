@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Traits\ForgetResponseCache;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Traits\SearchableTrait;
 
 class Branch extends Model
 {

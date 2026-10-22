@@ -245,7 +245,7 @@
                                                                         alt="{{ $prod['name'] }}"
                                                                         src="{{ $prod['feature_img'] }}"
                                                                         style="
-                                                                            @if ($prod["is_border"] && !empty($prod["border_image"]))
+                                                                            @if (!empty($prod["is_border"]) && !empty($prod["border_image"]))
                                                                                 border-style: solid;
                                                                                 border-width: 2rem;
                                                                                 border-image: url('{{ $prod["border_image"] }}') 11% round;

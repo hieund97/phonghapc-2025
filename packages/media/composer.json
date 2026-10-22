@@ -19,7 +19,7 @@
     ],
     "type": "project",
     "require": {
-        "ralouphie/mimey": "^2.0"
+        "symfony/mime": "^6.0|^7.0"
     },
     "autoload": {
         "psr-4": {
